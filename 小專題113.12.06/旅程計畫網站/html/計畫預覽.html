@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計畫預覽</title>
+  <!-- 引入 Bootstrap 5 的 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/計劃預覽.css">
+</head>
+<body>
+
+<!-- 主內容區 -->
+<div class="container">
+  <h1>計畫預覽</h1>
+
+  <!-- 用戶基本資料 -->
+  <div class="section-header">
+    <h4>基本資料</h4>
+  </div>
+  <p><strong>姓名：</strong>張三</p>
+  <p><strong>電子郵件：</strong>zhangsan@example.com</p>
+  <p><strong>登錄日期：</strong>2024年12月5日</p>
+
+  <!-- 行程規劃 -->
+  <div class="section-header">
+    <h4>行程規劃</h4>
+  </div>
+  <div class="item-block">
+    <h5>目的地</h5>
+    <p>台北市, 台灣</p>
+    <h5>出發日期</h5>
+    <p>2024年12月15日</p>
+    <h5>回程日期</h5>
+    <p>2024年12月20日</p>
+  </div>
+
+  <!-- 交通規劃 -->
+  <div class="section-header">
+    <h4>交通規劃</h4>
+  </div>
+  <div class="item-block">
+    <h5>航班資訊</h5>
+    <p>航班：國泰航空 CX 101</p>
+    <h5>出發時間</h5>
+    <p>2024年12月15日 10:00 AM</p>
+  </div>
+
+  <!-- 住宿規劃 -->
+  <div class="section-header">
+    <h4>住宿規劃</h4>
+  </div>
+  <div class="item-block">
+    <h5>酒店名稱</h5>
+    <p>台北君悅酒店</p>
+    <h5>入住日期</h5>
+    <p>2024年12月15日</p>
+    <h5>退房日期</h5>
+    <p>2024年12月20日</p>
+  </div>
+
+  <!-- 物品規劃 -->
+  <div class="section-header">
+    <h4>物品規劃</h4>
+  </div>
+  <div class="item-block">
+    <h5>必備物品</h5>
+    <ul>
+      <li>護照</li>
+      <li>機票</li>
+      <li>信用卡</li>
+    </ul>
+    <h5>個人用品</h5>
+    <ul>
+      <li>牙刷</li>
+      <li>洗髮水</li>
+      <li>洗面乳</li>
+    </ul>
+    <h5>電子產品</h5>
+    <ul>
+      <li>手機</li>
+      <li>充電器</li>
+      <li>耳機</li>
+    </ul>
+  </div>
+
+  <!-- 儲存按鈕 -->
+  <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveModal">
+    儲存計畫
+  </a>
+  <a href="./首頁.html" type="button" class="btn btn-success">
+    返回首頁
+  </a>
+
+<!-- 儲存規劃的模態框 -->
+<div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="saveModalLabel">完成</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>恭喜您完成本計畫！請為您的計畫命名：</p>
+        <form id="saveForm">
+          <div class="mb-3">
+            <label for="planName" class="form-label">計畫名稱</label>
+            <input type="text" class="form-control" id="planName" placeholder="輸入計畫名稱" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="savePlanButton">儲存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 引入 Bootstrap 和 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+  // JavaScript 事件處理
+  document.getElementById('savePlanButton').addEventListener('click', function () {
+    const planNameInput = document.getElementById('planName');
+    const planName = planNameInput.value.trim();
+
+    if (planName === "") {
+      alert("請輸入計畫名稱！");
+    } else {
+      alert(`計畫「${planName}」已儲存成功！將該計畫存放至旅程紀錄`);
+      // 這裡可以加入將資料提交到伺服器的邏輯
+      planNameInput.value = ""; // 清空輸入框
+      const modal = document.getElementById('saveModal');
+      const modalInstance = bootstrap.Modal.getInstance(modal);
+      modalInstance.hide(); // 關閉模態框
+    }
+  });
+</script>
+ 
+
+</body>
+</html>

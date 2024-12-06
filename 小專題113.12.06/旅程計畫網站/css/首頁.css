@@ -1,0 +1,82 @@
+header {
+  background: url('your-image.jpg') center center/cover no-repeat;
+  height: 100vh;
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+}
+
+.alert {
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #d4edda, #fff3cd);
+  /* 柔和的漸層背景 */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0056b3;
+  /* 突出連結 */
+  transition: color 0.3s ease;
+}
+
+.alert a:hover {
+  color: #00376b;
+  /* 懸停效果 */
+}
+
+
+/* 增加導航列陰影效果 */
+.navbar {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 輕微的過渡效果 */
+.navbar-nav .nav-link {
+  transition: all 0.3s ease;
+}
+
+/* 設置輪播圖片的高度 */
+.carousel-item img {
+  width: 100%;
+  /* 讓圖片寬度佔滿容器 */
+  height: 400px;
+  /* 設置固定的高度 */
+  object-fit: cover;
+  /* 確保圖片保持比例填滿容器 */
+}
+
+
+/* 鼠標懸停效果 */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #f8d347;
+  /* 黃金色高亮 */
+  background-color: rgba(248, 211, 71, 0.2);
+  /* 添加背景高亮 */
+}
+
+
+/* 控制選單顯示與隱藏 */
+.navbar-collapse {
+  font-size: 1.1rem;
+}
+
+/* 增加導航列中的間距 */
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}

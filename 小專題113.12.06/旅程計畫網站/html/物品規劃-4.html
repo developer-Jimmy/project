@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物品規劃</title>
+    <!-- 引入 Bootstrap 5 的 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/規劃設定.css">
+    <style>
+        /* 物品選擇區塊 */
+        .item-block {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .item-block h5 {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .item-block .form-check {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 主內容區 -->
+    <div class="container">
+        <h1>物品規劃</h1>
+
+        <!-- 進度條 -->
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+
+        <!-- 進度條步驟標籤 -->
+        <div class="d-flex justify-content-between">
+            <span class="step-label">規劃您的行程</span>
+            <span class="step-label">規劃您的交通</span>
+            <span class="step-label">規劃您的住宿</span>
+            <span class="step-label">規劃您的物品</span>
+        </div>
+
+        <!-- 步驟 4: 規劃物品 -->
+        <div class="step-header">
+            <h4>步驟 4：規劃您的物品</h4>
+        </div>
+
+        <!-- 物品清單 -->
+        <form>
+            <!-- 物品區塊1 -->
+            <div class="item-block">
+                <h5>必備物品</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="護照" id="item1">
+                    <label class="form-check-label" for="item1">護照</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="機票" id="item2">
+                    <label class="form-check-label" for="item2">機票</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="信用卡" id="item3">
+                    <label class="form-check-label" for="item3">信用卡</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-success">新增</button>
+            </div>
+
+            <!-- 物品區塊2 -->
+            <div class="item-block">
+                <h5>個人用品</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="牙刷" id="item4">
+                    <label class="form-check-label" for="item4">牙刷</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="洗髮水" id="item5">
+                    <label class="form-check-label" for="item5">洗髮水</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="洗面乳" id="item6">
+                    <label class="form-check-label" for="item6">洗面乳</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-success">新增</button>
+            </div>
+
+            <!-- 物品區塊3 -->
+            <div class="item-block">
+                <h5>電子產品</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="手機" id="item7">
+                    <label class="form-check-label" for="item7">手機</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="充電器" id="item8">
+                    <label class="form-check-label" for="item8">充電器</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="耳機" id="item9">
+                    <label class="form-check-label" for="item9">耳機</label>
+                    <button class="border-0">
+                        <i class="bi bi-x-square"></i>
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-success">新增</button>
+            </div>
+
+            <!-- 提交按鈕 -->
+            <a href="./計畫預覽.html" type="submit" class="btn btn-primary">儲存</a>
+        </form>
+    </div>
+
+    <!-- 引入 Bootstrap 和 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

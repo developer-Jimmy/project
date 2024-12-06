@@ -1,0 +1,51 @@
+/* 自訂樣式 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    color: #343a40;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #343a40;
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  /* 進度條樣式 */
+  .progress {
+    height: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .step-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  /* 按鈕設置 */
+.btn-primary {
+    background-color: #f8d347;
+    color: white;
+    font-weight: 700;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f7c220;
+  }
+  
+  /* 進度條步驟文字 */
+  .step-label {
+    font-weight: 600;
+  }
