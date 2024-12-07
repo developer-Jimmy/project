@@ -111,3 +111,12 @@ body {
   color: #00376b;
   /* 懸停效果 */
 }
+
+/* .pagination .page-link {
+  cursor: pointer;
+}
+
+.pagination .disabled .page-link {
+  cursor: not-allowed;
+  color: #ccc;
+} */
