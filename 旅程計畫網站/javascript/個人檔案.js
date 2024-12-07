@@ -60,8 +60,9 @@ function renderPlans(plans, container, statusClass, btnClass) {
       </p>
       <a class="btn btn-secondary">相關照片</a>
       <a class="btn btn-secondary">相關影片</a>
-      <a class="btn btn-danger">刪除計畫</a>
       <button class="btn ${btnClass}" onclick="viewDetails(${index})">查看詳細</button>
+      <a class="btn btn-info">分享計畫</a>
+      <a class="btn btn-danger">刪除計畫</a>
     `;
     container.appendChild(planCard);
   });
