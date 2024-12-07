@@ -19,26 +19,30 @@ header {
   border: none;
 }
 
-.alert {
+ /* .alert {
   font-size: 1.1rem;
   background: linear-gradient(90deg, #d4edda, #fff3cd);
+  */
   /* 柔和的漸層背景 */
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+  /* border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); } */
 
-.alert a {
+
+
+/* .alert a {
   text-decoration: none;
   font-weight: bold;
-  color: #0056b3;
-  /* 突出連結 */
-  transition: color 0.3s ease;
-}
+  color: #0056b3; */
 
-.alert a:hover {
-  color: #00376b;
-  /* 懸停效果 */
-}
+
+  /* 突出連結 */
+  /* transition: color 0.3s ease;
+} */
+
+/* .alert a:hover {
+  color: #00376b; */
+  /* 懸停效果 }*/
+
 
 
 /* 增加導航列陰影效果 */
