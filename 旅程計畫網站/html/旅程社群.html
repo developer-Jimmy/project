@@ -60,7 +60,7 @@
   <!-- 搜尋框 -->
   <div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-md-8 offset-md-2 mt-3">
         <div class="input-group search-bar">
           <input type="text" class="form-control" placeholder="搜尋旅程討論...">
           <button class="btn btn-primary" type="button">搜尋</button>
@@ -73,7 +73,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <a href="#" class="btn btn-success w-100 mb-3">開始新討論串</a>
+        <a href="#" class="btn btn-success w-25 mb-3">開始新的討論串</a>
       </div>
     </div>
   </div>
@@ -82,6 +82,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
+
+        <!-- 討論區主題選單 -->
+        <div class="profile-section container">
+          <div class="dropdown row">
+            <button class="border border-primary text-start btn btn-dark dropdown-toggle" type="button"
+              id="profileMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              討論區:
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="profileMenuButton">
+              <li><a class="dropdown-item" href="#">台北</a></li>
+              <li><a class=" dropdown-item" href="#">台中</a></li>
+              <li><a class="dropdown-item" href="#">台南</a></li>
+              <li><a class="dropdown-item" href="#">高雄</a></li>
+              <li><a class="dropdown-item" href="#">花蓮</a></li>
+              <li><a class="dropdown-item" href="#">台東</a></li>
+            </ul>
+          </div>
+        </div>
+
 
         <!-- 討論串 1 -->
         <div class="card">
