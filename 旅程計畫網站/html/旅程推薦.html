@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅程推薦</title>
+    <title>旅遊推薦</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定義CSS -->
     <link rel="stylesheet" href="../css/旅程推薦.css">
+
 </head>
 
 <body>
-
     <!-- 導航列 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
@@ -38,7 +40,7 @@
                         <a class="nav-link" href="./旅程社群.html">旅程社群</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./旅程推薦.html">旅程推薦</a>
+                        <a class="nav-link" href="#">旅程推薦</a>
                     </li>
                     <li class="nav-item" id="profileLink" style="display: none;">
                         <a class="nav-link" href="./帳戶導覽.html"><i class="bi bi-person-circle"></i></a>
@@ -56,162 +58,117 @@
             </div>
         </div>
     </nav>
-
-    <!-- 輪播圖 -->
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="旅行圖片1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="旅行圖片2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="旅行圖片3">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <!-- 旅程推薦 -->
-    <div class="container">
-        <div class="section-title">
-            <h3>根據國家選擇</h3>
-        </div>
-
+    <header class="bg-primary text-white text-center py-4">
+        <h1>旅程計畫旅遊推薦</h1>
+        <p>發現你的下一個目的地！</p>
         <!-- 搜尋框 -->
-        <div class="container">
+        <div class="container mt-3">
+            <form id="search-form" class="d-flex justify-content-center">
+                <input type="text" id="search-input" class="form-control w-50" placeholder="輸入目的地或主題..."
+                    aria-label="搜尋框" />
+                <button class="btn btn-light ms-2" type="submit">搜尋</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <!-- 搜尋結果 -->
+        <section id="search-results" class="d-none">
+            <h2 class="text-center my-4">搜尋結果</h2>
+            <div id="results-container" class="row">
+                <!-- 動態填充結果 -->
+            </div>
+
+            <!-- 分頁區域 -->
+            <nav class="mt-4">
+                <ul id="pagination" class="pagination justify-content-center">
+                    <!-- 動態生成頁碼 -->
+                </ul>
+            </nav>
+        </section>
+
+    </main>
+
+    <!-- 主內容區 -->
+    <main class="container my-4">
+        <!-- Hero Section -->
+        <section class="text-center">
+            <h2 class="mb-4">熱門推薦</h2>
+            <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/800x400?text=巴黎" class="d-block w-100" alt="巴黎">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>浪漫之都 - 巴黎</h5>
+                            <p>體驗法式浪漫與藝術氣息。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400?text=冰島" class="d-block w-100" alt="冰島">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>冰與火之地 - 冰島</h5>
+                            <p>觀賞壯麗極光與火山景觀。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400?text=東京" class="d-block w-100" alt="東京">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>活力都市 - 東京</h5>
+                            <p>探索日本的現代與傳統融合。</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 旅遊主題區 -->
+        <section class="mt-5">
+            <h2 class="text-center mb-4">依主題推薦</h2>
             <div class="row">
-                <div class="col-md-8 offset-md-2 mb-3">
-                    <div class="input-group search-bar">
-                        <input type="text" class="form-control" placeholder="搜尋國家...">
-                        <button class="btn btn-primary" type="button">搜尋</button>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200?text=冒險" class="card-img-top" alt="冒險">
+                        <div class="card-body">
+                            <h5 class="card-title">冒險之旅</h5>
+                            <p class="card-text">挑戰極限，體驗刺激戶外活動！</p>
+                            <a href="#" class="btn btn-primary">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200?text=浪漫" class="card-img-top" alt="浪漫">
+                        <div class="card-body">
+                            <h5 class="card-title">浪漫之旅</h5>
+                            <p class="card-text">沉浸於浪漫景致與甜蜜時光。</p>
+                            <a href="#" class="btn btn-primary">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200?text=美食" class="card-img-top" alt="美食">
+                        <div class="card-body">
+                            <h5 class="card-title">美食之旅</h5>
+                            <p class="card-text">品味全球美食，讓味蕾旅行。</p>
+                            <a href="#" class="btn btn-primary">了解更多</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-
-
-        <div class="row">
-            <!-- 台灣 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="台灣">
-                    <div class="card-body">
-                        <h5 class="card-title">台灣</h5>
-                        <p class="card-text">探索台灣的美麗風光與獨特文化。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 日本 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="日本">
-                    <div class="card-body">
-                        <h5 class="card-title">日本</h5>
-                        <p class="card-text">發現日本的歷史、文化與自然景點。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 美國 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="美國">
-                    <div class="card-body">
-                        <h5 class="card-title">美國</h5>
-                        <p class="card-text">體驗美國的多元文化與景點。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- 台灣 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="台灣">
-                    <div class="card-body">
-                        <h5 class="card-title">法國</h5>
-                        <p class="card-text">沉浸在法國的藝術氣息與浪漫氛圍中。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 日本 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="日本">
-                    <div class="card-body">
-                        <h5 class="card-title">義大利</h5>
-                        <p class="card-text">欣賞義大利的歷史古蹟、美食與迷人風光。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 美國 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="美國">
-                    <div class="card-body">
-                        <h5 class="card-title">英國</h5>
-                        <p class="card-text">發現英國的悠久歷史、皇家文化與現代魅力。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- 台灣 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="台灣">
-                    <div class="card-body">
-                        <h5 class="card-title">澳大利亞</h5>
-                        <p class="card-text">感受澳大利亞的熱帶氣候與壯麗自然風光。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 日本 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="日本">
-                    <div class="card-body">
-                        <h5 class="card-title">加拿大</h5>
-                        <p class="card-text">探索加拿大的廣袤森林、湖泊與友好文化。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 美國 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/500x250" class="card-img-top" alt="美國">
-                    <div class="card-body">
-                        <h5 class="card-title">南非</h5>
-                        <p class="card-text">探索南非的野生動物、壯麗山景與文化多樣性。</p>
-                        <a href="#" class="btn btn-primary">立即查看</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- 頁尾 -->
     <div class="alert alert-info text-center mt-4" role="alert" id="membership-alert">
         <strong>尚未登入？</strong> 註冊或登入帳號，即可解鎖完整社群功能與積分系統！
@@ -228,6 +185,10 @@
         <p>© 2024 行程規劃網站. All rights reserved.</p>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 自定義JavaScript -->
+    <script src="../javascript/旅程推薦.js"></script>
 
 </body>
 

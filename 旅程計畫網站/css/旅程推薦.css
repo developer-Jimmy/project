@@ -3,6 +3,9 @@ body {
     background-color: #f8f9fa;
 }
 
+header {
+    background: linear-gradient(to right, #4caf50, #81c784);
+}
 
 /* 增加導航列陰影效果 */
 .navbar {
@@ -52,7 +55,7 @@ body {
 }
 
 .card img {
-    height: 250px;
+    height: 20s0px;
     object-fit: cover;
 }
 
