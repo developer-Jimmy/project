@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const searchResults = document.getElementById("search-results");
     const resultsContainer = document.getElementById("results-container");
-    const pagination = document.getElementById("pagination");
   
     const destinations = [
       { title: "巴黎", description: "浪漫之都", img: "https://via.placeholder.com/350x200?text=巴黎" },
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
       if (paginatedResults.length === 0) {
         resultsContainer.innerHTML = `<p class="text-center">沒有找到符合條件的結果。</p>`;
-        pagination.innerHTML = ""; // 清空分頁按鈕
       } else {
         paginatedResults.forEach((result) => {
           const card = `
@@ -64,41 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
           resultsContainer.innerHTML += card;
         });
-  
-        // 更新分頁按鈕
-        updatePagination(results.length, page);
-      }
-  
+        }
       searchResults.classList.remove("d-none");
-    }
-  
-    // 更新分頁按鈕
-    function updatePagination(totalResults, currentPage) {
-      pagination.innerHTML = ""; // 清空舊的按鈕
-  
-      const totalPages = Math.ceil(totalResults / resultsPerPage);
-  
-      if (totalPages <= 1) return; // 如果只有一頁，不顯示分頁按鈕
-  
-      for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement("li");
-        li.className = "page-item";
-        if (i === currentPage) li.classList.add("active");
-  
-        const a = document.createElement("a");
-        a.className = "page-link";
-        a.href = "#";
-        a.textContent = i;
-  
-        // 點擊頁碼時切換頁面
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          currentPage = i;
-          displayResults(filteredResults, currentPage);
-        });
-  
-        li.appendChild(a);
-        pagination.appendChild(li);
-      }
     }
   });
