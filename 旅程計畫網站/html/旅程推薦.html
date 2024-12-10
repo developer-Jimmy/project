@@ -74,6 +74,15 @@
         <p></p>
     </section>
 
+       <!-- 搜尋框 -->
+       <div class="container mt-3">
+        <form id="search-form" class="d-flex justify-content-center">
+            <input type="text" id="search-input" class="form-control w-50" placeholder="輸入目的地或主題..."
+                aria-label="搜尋框" />
+            <button class="btn btn-primary ms-2" type="submit">搜尋</button>
+        </form>
+    </div>
+</header>
 
     <main class="container my-4">
         <!-- 搜尋結果 -->
@@ -89,7 +98,7 @@
     <!-- 主內容區 -->
     <main class="container my-4">
         <!-- Hero Section -->
-        <section class="text-center">
+        <section class="text-center" id= "travel-recommend">
             <h2 class="mb-4">熱門推薦</h2>
             <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -164,7 +173,7 @@
                 </div>
             </div>
              <!-- 分頁導航 -->
-             <nav aria-label="討論區翻頁">
+             <nav aria-label="旅程推薦翻頁">
                 <ul class="pagination justify-content-center mt-3">
                   <li class="page-item" id="prev-page">
                     <a class="page-link" href="#" aria-label="上一頁">上一頁</a>
