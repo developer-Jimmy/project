@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>個人檔案</title>
+  <title>個人資料</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/個人檔案.css">
+  <link rel="stylesheet" href="../css/個人資料.css">
 </head>
 
 <body>
@@ -16,8 +16,45 @@
     <div class="profile-header">
       <img src="https://via.placeholder.com/120" alt="Profile Picture">
       <h2>李四</h2>
-      <p>歡迎來到個人檔案！</p>
+      <p>歡迎來到個人資料！</p>
     </div>
+
+    <div class="container mt-5">
+      <!-- 卡片容器 -->
+      <div class="card mx-auto shadow-lg" style="max-width: 500px;">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">基本資料</h3>
+          <form>
+            <!-- 姓名 -->
+            <div class="mb-3">
+              <label for="fullName" class="form-label">姓名</label>
+              <input type="text" class="form-control" id="fullName" placeholder="輸入您的姓名" value="王小明" required>
+            </div>
+            <!-- 電子郵件 -->
+            <div class="mb-3">
+              <label for="email" class="form-label">電子郵件地址</label>
+              <input type="email" class="form-control" id="email" placeholder="輸入您的電子郵件" value="example@email.com"
+                required>
+            </div>
+            <!-- 電話 -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">電話</label>
+              <input type="tel" class="form-control" id="phone" placeholder="輸入您的電話號碼" value="0912345678" required>
+            </div>
+            <!-- 地址 -->
+            <div class="mb-3">
+              <label for="address" class="form-label">地址</label>
+              <textarea class="form-control" id="address" rows="3" placeholder="輸入您的地址" required>台北市中正區</textarea>
+            </div>
+            <!-- 提交按鈕 -->
+            <div class="d-grid">
+              <a href="#" type="submit" class="btn btn-primary">更新基本資料</a>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
 
     <!-- 計劃管理區塊 -->
 
@@ -66,7 +103,7 @@
     <!-- 引入 Bootstrap 和 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="../javascript/個人檔案.js"></script>
+    <script src="../javascript/個人資料.js"></script>
 
 </body>
 

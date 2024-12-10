@@ -37,18 +37,46 @@ body {
 
 /* 介紹區 */
 #introduce {
-    background-color: white;
+    /* background-color: white; */
+    background-color: #222;
+    /* 深灰色背景 */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #introduce h1 {
-    color: #006699;
-    /* 深藍色文字 */
+    color: #f39c12;
+    /* 亮金色標題 */
+    font-size: 36px;
+    font-weight: bold;
+    /* color: whitesmoke; */
 }
 
 #introduce p {
+    color: #ccc;
+    /* 淺灰色文字 */
     font-size: 18px;
-    color: #444;
-    /* 中等灰色 */
+    margin-top: 15px;
+}
+
+.image-title {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform:
+        translate(-50%, -100%);
+}
+.image-text {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:
+        translate(-50%, -70%);
 }
 
 .card {
