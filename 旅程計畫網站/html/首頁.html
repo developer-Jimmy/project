@@ -37,13 +37,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">聯絡我們</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            社群
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./討論區.html">討論區</a></li>
+                            <li><a class="dropdown-item" href="./直播平台.html">直播平台</a></li>
+                            <li><a class="dropdown-item" href="./旅程推薦.html">旅程推薦</a></li>
+                        </ul>
+                    </li>
+
                     <!-- 登入和註冊（根據登入狀態顯示） -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="./旅程社群.html">旅程社群</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./旅程推薦.html">旅程推薦</a>
-                    </li>
                     <li class="nav-item" id="profileLink" style="display: none;">
                         <a class="nav-link" href="./帳戶導覽.html">
                             <i class="bi bi-person-circle ">
@@ -64,15 +71,18 @@
         </div>
     </nav>
 
+
     <!-- 歡迎區塊 -->
     <header class="text-white text-center py-5"
         style="background: url('../img/首頁圖片/travel-background.jpg') center/cover no-repeat;height: 100vh;">
         <div class="container">
             <h1 class="display-4">探索未知的旅途</h1>
-            <p class="lead">用我們的工具，計劃屬於您的完美旅程！</p>
+            <p>用我們的工具，計劃屬於您的完美旅程！</p>
             <a href="./行程規劃-1.html" class="btn btn-lg btn-light">立即開始</a>
         </div>
     </header>
+
+
     <br>
 
     <!-- 輪播圖 -->
@@ -166,7 +176,7 @@
     <footer class="bg-dark text-white text-center py-3">
         <a href="" class="text-info">隱私權條款</a>
         <a href="" class="text-info">常見問題</a>
-        <p>© 2024 行程規劃網站. All rights reserved.</p>
+        <p>© 2024 旅程計畫網站. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

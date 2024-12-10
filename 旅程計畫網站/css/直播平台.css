@@ -1,13 +1,9 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
 }
 
-header {
-    background: linear-gradient(to right, #4caf50, #81c784);
-}
-
-/* 增加導航列陰影效果 */
+  /* 增加導航列陰影效果 */
 .navbar {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -16,10 +12,9 @@ header {
   .navbar-nav .nav-link {
     transition: all 0.3s ease;
   }
-
-
-/* 鼠標懸停效果 */
-.navbar-dark .navbar-nav .nav-link:hover {
+  
+  /* 鼠標懸停效果 */
+  .navbar-dark .navbar-nav .nav-link:hover {
     color: #f8d347;
     /* 黃金色高亮 */
     background-color: rgba(248, 211, 71, 0.2);
@@ -36,65 +31,44 @@ header {
   .navbar-nav .nav-item {
     margin-left: 15px;
   }
-
-.carousel-item img {
+  
+  .hero {
+    background: linear-gradient(to bottom, #1a1a1a, #333);
+    color: #f8f9fa;
+  }
+  
+  .card {
+    overflow: hidden;
+  }
+  
+  .card iframe {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-/* 頁面內容區 */
-section h1 {
-    color: #006699; /* 深藍色文字 */
-  }
-  section p {
-    font-size: 18px;
-    color: #444; /* 中等灰色 */
-  }
-
-.card {
+    height: 180px;
     border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+  }
+  
+  .table {
+    color: #f8f9fa;
+  }
 
-.card-title {
-    color: #007bff;
-}
-
-.card img {
-    height: 20s0px;
-    object-fit: cover;
-}
-
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.section-title {
-    margin-top: 50px;
-    text-align: center;
-    color: #333;
-}
-
-.alert {
+  .alert {
     font-size: 1.1rem;
     background: linear-gradient(90deg, #d4edda, #fff3cd);
     /* 柔和的漸層背景 */
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.alert a {
+  }
+  
+  .alert a {
     text-decoration: none;
     font-weight: bold;
     color: #0056b3;
     /* 突出連結 */
     transition: color 0.3s ease;
-}
-
-.alert a:hover {
+  }
+  
+  .alert a:hover {
     color: #00376b;
     /* 懸停效果 */
-}
+  }
+  

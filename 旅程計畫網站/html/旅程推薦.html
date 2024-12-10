@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅遊推薦</title>
+    <title>旅程推薦</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 自定義CSS -->
@@ -16,7 +16,7 @@
     <!-- 導航列 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="#">旅程推薦</a>
+            <a class="navbar-brand" href="#">旅程計畫網站</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,15 +35,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">聯絡我們</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          社群
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="./討論區.html">討論區</a></li>
+                          <li><a class="dropdown-item" href="./直播平台.html">直播平台</a></li>
+                          <li><a class="dropdown-item" href="./旅程推薦.html">旅程推薦</a></li>
+                        </ul>
+                      </li>
+
                     <!-- 登入和註冊（根據登入狀態顯示） -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="./旅程社群.html">旅程社群</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">旅程推薦</a>
-                    </li>
                     <li class="nav-item" id="profileLink" style="display: none;">
-                        <a class="nav-link" href="./帳戶導覽.html"><i class="bi bi-person-circle"></i></a>
+                        <a class="nav-link" href="./帳戶導覽.html">
+                            <i class="bi bi-person-circle ">
+                            </i>
+                        </a>
                     </li>
                     <li class="nav-item" id="logoutLink" style="display: none;">
                         <a class="nav-link" href="#">登出</a>
@@ -58,18 +67,12 @@
             </div>
         </div>
     </nav>
-    <header class="bg-primary text-white text-center py-4">
-        <h1>旅程計畫旅遊推薦</h1>
-        <p>參考適合您的旅程！</p>
-        <!-- 搜尋框 -->
-        <div class="container mt-3">
-            <form id="search-form" class="d-flex justify-content-center">
-                <input type="text" id="search-input" class="form-control w-50" placeholder="輸入目的地或主題..."
-                    aria-label="搜尋框" />
-                <button class="btn btn-light ms-2" type="submit">搜尋</button>
-            </form>
-        </div>
-    </header>
+
+    <!-- 介紹區 -->
+    <section class="container text-center py-5">
+        <h1 class="display-4">歡迎來到旅遊推薦</h1>
+        <p></p>
+    </section>
 
 
     <main class="container my-4">
@@ -193,7 +196,7 @@
     <footer class="bg-dark text-white text-center py-3">
         <a href="" class="text-info">隱私權條款</a>
         <a href="" class="text-info">常見問題</a>
-        <p>© 2024 行程規劃網站. All rights reserved.</p>
+        <p>© 2024 旅程計畫網站. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->

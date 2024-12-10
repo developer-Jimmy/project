@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>旅程社群</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/旅程社群.css">
+  <link rel="stylesheet" href="../css/討論區.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
   <!-- 導航列 -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
     <div class="container">
-      <a class="navbar-brand" href="#">旅程社群</a>
+      <a class="navbar-brand" href="#">旅程計畫網站</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,15 +33,25 @@
           <li class="nav-item">
             <a class="nav-link" href="#">聯絡我們</a>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              社群
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="./討論區.html">討論區</a></li>
+              <li><a class="dropdown-item" href="./直播平台.html">直播平台</a></li>
+              <li><a class="dropdown-item" href="./旅程推薦.html">旅程推薦</a></li>
+            </ul>
+          </li>
+
           <!-- 登入和註冊（根據登入狀態顯示） -->
-          <li class="nav-item">
-            <a class="nav-link" href="#">旅程社群</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./旅程推薦.html">旅程推薦</a>
-          </li>
           <li class="nav-item" id="profileLink" style="display: none;">
-            <a class="nav-link" href="./帳戶導覽.html"><i class="bi bi-person-circle"></i></a>
+            <a class="nav-link" href="./帳戶導覽.html">
+              <i class="bi bi-person-circle ">
+              </i>
+            </a>
           </li>
           <li class="nav-item" id="logoutLink" style="display: none;">
             <a class="nav-link" href="#">登出</a>
@@ -57,6 +67,11 @@
     </div>
   </nav>
 
+  <!-- 介紹區 -->
+  <section class="container text-center py-5">
+      <h1 class="display-4">歡迎來到討論區</h1>
+      <p></p>
+  </section>
   <!-- 搜尋框 -->
   <div class="container">
     <div class="row">
@@ -178,7 +193,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- 頁尾 -->
   <div class="alert alert-info text-center mt-4" role="alert" id="membership-alert">
     <strong>尚未登入？</strong> 註冊或登入帳號，即可解鎖完整社群功能與積分系統！
@@ -190,9 +204,10 @@
   <footer class="bg-dark text-white text-center py-3">
     <a href="" class="text-info">隱私權條款</a>
     <a href="" class="text-info">常見問題</a>
-    <p>© 2024 行程規劃網站. All rights reserved.</p>
+    <p>© 2024 旅程計畫網站. All rights reserved.</p>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../javascript/討論區.js"></script>
 </body>
 
 
