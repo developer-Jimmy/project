@@ -6,8 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>直播平台</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/直播平台.css">
+  <link rel="stylesheet" href="../css/環境設定.css">
+  <style>
+    #introduce {
+      background: linear-gradient(to bottom, #1a1a1a, #333);
+      color: #f8f9fa;
+    }
+
+    .card {
+      overflow: hidden;
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .table {
+      color: #f8f9fa;
+    }
+  </style>
 </head>
+
 
 <body class="bg-dark text-light">
   <!-- 導航列 -->
@@ -67,7 +88,7 @@
   </nav>
 
   <!-- 介紹區 -->
-  <section class="hero text-center bg-dark py-5">
+  <section class="text-center bg-dark py-5" id="introduce">
     <div class="container">
       <h1 class="display-4">歡迎來到直播平台</h1>
       <p>欣賞來自世界各地的旅遊直播，探索新的目的地！</p>
@@ -94,7 +115,7 @@
         <!-- 新增其他直播 -->
         <div class="col-md-4">
           <div class="card bg-dark border-secondary">
-            <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/your_video_id" allowfullscreen></iframe>
             <div class="card-body">
               <h5 class="card-title">目的地：巴黎</h5>
               <p class="card-text">直播主：旅者Tom</p>
