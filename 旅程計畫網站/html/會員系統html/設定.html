@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h3 class="text-center mb-4">設定</h3>
+
+
+
+        <!-- 隱私設定 -->
+
+
+
+
+        <div class="card mb-4">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">計畫隱私設置</h5>
+            <form>
+              <div class="mb-3">
+                <label for="visibility">我的計畫是否公開：</label>
+                <select id="visibility" class="form-select">
+                  <option>公開</option>
+                  <option>私密</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">保存隱私設定</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">直播隱私設置</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">選擇直播可見範圍</label>
+                <select class="form-select">
+                  <option selected>公開直播</option>
+                  <option>私密直播（僅限邀請）</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">是否開啟即時訊息過濾</label>
+                <input type="checkbox" class="form-check-input" checked> 開啟
+              </div>
+              <button type="submit" class="btn btn-primary w-100">保存隱私設定</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 安全設定 -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-center">帳號安全設置</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">啟用雙重驗證 (2FA)</label>
+                <input type="checkbox" class="form-check-input" checked> 啟用
+              </div>
+              <div class="mb-3">
+                <label class="form-label">更改密碼</label>
+                <input type="password" class="form-control" placeholder="輸入新密碼">
+              </div>
+              <button type="submit" class="btn btn-danger w-100">保存安全設定</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 通知設定 -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-center">通知設定</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">直播提醒</label>
+                <select class="form-select">
+                  <option selected>接收所有通知</option>
+                  <option>僅接收私密直播通知</option>
+                  <option>不接收通知</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">保存通知設定</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
