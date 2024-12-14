@@ -1,0 +1,77 @@
+body {
+    background-color: #f8f9fa;
+    /* 整體背景 */
+    font-family: 'Roboto', sans-serif;
+}
+.card {
+    border-radius: 15px;
+}
+
+ /* 側邊欄樣式 */
+ .list-group-item {
+    font-size: 1.1rem;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover 效果 */
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* 當前頁面的高亮顏色 */
+.list-group-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 圖標與文字間的間距 */
+.list-group-item i {
+    margin-right: 10px;
+}
+
+/* 保證圖標大小一致 */
+.list-group-item i {
+    font-size: 1.3rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+#planList .list-group-item {
+    cursor: pointer;
+}
+.container {
+    margin-top: 50px;
+}
+
+
+
+.form-label {
+    font-weight: bold;
+}
+
+
+
+.btn-outline-danger {
+    border-radius: 20px;
+}
+
+.form-control {
+    border-radius: 20px;
+}
+
+.bi-lock {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.btn {
+    border-radius: 20px;
+}
