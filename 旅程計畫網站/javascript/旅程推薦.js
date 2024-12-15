@@ -3,18 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const searchResults = document.getElementById("search-results");
   const resultsContainer = document.getElementById("results-container");
-
+  const recommendedContent = document.getElementById("recommended-content");
   const destinations = [
-    { title: "巴黎", description: "浪漫之都", img: "https://via.placeholder.com/350x200?text=巴黎" },
-    { title: "冰島", description: "觀賞極光與火山奇景", img: "https://via.placeholder.com/350x200?text=冰島" },
-    { title: "東京", description: "探索日本文化與美食", img: "https://via.placeholder.com/350x200?text=東京" },
-    { title: "阿姆斯特丹", description: "迷人的運河與花卉", img: "https://via.placeholder.com/350x200?text=阿姆斯特丹" },
-    { title: "紐約", description: "永不眠的城市", img: "https://via.placeholder.com/350x200?text=紐約" },
-    { title: "巴塞隆納", description: "高迪建築與陽光沙灘", img: "https://via.placeholder.com/350x200?text=巴塞隆納" },
-    { title: "倫敦", description: "歷史與現代的完美融合", img: "https://via.placeholder.com/350x200?text=倫敦" },
-    { title: "雪梨", description: "壯觀的歌劇院與港灣大橋", img: "https://via.placeholder.com/350x200?text=雪梨" },
-    { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃", img: "https://via.placeholder.com/350x200?text=佛羅倫斯" },
-    { title: "里約熱內盧", description: "熱情的嘉年華與海灘", img: "https://via.placeholder.com/350x200?text=里約" },
+    { title: "巴黎", description: "浪漫之都", img : "../../img/旅程推薦圖片/巴黎搜尋.jpg" },
+    { title: "冰島", description: "觀賞極光與火山奇景", img: "../../img/旅程推薦圖片/冰島搜尋.jpg" },
+    { title: "東京", description: "探索日本文化與美食", img: "../../img/旅程推薦圖片/東京搜尋.jpg" },
+    { title: "阿姆斯特丹", description: "迷人的運河與花卉", img: "../../img/旅程推薦圖片/阿姆斯特丹搜尋.jpg" },
+    { title: "紐約", description: "永不眠的城市", img: "../../img/旅程推薦圖片/紐約搜尋.jpg" },
+    { title: "倫敦", description: "歷史與現代的完美融合", img: "../../img/旅程推薦圖片/倫敦搜尋.jpg" },
+    { title: "雪梨", description: "壯觀的歌劇院與港灣大橋", img: "../../img/旅程推薦圖片/雪梨搜尋.jpg" },
+    { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃", img: "../../img/旅程推薦圖片/佛羅倫斯搜尋.jpg" },
+    { title: "里約熱內盧", description: "熱情的嘉年華與海灘", img: "../../img/旅程推薦圖片/里約熱內盧搜尋.jpg" },
   ];
 
   const resultsPerPage = 6; // 每頁顯示的結果數量
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const paginatedResults = results.slice(start, end);
 
     if (paginatedResults.length === 0) {
-      resultsContainer.innerHTML = `<p class="text-center">沒有找到符合條件的結果。</p>`;
+      resultsContainer.innerHTML = `<p style="color: white" class="text-center">沒有找到符合條件的結果。</p>`;
     } else {
       paginatedResults.forEach((result) => {
         const card = `
@@ -61,8 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           `;
         resultsContainer.innerHTML += card;
+        updateContent();
+        
       });
     }
     searchResults.classList.remove("d-none");
   }
+  // 更新整頁內容
+function updateContent() {
+  recommendedContent.innerHTML = "";
+}
 });
+

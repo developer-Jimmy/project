@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // 更新討論內容
     function updateContent(page) {
-      discussionContent.innerHTML = `<p>正在顯示第 ${page} 頁內容...</p>`;
+      discussionContent.innerHTML = `<p style="color: white;">正在顯示第 ${page} 頁內容...</p>`;
     }
   
     // 更新分頁按鈕狀態
