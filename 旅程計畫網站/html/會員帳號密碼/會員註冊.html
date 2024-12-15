@@ -8,6 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../css/會員註冊與登入.css">
+
 </head>
 
 <body>
@@ -19,12 +20,11 @@
         <div class="card shadow-sm">
           <div class="card-body">
             <h3 class="card-title text-center mb-4">註冊新帳戶</h3>
-
             <!-- 註冊表單 -->
             <form action="#" method="POST">
               <div class="mb-3">
-                <label for="username" class="form-label">使用者名稱</label>
-                <input type="text" class="form-control" id="username" placeholder="請輸入您的使用者名稱" required>
+                <label for="username" class="form-label">用戶名稱</label>
+                <input type="text" class="form-control" id="username" placeholder="請輸入您的用戶名稱" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">電子郵件</label>
@@ -39,7 +39,7 @@
                 <input type="password" class="form-control" id="confirmPassword" placeholder="請確認您的密碼" required>
               </div>
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">註冊</button>
+                <button onclick="register()" type="button" class="btn btn-primary btn-lg">註冊</button>
               </div>
             </form>
 
@@ -55,6 +55,49 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    function register() {
+      // 獲取表單輸入值
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+
+      // 驗證輸入
+      if (!username) {
+        alert("用戶名不能為空!");
+        return
+      }
+
+      if (!email) {
+        alert("電子郵件不能為空!");
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("電子郵件格式無效!");
+        return;
+      }
+
+      if (!password) {
+        alert("密碼不能為空!");
+        return;
+      }
+
+      if (password.length < 8) {
+        alert("密碼必須至少包含 8 個字符!");
+        return;
+      }
+      if (password !== confirmPassword) {
+        alert("兩次輸入的密碼不一致!");
+        return;
+      }
+      // 註冊成功提示
+      alert("註冊成功!");
+    }
+  </script>
 </body>
 
 </html>
