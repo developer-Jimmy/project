@@ -1,6 +1,10 @@
 // 模擬用戶登入狀態
-    const isLoggedIn = true; // 假設用戶已登入，這裡可以從localStorage或cookie讀取狀態
 
+// 在页面加载时读取存储的布尔值
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    // 假設用戶已登入，這裡可以從localStorage或cookie讀取狀態
+   
 // 控制顯示登入註冊或個人頁面登出
     const loginLink = document.getElementById('loginLink');
     const registerLink = document.getElementById('registerLink');
@@ -26,7 +30,8 @@ if (isLoggedIn) {
     // 處理登出邏輯，這裡是模擬
     alert('您已經登出');
     // 可以清除localStorage或cookie等
-    window.location.reload(); // 刷新頁面
+    localStorage.removeItem('isLoggedIn');
+    window.location.href="./會員帳號密碼/會員登入.html"; // 刷新頁面
     });
 
 

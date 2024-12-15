@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.getElementById("results-container");
   const recommendedContent = document.getElementById("recommended-content");
   const destinations = [
-    { title: "巴黎", description: "浪漫之都", img : "../../img/旅程推薦圖片/巴黎搜尋.jpg" },
-    { title: "冰島", description: "觀賞極光與火山奇景", img: "../../img/旅程推薦圖片/冰島搜尋.jpg" },
-    { title: "東京", description: "探索日本文化與美食", img: "../../img/旅程推薦圖片/東京搜尋.jpg" },
-    { title: "阿姆斯特丹", description: "迷人的運河與花卉", img: "../../img/旅程推薦圖片/阿姆斯特丹搜尋.jpg" },
-    { title: "紐約", description: "永不眠的城市", img: "../../img/旅程推薦圖片/紐約搜尋.jpg" },
-    { title: "倫敦", description: "歷史與現代的完美融合", img: "../../img/旅程推薦圖片/倫敦搜尋.jpg" },
-    { title: "雪梨", description: "壯觀的歌劇院與港灣大橋", img: "../../img/旅程推薦圖片/雪梨搜尋.jpg" },
-    { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃", img: "../../img/旅程推薦圖片/佛羅倫斯搜尋.jpg" },
-    { title: "里約熱內盧", description: "熱情的嘉年華與海灘", img: "../../img/旅程推薦圖片/里約熱內盧搜尋.jpg" },
+    { title: "巴黎", description: "浪漫之都", img : "../img/旅程推薦圖片/巴黎搜尋.jpg" },
+    { title: "冰島", description: "觀賞極光與火山奇景", img: "../img/旅程推薦圖片/冰島搜尋.jpg" },
+    { title: "東京", description: "探索日本文化與美食", img: "../img/旅程推薦圖片/東京搜尋.jpg" },
+    { title: "阿姆斯特丹", description: "迷人的運河與花卉", img: "../img/旅程推薦圖片/阿姆斯特丹搜尋.jpg" },
+    { title: "紐約", description: "永不眠的城市", img: "../img/旅程推薦圖片/紐約搜尋.jpg" },
+    { title: "倫敦", description: "歷史與現代的完美融合", img: "../img/旅程推薦圖片/倫敦搜尋.jpg" },
+    { title: "雪梨", description: "壯觀的歌劇院與港灣大橋", img: "../img/旅程推薦圖片/雪梨搜尋.jpg" },
+    { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃", img: "../img/旅程推薦圖片/佛羅倫斯搜尋.jpg" },
+    { title: "里約熱內盧", description: "熱情的嘉年華與海灘", img: "../img/旅程推薦圖片/里約熱內盧搜尋.jpg" },
   ];
 
   const resultsPerPage = 6; // 每頁顯示的結果數量
