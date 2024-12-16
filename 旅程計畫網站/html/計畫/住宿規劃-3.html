@@ -61,7 +61,11 @@
         <form>
             <!-- 住宿方式1 -->
             <section class="accommodation-block">
-                <h5>第 1 晚：台中市區住宿</h5>
+                <h5>第 1 晚</h5>
+                <div class="form-group">
+                    <label for="accommodation1-title">住宿地點</label>
+                    <input type="text" class="form-control" id="accommodation1-title" placeholder="例如：台中市區住宿" required>
+                </div>
                 <div class="form-group">
                     <label for="accommodation1-type">住宿類型</label>
                     <select class="form-select" id="accommodation1-type" required>
@@ -83,13 +87,17 @@
                     <label for="accommodation1-location">住宿地點</label>
                     <input type="text" class="form-control" id="accommodation1-location" placeholder="例如：台中市區" required>
                 </div>
-                <button type="button" class="btn btn-success">新增</button>
-                <button type="button" class="btn btn-danger">刪除</button>
+
             </section>
 
             <!-- 住宿方式2 -->
             <section class="accommodation-block">
-                <h5>第 2 晚：高雄市區住宿</h5>
+                <h5>第 2 晚</h5>
+                <div class="form-group">
+                    <label for="accommodation2-title">住宿地點</label>
+                    <input type="text" class="form-control" id="accommodation2-title" placeholder="例如：高雄市區住宿" required>
+                </div>
+
                 <div class="form-group">
                     <label for="accommodation2-type">住宿類型</label>
                     <select class="form-select" id="accommodation2-type" required>
@@ -111,15 +119,18 @@
                     <label for="accommodation2-location">住宿地點</label>
                     <input type="text" class="form-control" id="accommodation2-location" placeholder="例如：高雄市區" required>
                 </div>
-                <button type="button" class="btn btn-success">新增</button>
-                <button type="button" class="btn btn-danger">刪除</button>
+
             </section>
 
             <!-- 增加更多住宿段 -->
 
             <!-- 提交按鈕 -->
-            <a href="./交通規劃-2.html" type="button" class="btn btn-success ms-auto">返回</a>
-            <a href="./物品規劃-4.html" type="button" class="btn btn-primary">儲存</a>
+            <div class="my-3">
+                <button id="add-day-btn" class="btn btn-outline-primary">新增一晚住宿</button>
+                <button class="btn btn-outline-danger">刪除</button>
+                <a href="./交通規劃-2.html" type="button" class="btn btn-success ms-auto">返回</a>
+                <a href="./物品規劃-4.html" type="button" class="btn btn-primary">儲存</a>
+            </div>
         </form>
     </main>
 

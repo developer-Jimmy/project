@@ -62,7 +62,11 @@
         <form>
             <!-- 交通方式1 -->
             <section class="transport-block">
-                <h5>第 1 段交通：台北市區到台中</h5>
+                <h5>第 1 段交通</h5>
+                <div class="form-group">
+                    <label for="transport1-title">起點至目的地</label>
+                    <input type="text" class="form-control" id="transport1-title" placeholder="例如：台北市區到台中" required>
+                </div>
                 <div class="form-group">
                     <label for="transport1-type">交通工具</label>
                     <select class="form-select" id="transport1-type" required>
@@ -81,13 +85,16 @@
                     <input type="text" class="form-control" id="transport1-departure-location" placeholder="例如：台北車站"
                         required>
                 </div>
-                <button type="button" class="btn btn-success">新增</button>
-                <button type="button" class="btn btn-danger">刪除</button>
+
             </section>
 
             <!-- 交通方式2 -->
             <section class="transport-block">
-                <h5>第 2 段交通：台中到高雄</h5>
+                <h5>第 2 段交通</h5>
+                <div class="form-group">
+                    <label for="transport2-title">起點至目的地</label>
+                    <input type="text" class="form-control" id="transport2-title" placeholder="例如：台中到高雄" required>
+                </div>
                 <div class="form-group">
                     <label for="transport2-type">交通工具</label>
                     <select class="form-select" id="transport2-type" required>
@@ -106,15 +113,18 @@
                     <input type="text" class="form-control" id="transport2-departure-location" placeholder="例如：台中火車站"
                         required>
                 </div>
-                <button type="button" class="btn btn-success">新增</button>
-                <button type="button" class="btn btn-danger">刪除</button>
+
             </section>
 
             <!-- 增加更多交通段 -->
 
             <!-- 提交按鈕 -->
-            <a href="./行程規劃-1.html" type="button" class="btn btn-success ms-auto">返回</a>
-            <a href="./住宿規劃-3.html" type="button" class="btn btn-primary">儲存</a>
+            <div class="my-3">
+                <button id="add-day-btn" class="btn btn-outline-primary">新增一段交通</button>
+                <button class="btn btn-outline-danger">刪除</button>
+                <a href="./行程規劃-1.html" type="button" class="btn btn-success ms-auto">返回</a>
+                <a href="./住宿規劃-3.html" type="button" class="btn btn-primary">儲存</a>
+            </div>
         </form>
     </main>
 
