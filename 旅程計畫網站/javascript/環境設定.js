@@ -33,7 +33,12 @@ if (isLoggedIn) {
     localStorage.removeItem('isLoggedIn');
     window.location.href="./會員帳號密碼/會員登入.html"; // 刷新頁面
     });
-
+    AOS.init({
+        duration: 1200, // 動畫持續時間（毫秒）
+        easing: 'ease-in-out', // 動畫效果
+        once: true, // 滾動時是否只執行一次
+        mirror: false // 是否當元素滾出視口時反向執行動畫
+    });
 
 
     

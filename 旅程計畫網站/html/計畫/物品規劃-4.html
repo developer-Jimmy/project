@@ -58,24 +58,24 @@
         <form>
             <!-- 物品區塊1 -->
             <section class="item-block">
-                <h5>必備物品</h5>
+                <input class="form-control form-control-sm mb-2" type="text" value="必備物品" aria-label="必備物品">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="護照" id="item1">
-                    <label class="form-check-label" for="item1">護照</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="護照" id="label1">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="機票" id="item2">
-                    <label class="form-check-label" for="item2">機票</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="機票" id="label2">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="信用卡" id="item3">
-                    <label class="form-check-label" for="item3">信用卡</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="信用卡" id="label3">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
@@ -85,24 +85,24 @@
 
             <!-- 物品區塊2 -->
             <section class="item-block">
-                <h5>個人用品</h5>
+                <input class="form-control form-control-sm mb-2" type="text" value="個人用品" aria-label="個人用品">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="牙刷" id="item4">
-                    <label class="form-check-label" for="item4">牙刷</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="牙刷" id="label4">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="洗髮水" id="item5">
-                    <label class="form-check-label" for="item5">洗髮水</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="洗髮水" id="label5">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="洗面乳" id="item6">
-                    <label class="form-check-label" for="item6">洗面乳</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="洗面乳" id="label6">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
@@ -112,24 +112,24 @@
 
             <!-- 物品區塊3 -->
             <section class="item-block">
-                <h5>電子產品</h5>
+                <input class="form-control form-control-sm mb-2" type="text" value="電子產品" aria-label="電子產品">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="手機" id="item7">
-                    <label class="form-check-label" for="item7">手機</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="手機" id="label7">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="充電器" id="item8">
-                    <label class="form-check-label" for="item8">充電器</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="充電器" id="label8">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="耳機" id="item9">
-                    <label class="form-check-label" for="item9">耳機</label>
+                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="耳機" id="label9">
                     <button class="border-0">
                         <i class="bi bi-x-square"></i>
                     </button>
@@ -138,8 +138,12 @@
             </section>
 
             <!-- 提交按鈕 -->
-            <a href="./住宿規劃-3.html" type="button" class="btn btn-success ms-auto">返回</a>
-            <a href="./計畫預覽.html" type="button" class="btn btn-primary">儲存</a>
+            <div class="my-3">
+                <button id="add-day-btn" class="btn btn-outline-primary">新增物品欄位</button>
+                <button class="btn btn-outline-danger">刪除</button>
+                <a href="./住宿規劃-3.html" type="button" class="btn btn-success ms-auto">返回</a>
+                <a href="./計畫預覽.html" type="button" class="btn btn-primary">儲存</a>
+            </div>
         </form>
     </main>
 
