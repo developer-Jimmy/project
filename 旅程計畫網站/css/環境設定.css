@@ -6,8 +6,7 @@ body {
 
 /* 首頁夜遊推薦 */
 
-css
-複製程式碼
+
 /* 夜遊推薦圖片樣式 */
 .img-fluid {
     max-height: 300px;
@@ -82,12 +81,7 @@ css
 
 /* 排行榜標籤 */
 
-.card {
-    border: none;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
+
 
 .card .badge {
     font-size: 1.2rem;
@@ -353,10 +347,7 @@ css
 }
 
 
-h3 {
+label,h2,h3 {
     color: white;
 }
 
-label {
-    color: white;
-}
