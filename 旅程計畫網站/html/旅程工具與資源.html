@@ -4,18 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我們</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>旅程工具與資源</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/環境設定.css">
-    
+
 </head>
 
 <body>
-
 
     <!-- 導航列 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
@@ -34,13 +32,13 @@
                         <a class="nav-link" href="./計畫/行程規劃-1.html">開始計畫</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./旅程工具與資源.html">旅程工具與資源</a>
+                        <a class="nav-link" href="#">旅程工具與資源</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./活動專區.html">活動專區</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">聯絡我們</a>
+                        <a class="nav-link" href="./聯絡我們.html">聯絡我們</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -77,67 +75,83 @@
     </nav>
 
 
-
-    <!-- Contact Header -->
-
+    <!-- 介紹區 -->
     <section class="text-center py-5" id="introduce">
         <div class="container">
-            <h1 class="display-4">聯絡我們</h1>
-            <p>如果您有任何問題或建議，請隨時與我們聯繫!</p>
+            <h1 class="display-4">歡迎來到旅程工具與資源</h1>
+            <p>高效工具與資訊，讓你的旅程規劃更輕鬆！</p>
         </div>
     </section>
-    <!-- Contact Info -->
-    <section class="container contact-info">
-        <h3>其他聯絡方式：</h3>
-        <ul>
-            <li style="color: white;"><strong style="color: white;">電話：</strong> 123-456-7890</li>
-            <li style="color: white;"><strong style="color: white;">電子郵件：</strong> support@example.com</li>
-            <li style="color: white;"><strong style="color: white;">社交媒體：</strong>
-                <a href="https://facebook.com/ourpage" target="_blank">Facebook</a> |
-                <a href="https://twitter.com/ourpage" target="_blank">Twitter</a>
-            </li>
-        </ul>
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">實用旅行工具</h2>
+            <div class="row">
+                <!-- 工具卡片 1：時差轉換 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">時差轉換</h5>
+                            <p class="card-text">輕鬆計算不同城市之間的時差。</p>
+                            <a href="#" class="btn btn-outline-primary">使用工具</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- 工具卡片 2：貨幣兌換計算 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">貨幣兌換</h5>
+                            <p class="card-text">快速兌換各國貨幣，掌握預算。</p>
+                            <a href="#" class="btn btn-outline-primary">使用工具</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- 工具卡片 3：旅程預算計算 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">預算計算</h5>
+                            <p class="card-text">制定你的旅程預算，避免超支。</p>
+                            <a href="#" class="btn btn-outline-primary">使用工具</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="container contact-info">
-        <h3>發送訊息</h3>
-        <form id="contactForm" action="#" method="POST">
-            <div class="form-group">
-                <label for="name">姓名</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="email">電子郵件</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">主題</label>
-                <select id="subject" name="subject" class="form-control" required>
-                    <option value="general">一般查詢</option>
-                    <option value="technical">技術支援</option>
-                    <option value="feedback">建議與反饋</option>
-                    <option value="other">其他</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">留言內容</label>
-                <textarea id=" message" name="message" class="form-control" rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="attachment">附加檔案</label>
-                <input type="file" id="attachment" name="attachment" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">送出訊息</button>
-        </form>
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">旅遊資訊資源</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="#" target="_blank" class="text-decoration-none">全球簽證須知</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" target="_blank" class="text-decoration-none">熱門城市天氣查詢</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" target="_blank" class="text-decoration-none">國際交通指南</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" target="_blank" class="text-decoration-none">行李打包技巧與清單</a>
+                </li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Contact Footer -->
+
+
+    
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <a href="" class="text-info">隱私權條款</a>
         <a href="" class="text-info">常見問題</a>
         <p>© 2024 旅程計畫網站. All rights reserved.</p>
     </footer>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>

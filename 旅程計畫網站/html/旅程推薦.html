@@ -35,7 +35,10 @@
                         <a class="nav-link" href="./計畫/行程規劃-1.html">開始計畫</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../html/最新活動.html">最新活動</a>
+                        <a class="nav-link" href="./旅程工具與資源.html">旅程工具與資源</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./活動專區.html">活動專區</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./聯絡我們.html">聯絡我們</a>
@@ -74,6 +77,7 @@
         </div>
     </nav>
 
+
     <!-- 介紹區 -->
     <section class="text-center py-5" id="introduce">
         <div class="container">
@@ -81,6 +85,16 @@
             <p>各種熱門旅遊地點和活動，幫助你找到下一段夢想旅程。探索精彩，從這裡開始！</p>
         </div>
     </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">熱門旅程排行榜</h2>
+            <div class="row" id="ranking-container">
+                <!-- 排行榜卡片將由 JavaScript 動態生成 -->
+            </div>
+        </div>
+    </section>
+
 
     <!-- 搜尋框 -->
     <div class="container mt-3">
@@ -147,7 +161,7 @@
 
             <!-- 旅遊主題區 -->
             <section class="mt-5">
-                <h2 class="text-center mb-4">主題推薦</h2>
+                <h2 class="text-center mb-4">精彩體驗推薦</h2>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card" data-aos="zoom-in">
@@ -155,17 +169,52 @@
                             <div class="card-body">
                                 <h5 class="card-title">冒險之旅</h5>
                                 <p class="card-text">挑戰極限，體驗刺激戶外活動！</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+
+                                <!-- 喜歡按鈕與評分 -->
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                        <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                    </button>
+                                    <div class="rating ms-5">
+                                        <span class="rating-stars">
+                                            <i class="bi bi-star text-muted" data-value="1"></i>
+                                            <i class="bi bi-star text-muted" data-value="2"></i>
+                                            <i class="bi bi-star text-muted" data-value="3"></i>
+                                            <i class="bi bi-star text-muted" data-value="4"></i>
+                                            <i class="bi bi-star text-muted" data-value="5"></i>
+                                        </span>
+                                        <span class="rating-score text-muted ms-2">(0/5)</span>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card" data-aos="zoom-in"">
+                        <div class="card" data-aos="zoom-in">
                             <img src=" ../img/旅程推薦圖片/浪漫之旅.jpg" class="card-img-top" alt="浪漫">
                             <div class="card-body">
                                 <h5 class="card-title">浪漫之旅</h5>
                                 <p class="card-text">沉浸於浪漫景致與甜蜜時光。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
@@ -175,7 +224,24 @@
                             <div class="card-body">
                                 <h5 class="card-title">美食之旅</h5>
                                 <p class="card-text">品味全球美食，讓味蕾旅行。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
@@ -188,17 +254,51 @@
                             <div class="card-body">
                                 <h5 class="card-title">養生旅遊</h5>
                                 <p class="card-text">溫泉療癒、瑜伽冥想、健康餐飲，放鬆身心享平靜。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card" data-aos="zoom-in"">
+                        <div class="card" data-aos="zoom-in">
                             <img src=" ../img/旅程推薦圖片/運動旅遊.jpg" class="card-img-top" alt="浪漫">
                             <div class="card-body">
                                 <h5 class="card-title">運動旅遊</h5>
                                 <p class="card-text">登山攀岩、騎行探險、水上運動，活力旅程享挑戰。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
@@ -208,7 +308,24 @@
                             <div class="card-body">
                                 <h5 class="card-title">悠閒旅遊</h5>
                                 <p class="card-text">登山漫步、咖啡慢享、田園靜養，放鬆心靈好去處。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
@@ -221,17 +338,51 @@
                             <div class="card-body">
                                 <h5 class="card-title">山區</h5>
                                 <p class="card-text">登山遠足、雲海觀景、森林露營，感受自然的寧靜。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card" data-aos="zoom-in"">
+                        <div class="card" data-aos="zoom-in">
                             <img src=" ../img/旅程推薦圖片/海邊.jpg" class="card-img-top" alt="浪漫">
                             <div class="card-body">
                                 <h5 class="card-title">海邊</h5>
                                 <p class="card-text">沙灘漫步、海上活動、夕陽美景，盡享海濱悠閒時光。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                    <!-- 喜歡按鈕與評分 -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span class="rating-stars">
+                                                <i class="bi bi-star text-muted" data-value="1"></i>
+                                                <i class="bi bi-star text-muted" data-value="2"></i>
+                                                <i class="bi bi-star text-muted" data-value="3"></i>
+                                                <i class="bi bi-star text-muted" data-value="4"></i>
+                                                <i class="bi bi-star text-muted" data-value="5"></i>
+                                            </span>
+                                            <span class="rating-score text-muted ms-2">(0/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
@@ -241,7 +392,18 @@
                             <div class="card-body">
                                 <h5 class="card-title">鄉村</h5>
                                 <p class="card-text">田園風光、農家體驗、慢步小徑，感受純樸的生活。</p>
-                                <a href="#" class="btn btn-primary">了解更多</a>
+                                     <!-- 喜歡按鈕與評分 -->
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-danger like-btn" data-likes="25">
+                                            <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">25</span>)
+                                        </button>
+                                        <div class="rating ms-5">
+                                            <span>★★★★☆</span>
+                                            <span class="rating-score text-muted">(4.5/5)</span>
+                                        </div>
+                                    </div>
+    
+                                    <a href="#" class="btn btn-primary mt-2 w-100">了解更多</a>
                             </div>
                         </div>
                     </div>
