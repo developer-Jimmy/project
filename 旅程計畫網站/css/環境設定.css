@@ -4,41 +4,68 @@ body {
     background: linear-gradient(135deg, #1e1e1e 30%, #333333 90%);
 }
 
-
-
-
-/* 增加導航列陰影效果 */
-.navbar {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* 移除社群的預設底線 */
+.navbar-nav .nav-item.dropdown .nav-link::after {
+    content: none !important; /* 完全移除底線 */
 }
 
-/* 輕微的過渡效果 */
-.navbar-nav .nav-link {
+/* 改進黑色風格，加入深度質感 */
+.navbar-dark {
+    background: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
+    /* 漸層黑色背景 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* 細微白色邊框增加分隔感 */
+}
+
+/* 導覽列陰影效果增強 */
+.navbar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 鼠標懸停效果 - 夜晚金光點綴 */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107;
+    /* 柔和的金黃色 */
+    background-color: rgba(255, 193, 7, 0.1);
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 
-/* 鼠標懸停效果 */
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #f8d347;
-    /* 黃金色高亮 */
-    background-color: rgba(248, 211, 71, 0.2);
-    /* 添加背景高亮 */
-}
-
-
-/* 控制選單顯示與隱藏 */
-.navbar-collapse {
-    font-size: 1.1rem;
-}
-
-/* 增加導航列中的間距 */
+/* 選單間距微調，增加舒適感 */
 .navbar-nav .nav-item {
-    margin-left: 15px;
+    margin-left: 20px;
 }
-.dropdown-toggle::after {
-    display: none;
+
+/* 動態底線效果 */
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #ffc107;
+    transition: width 0.3s ease;
 }
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* 圓潤的按鈕設計（登入與註冊） */
+.navbar-nav .nav-link {
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* 響應式設計，提升手機體驗 */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
 
 /* 介紹區 */
 #introduce {
