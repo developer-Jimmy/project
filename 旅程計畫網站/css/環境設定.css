@@ -12,7 +12,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 .output-area {
     font-size: 1.5rem;
     font-weight: bold;
@@ -20,6 +19,7 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+
 .output-area span {
     color: #28a745;
 }
@@ -52,7 +52,6 @@ footer {
     /* 淺灰色標題 */
 }
 
-/* 卡片設計 */
 .activity-item {
     display: flex;
     align-items: center;
@@ -122,7 +121,55 @@ footer {
     }
 }
 
+
 /* 卡片設計 */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+/* 旅程推薦 */
+/* 排行榜標籤 */
+.card .badge {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.card-title {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* 直播平台 */
+.card-text {
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+}
+
+.card-body {
+    background-color: #fff;
+}
+
+.card-body .rating span {
+    color: #ffc107;
+    /* 星星顏色 */
+}
+
+.card img {
+    height: 20s0px;
+    object-fit: cover;
+}
 
 .card-img-top {
     width: 100%;
@@ -135,27 +182,20 @@ footer {
     /* 裁剪多餘部分，保持比例 */
 }
 
+.card-footer {
+    margin-top: auto;
+    padding-top: 10px;
+}
 
-
+.card-footer .btn {
+    font-size: 1rem;
+}
 
 /* 首頁夜遊推薦 */
-
-
 /* 夜遊推薦圖片樣式 */
 .img-fluid {
     max-height: 300px;
     object-fit: cover;
-}
-
-/* 夜遊卡片陰影與 hover 效果 */
-.card {
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* 夜遊標題區塊 */
@@ -166,16 +206,6 @@ footer {
 .btn-outline-light:hover {
     background-color: #f8d347;
     color: #000;
-}
-
-/* 卡片標題間距 */
-.card-title {
-    margin-bottom: 10px;
-}
-
-
-.card {
-    margin-bottom: 20px;
 }
 
 /* 精選夜遊地點 */
@@ -217,21 +247,6 @@ footer {
     object-fit: cover;
     /* 保持圖片比例 */
 }
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* 排行榜標籤 */
-
-
-
-.card .badge {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-}
-
 
 /* 移除社群的預設底線 */
 .navbar-nav .nav-item.dropdown .nav-link::after {
@@ -312,22 +327,7 @@ footer {
     font-size: 0.75rem;
 }
 
-.card-body .rating span {
-    color: #ffc107;
-    /* 星星顏色 */
-}
-
-.card-footer {
-    margin-top: auto;
-    padding-top: 10px;
-}
-
-.card-footer .btn {
-    font-size: 1rem;
-}
-
 /* 介紹區 */
-
 
 #introduce {
     background: linear-gradient(to bottom, #1a1a1a, #333);
@@ -361,40 +361,12 @@ footer {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    margin-bottom: 20px;
-}
 
-.card-title {
-    color: #007bff;
-}
-
-
-.card:hover {
-    transform: scale(1.05);
-}
 
 #startButton {
     background: linear-gradient(45deg, #007bff, #00c6ff);
     color: white;
     border: none;
-}
-
-
-.card-header {
-    background-color: #f8f9fa;
-}
-
-.card-body {
-    background-color: #fff;
-}
-
-.card img {
-    height: 20s0px;
-    object-fit: cover;
 }
 
 

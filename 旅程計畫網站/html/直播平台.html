@@ -46,10 +46,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./旅程工具與資源.html">旅程工具與資源</a>
-        </li>
-        <li class="nav-item">
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./活動專區.html">活動專區</a>
-        </li>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="./聯絡我們.html">聯絡我們</a>
           </li>
@@ -96,31 +96,51 @@
   </section>
 
   <!-- 實況直播區 -->
-  <section id="live" class="py-5">
+  <section id="live" class="py-5 bg-dark text-white">
     <div class="container">
-      <h2 class="mb-4">熱門旅程直播</h2>
+      <h2 class="mb-4 text-center">熱門旅程直播</h2>
       <div class="row g-4">
-        <!-- 直播卡片 -->
+        <!-- 直播卡片 1 -->
         <div class="col-md-4">
           <div class="card bg-dark border-secondary">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/your_video_id"
+            <iframe class="embed-responsive-item" src="../mp4/直播平台影片/馬爾地夫.mp4"
               allowfullscreen></iframe>
-            <div class="card-body bg-dark">
+            <div class="card-body">
               <h5 class="card-title">目的地：馬爾地夫</h5>
               <p class="card-text">直播主：旅遊達人Alice</p>
+              <p class="card-text">主題：潛水與珊瑚探索</p>
               <p class="card-text"><small>🔥 12,345 人正在觀看</small></p>
+              <a href="#" class="btn btn-outline-light text-black w-100 mt-2">觀看直播</a>
             </div>
           </div>
         </div>
-        <!-- 新增其他直播 -->
+
+        <!-- 直播卡片 2 -->
         <div class="col-md-4">
           <div class="card bg-dark border-secondary">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/your_video_id"
+            <iframe class="embed-responsive-item" src="../mp4/直播平台影片/巴黎.mp4"
               allowfullscreen></iframe>
-            <div class="card-body bg-dark">
+            <div class="card-body">
               <h5 class="card-title">目的地：巴黎</h5>
               <p class="card-text">直播主：旅者Tom</p>
+              <p class="card-text">主題：浪漫的夜晚遊覽</p>
               <p class="card-text"><small>🔥 9,876 人正在觀看</small></p>
+              <a href="#" class="btn btn-outline-light text-black w-100 mt-2">觀看直播</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 直播卡片 3 -->
+        <div class="col-md-4">
+          <div class="card bg-dark border-secondary">
+            <iframe class="embed-responsive-item" src="../mp4/直播平台影片/東京.mp4"
+              allowfullscreen></iframe>
+            <div class="card-body">
+              <h5 class="card-title">目的地：東京</h5>
+              <p class="card-text">直播主：旅遊專家Emily</p>
+              <p class="card-text">主題：城市光影探險</p>
+              <p class="card-text"><small>🔥 8,654 人正在觀看</small></p>
+              <a href="#" class="btn btn-outline-light text-black w-100 mt-2">觀看直播</a>
             </div>
           </div>
         </div>
@@ -131,7 +151,7 @@
   <!-- 分類區 -->
   <section id="categories" class="py-5 bg-black">
     <div class="container">
-      <h2 class="mb-4">分類瀏覽</h2>
+      <h2 class="mb-4 text-center text-white">分類瀏覽</h2>
       <div class="row g-4">
         <div class="col-md-3">
           <button class="btn btn-outline-light w-100">自然景點</button>
@@ -150,9 +170,9 @@
   </section>
 
   <!-- 旅程時間表 -->
-  <section id="schedule" class="py-5">
+  <section id="schedule" class="py-5 bg-dark">
     <div class="container">
-      <h2 class="mb-4">即將開始的旅程</h2>
+      <h2 class="mb-4 text-center">即將開始的旅程</h2>
       <div class="table-responsive">
         <table class="table table-striped table-dark">
           <thead>
@@ -161,20 +181,29 @@
               <th>目的地</th>
               <th>直播主</th>
               <th>時間</th>
+              <th>提醒</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>2024年12月15日</td>
-              <td>冰島</td>
+              <td>
+                <img src="../img/旅程推薦圖片/冰島圖片.jpg" alt="冰島" class="img-thumbnail me-2" style="width: 50px;">
+                冰島
+              </td>
               <td>探險家David</td>
               <td>晚上8點</td>
+              <td><button class="btn btn-outline-light btn-sm">設置提醒</button></td>
             </tr>
             <tr>
               <td>2024年12月18日</td>
-              <td>東京</td>
+              <td>
+                <img src="../img/旅程推薦圖片/東京圖片.jpg" alt="東京" class="img-thumbnail me-2" style="width: 50px;">
+                東京
+              </td>
               <td>旅遊專家Emily</td>
               <td>下午6點</td>
+              <td><button class="btn btn-outline-light btn-sm">設置提醒</button></td>
             </tr>
           </tbody>
         </table>

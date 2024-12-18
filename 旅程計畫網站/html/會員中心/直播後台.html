@@ -121,7 +121,27 @@
 
             <!-- Bootstrap JS -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="../../javascript/會員中心.js"></script>
+            <script>
+
+                // 直播後台
+                function startStream() {
+                    // 更新直播狀態為直播中
+                    document.getElementById("streamStatus").textContent = "直播中";
+                    document.getElementById("streamStatus").className = "status-online";
+
+                    // 顯示即時指示燈
+                    document.getElementById("liveIndicator").style.display = "flex";
+                }
+
+                function stopStream() {
+                    // 更新直播狀態為離線
+                    document.getElementById("streamStatus").textContent = "離線";
+                    document.getElementById("streamStatus").className = "status-offline";
+
+                    // 隱藏即時指示燈
+                    document.getElementById("liveIndicator").style.display = "none";
+                }
+            </script>
 
 </body>
 
