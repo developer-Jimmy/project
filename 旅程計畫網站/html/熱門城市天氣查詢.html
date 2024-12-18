@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱門城市天氣查詢</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/環境設定.css">
+</head>
+
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <h1>熱門城市天氣查詢</h1>
+            <p class="lead">快速查詢世界各地熱門城市的即時天氣狀況</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <!-- 搜索欄 -->
+        <section class="mb-4">
+            <h2 class="mb-4">城市搜索</h2>
+            <div class="input-group">
+                <input type="text" id="city-input" class="form-control" placeholder="輸入城市名稱...">
+                <button class="btn btn-primary" id="search-btn">查詢</button>
+            </div>
+        </section>
+
+        <!-- 熱門城市天氣 -->
+        <section>
+            <h2 class="mb-4">熱門城市</h2>
+            <div class="row" id="popular-cities">
+                <!-- 城市卡片範例 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">東京 (Tokyo)</h5>
+                            <p class="card-text" id="tokyo-weather">天氣資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">紐約 (New York)</h5>
+                            <p class="card-text" id="newyork-weather">天氣資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">巴黎 (Paris)</h5>
+                            <p class="card-text" id="paris-weather">天氣資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索結果顯示 -->
+        <section class="mt-5">
+            <h2 class="mb-4">查詢結果</h2>
+            <div id="search-result" class="alert alert-info">請輸入城市名稱進行查詢</div>
+        </section>
+        <div class="text-center">
+            <a href="./旅程工具與資源.html" class="btn btn-primary">返回</a>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-3 text-center">
+        <p>&copy; 2024 旅程計畫 | 資料來源：公開天氣 API</p>
+    </footer>
+
+    <script>
+        // 假設使用的 API 是 mock 的，這裡以靜態數據模擬。
+        const mockWeatherData = {
+            "Tokyo": "晴天，25℃",
+            "New York": "多雲，18℃",
+            "Paris": "小雨，15℃"
+        };
+
+        // 為熱門城市加載天氣資訊
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('tokyo-weather').textContent = mockWeatherData.Tokyo;
+            document.getElementById('newyork-weather').textContent = mockWeatherData["New York"];
+            document.getElementById('paris-weather').textContent = mockWeatherData.Paris;
+        });
+
+        // 搜索城市天氣
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const city = document.getElementById('city-input').value.trim();
+            const resultDiv = document.getElementById('search-result');
+
+            if (city === "") {
+                resultDiv.textContent = "請輸入城市名稱！";
+                resultDiv.className = "alert alert-danger";
+                return;
+            }
+
+            const weather = mockWeatherData[city];
+            if (weather) {
+                resultDiv.textContent = `${city} 的天氣是：${weather}`;
+                resultDiv.className = "alert alert-success";
+            } else {
+                resultDiv.textContent = `${city} 的天氣資訊暫無！`;
+                resultDiv.className = "alert alert-warning";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

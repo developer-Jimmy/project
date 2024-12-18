@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國際交通指南</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/環境設定.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <h1>國際交通指南</h1>
+            <p class="lead">了解全球熱門交通方式與旅遊建議，讓您的旅程更輕鬆</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <!-- 交通搜索欄 -->
+        <section class="mb-4">
+            <h2 class="mb-4">交通方式搜索</h2>
+            <div class="input-group">
+                <input type="text" id="transport-input" class="form-control" placeholder="輸入城市或交通方式...">
+                <button class="btn btn-primary" id="search-btn">查詢</button>
+            </div>
+        </section>
+
+        <!-- 熱門交通方式 -->
+        <section>
+            <h2 class="mb-4">熱門交通方式</h2>
+            <div class="row" id="popular-transports">
+                <!-- 交通卡片範例 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">東京地鐵 (Tokyo Metro)</h5>
+                            <p class="card-text" id="tokyo-transport">資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">紐約地鐵 (New York Subway)</h5>
+                            <p class="card-text" id="newyork-transport">資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">巴黎地鐵 (Paris Metro)</h5>
+                            <p class="card-text" id="paris-transport">資訊加載中...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索結果顯示 -->
+        <section class="mt-5">
+            <h2 class="mb-4">查詢結果</h2>
+            <div id="search-result" class="alert alert-info">請輸入內容進行查詢</div>
+        </section>
+        <div class="text-center">
+            <a href="./旅程工具與資源.html" class="btn btn-primary">返回</a>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-3 text-center">
+        <p>&copy; 2024 旅程計畫 | 資料來源：公開交通數據</p>
+    </footer>
+
+    <script>
+        // 假設使用的 API 是 mock 的，這裡以靜態數據模擬。
+        const mockTransportData = {
+            "Tokyo Metro": "便捷、準時、覆蓋廣泛，東京地鐵是遊客的最佳選擇。",
+            "New York Subway": "24小時運營，但需注意高峰擁擠和部分老舊設施。",
+            "Paris Metro": "密集的地鐵網絡，適合探索巴黎各大景點。"
+        };
+
+        // 為熱門交通方式加載資訊
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('tokyo-transport').textContent = mockTransportData["Tokyo Metro"];
+            document.getElementById('newyork-transport').textContent = mockTransportData["New York Subway"];
+            document.getElementById('paris-transport').textContent = mockTransportData["Paris Metro"];
+        });
+
+        // 搜索交通方式
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const transport = document.getElementById('transport-input').value.trim();
+            const resultDiv = document.getElementById('search-result');
+
+            if (transport === "") {
+                resultDiv.textContent = "請輸入內容！";
+                resultDiv.className = "alert alert-danger";
+                return;
+            }
+
+            const info = mockTransportData[transport];
+            if (info) {
+                resultDiv.textContent = `${transport} 的資訊是：${info}`;
+                resultDiv.className = "alert alert-success";
+            } else {
+                resultDiv.textContent = `${transport} 的資訊暫無！`;
+                resultDiv.className = "alert alert-warning";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
