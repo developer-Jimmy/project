@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貨幣兌換工具</title>
+    <!-- 引入 Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .output-area {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4">
+            <h1>貨幣兌換工具</h1>
+            <!-- 輸入金額 -->
+            <div class="mb-3">
+                <label for="amount" class="form-label">請輸入金額</label>
+                <input type="number" class="form-control" id="amount" placeholder="例如: 100">
+            </div>
+            <!-- 選擇貨幣 -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="fromCurrency" class="form-label">選擇來源貨幣</label>
+                    <select class="form-select" id="fromCurrency">
+                        <option value="USD" selected>USD - 美元</option>
+                        <option value="TWD">TWD - 台幣</option>
+                        <option value="EUR">EUR - 歐元</option>
+                        <option value="JPY">JPY - 日圓</option>
+                        <option value="CNY">CNY - 人民幣</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="toCurrency" class="form-label">選擇目標貨幣</label>
+                    <select class="form-select" id="toCurrency">
+                        <option value="TWD">TWD - 台幣</option>
+                        <option value="USD">USD - 美元</option>
+                        <option value="EUR">EUR - 歐元</option>
+                        <option value="JPY">JPY - 日圓</option>
+                        <option value="CNY">CNY - 人民幣</option>
+                    </select>
+                </div>
+            </div>
+            <!-- 兌換按鈕 -->
+            <div class="d-grid">
+                <button class="btn btn-primary" onclick="convertCurrency()">兌換</button>
+            </div>
+            <!-- 顯示結果 -->
+            <div id="output" class="output-area"></div>
+        </div>
+        <!-- 版權資訊 -->
+        <footer>
+            貨幣兌換工具 © 2024 by 旅程計畫
+        </footer>
+    </div>
+
+    <!-- JavaScript 功能 -->
+    <script>
+        // 預設匯率 (這裡為範例，可連接 API 提供即時匯率)
+        const exchangeRates = {
+            USD: { TWD: 31, EUR: 0.91, JPY: 144.5, CNY: 7.1 },
+            TWD: { USD: 0.032, EUR: 0.029, JPY: 4.65, CNY: 0.23 },
+            EUR: { USD: 1.1, TWD: 34.1, JPY: 158.7, CNY: 7.8 },
+            JPY: { USD: 0.0069, TWD: 0.21, EUR: 0.0063, CNY: 0.049 },
+            CNY: { USD: 0.14, TWD: 4.3, EUR: 0.13, JPY: 20.4 }
+        };
+
+        function convertCurrency() {
+            const amount = document.getElementById("amount").value;
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+
+            // 檢查輸入金額
+            if (!amount || amount <= 0) {
+                alert("請輸入有效的金額！");
+                return;
+            }
+
+            // 計算兌換結果
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            const convertedAmount = (amount * rate).toFixed(2);
+
+            // 顯示結果
+            document.getElementById("output").innerHTML = `
+                ${amount} ${fromCurrency} = <span>${convertedAmount} ${toCurrency}</span>
+            `;
+        }
+    </script>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

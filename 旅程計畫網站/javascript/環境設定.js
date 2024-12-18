@@ -10,6 +10,7 @@ const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const registerLink = document.getElementById('registerLink');
     const profileLink = document.getElementById('profileLink');
     const logoutLink = document.getElementById('logoutLink');
+    const membershipAlert = document.getElementById('membership-alert');
 
 if (isLoggedIn) {
     // 顯示個人頁面和登出，隱藏登入和註冊
@@ -17,12 +18,15 @@ if (isLoggedIn) {
     registerLink.style.display = 'none';
     profileLink.style.display = 'block';
     logoutLink.style.display = 'block';
+    membershipAlert.style.display = 'none';
+    
 } else {
     // 顯示登入和註冊，隱藏個人頁面和登出
     loginLink.style.display = 'block';
     registerLink.style.display = 'block';
     profileLink.style.display = 'none';
     logoutLink.style.display = 'none';
+    membershipAlert.style.display = 'block';
     }
 
     //登出功能（模擬）

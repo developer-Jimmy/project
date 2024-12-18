@@ -50,38 +50,58 @@
                     <a href="../首頁.html" class="list-group-item list-group-item-action">
                         <i class="bi bi-box-arrow-right"></i> 返回
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action" id="logoutBtn">
+                    <a href="#" class="list-group-item list-group-item-action">
                         <i class="bi bi-box-arrow-right"></i> 登出
                     </a>
                 </div>
             </nav>
             <!-- 主要內容區 -->
-            <section class="col-md-9">
-
+            <section class="col-md-9 mx-auto my-5">
                 <!-- 好友清單 -->
                 <div class="card shadow">
                     <div class="card-body">
-                        <h3 class="card-title">好友清單</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="friend1">
-                                    <span>好友 A</span>
+                        <h3 class="card-title mb-4">好友清單</h3>
+                        <!-- 搜尋好友 -->
+                        <div class="search-box">
+                            <input type="text" class="form-control" id="searchInput" placeholder="搜尋好友..." onkeyup="filterFriends()">
+                        </div>
+                        <!-- 好友列表 -->
+                        <ul class="list-group" id="friendList">
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle me-3" alt="friend1">
+                                    <div>
+                                        <span>好友 A</span>
+                                        <div class="friend-status online-status" style="color: green;">在線</div>
+                                    </div>
                                 </div>
                                 <button class="btn btn-outline-danger btn-sm">刪除</button>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="friend2">
-                                    <span>好友 B</span>
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle me-3" alt="friend2">
+                                    <div>
+                                        <span>好友 B</span>
+                                        <div class="friend-status offline-status" style="color: gray;">離線</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-danger btn-sm">刪除</button>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/40" class="rounded-circle me-3" alt="friend3">
+                                    <div>
+                                        <span>好友 C</span>
+                                        <div class="friend-status online-status" style="color: green;">在線</div>
+                                    </div>
                                 </div>
                                 <button class="btn btn-outline-danger btn-sm">刪除</button>
                             </li>
                         </ul>
+                        <!-- 添加好友按鈕 -->
                         <button class="btn btn-outline-primary mt-3">添加好友</button>
                     </div>
                 </div>
-
             </section>
         </div>
     </main>
