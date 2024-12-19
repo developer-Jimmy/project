@@ -49,8 +49,8 @@
 
             <!-- 提交按鈕 -->
             <div class="my-3">
-                <button type="button" id="add-item-btn" class="btn btn-outline-primary">新增物品欄位</button>
-                <button type="button" id="remove-item-btn" class="btn btn-outline-danger">刪除最後物品欄位</button>
+                <button type="button" id="add-item-btn" class="btn btn-outline-primary">新增物品清單</button>
+                <button type="button" id="remove-item-btn" class="btn btn-outline-danger">刪除最後物品清單</button>
                 <a href="./住宿規劃-3.html" class="btn btn-secondary">返回</a>
                 <a href="./計畫預覽.html" type="button" id="save-item" class="btn btn-success">儲存</a>
             </div>
@@ -66,7 +66,7 @@
             document.getElementById('remove-item-btn').addEventListener('click', removeItem);
             document.getElementById('save-item').addEventListener('click', saveItem);
 
-            // 初始化動態新增第一個物品欄位
+            // 初始化動態新增第一個物品清單
             addItem();
         });
 
@@ -79,7 +79,7 @@
             <section class="item-block mb-4">
                 <h5>物品清單 ${segments}</h5>
                 <div class="form-group mb-2">
-                    <input class="form-control form-control-sm mb-2 item-name" type="text" placeholder="清單名稱">
+                    <input class="form-control form-control-sm mb-2 item-name" type="text" placeholder="例如：電子產品">
                 </div>
                 <div class="item-sublist">
                     <!-- 子項目將在此動態生成 -->
@@ -108,8 +108,7 @@
 
             const html = `
             <div class="form-check mb-2">
-                <input class="form-check-input subitem-checkbox" type="checkbox">
-                <input class="form-control form-control-sm d-inline w-auto subitem-name ms-2" type="text" placeholder="項目 ${subItems}">
+                <input class="form-control form-control-sm d-inline w-auto subitem-name" type="text" placeholder="項目 ${subItems}">
                 <button type="button" class="btn btn-sm btn-outline-danger ms-2 remove-subitem-btn">刪除</button>
             </div>
             `;
@@ -144,7 +143,6 @@
             const itemsData = [...document.querySelectorAll('.item-block')].map(block => {
                 const subItems = [...block.querySelectorAll('.form-check')].map(subItem => ({
                     name: subItem.querySelector('.subitem-name').value || "未命名項目",
-                    checked: subItem.querySelector('.subitem-checkbox').checked
                 }));
                 return {
                     listName: block.querySelector('.item-name').value || "未命名清單",
@@ -155,6 +153,8 @@
             localStorage.setItem('itemsData', JSON.stringify(itemsData));
             alert("物品規劃已儲存！");
         }
+
+
     </script>
 </body>
 

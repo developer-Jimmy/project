@@ -36,8 +36,8 @@
                 <!-- 住宿方式動態插入區域 -->
             </div>
             <div class="my-3">
-                <button type="button" id="add-accommodation-btn" class="btn btn-outline-primary">新增一晚住宿</button>
-                <button type="button" id="remove-accommodation-btn" class="btn btn-outline-danger">刪除最後一晚住宿</button>
+                <button type="button" id="add-accommodation-btn" class="btn btn-outline-primary">新增一個住宿</button>
+                <button type="button" id="remove-accommodation-btn" class="btn btn-outline-danger">刪除最後一個住宿</button>
                 <a href="./交通規劃-2.html" class="btn btn-secondary">返回</a>
                 <a href="./物品規劃-4.html" type="button" id="save-accommodation" class="btn btn-success">儲存</a>
             </div>
@@ -57,7 +57,7 @@
             const segments = container.querySelectorAll('.accommodation-block').length + 1;
             const html = `
                 <section class="accommodation-block">
-                    <h5>第 ${segments} 晚</h5>
+                    <h5>第 ${segments} 個</h5>
                     <div class="form-group">
                         <label>住宿地點</label>
                         <input type="text" class="form-control accommodation-location" placeholder="例如：台中市區" required>
@@ -74,11 +74,17 @@
                     </div>
                     <div class="form-group">
                         <label>入住時間</label>
-                        <input type="date" class="form-control accommodation-check-in" required>
+                        <div class="d-flex">
+                            <input type="date" class="form-control accommodation-check-in-date" required>
+                            <input type="time" class="form-control accommodation-check-in-time ms-2" required>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>退房時間</label>
-                        <input type="date" class="form-control accommodation-check-out" required>
+                        <div class="d-flex">
+                            <input type="date" class="form-control accommodation-check-out-date" required>
+                            <input type="time" class="form-control accommodation-check-out-time ms-2" required>
+                        </div>
                     </div>
                 </section>
             `;
@@ -91,7 +97,7 @@
             if (blocks.length > 0) {
                 container.removeChild(blocks[blocks.length - 1]);
             } else {
-                alert("已經沒有更多住宿可以刪除！");
+                alert("已經沒有更多住宿規劃可以刪除！");
             }
         }
 
@@ -100,8 +106,10 @@
             const accommodationData = [...container.querySelectorAll('.accommodation-block')].map(block => ({
                 location: block.querySelector('.accommodation-location').value,
                 type: block.querySelector('.accommodation-type').value,
-                checkIn: block.querySelector('.accommodation-check-in').value,
-                checkOut: block.querySelector('.accommodation-check-out').value,
+                checkInDate: block.querySelector('.accommodation-check-in-date').value,
+                checkInTime: block.querySelector('.accommodation-check-in-time').value,
+                checkOutDate: block.querySelector('.accommodation-check-out-date').value,
+                checkOutTime: block.querySelector('.accommodation-check-out-time').value,
             }));
             localStorage.setItem('accommodationData', JSON.stringify(accommodationData));
             alert('住宿規劃已儲存！');

@@ -94,14 +94,15 @@
         itineraryData.forEach((item, index) => {
           itineraryContainer.innerHTML += `
             <div class="card mb-2">
-              <div class="card-body">
-                <h5 class="card-title">第 ${index + 1} 天</h5>
-                <p><strong>行程名稱:</strong> ${item.name}</p>
-                <p><strong>時間:</strong> ${item.time}</p>
-                <p><strong>活動:</strong> ${item.activity}</p>
-                <p><strong>地點:</strong> ${item.location}</p>
-              </div>
-            </div>`;
+        <div class="card-body">
+          <h5 class="card-title">第 ${index + 1} 天</h5>
+          <p><strong>行程名稱:</strong> ${item.name}</p>
+          <p><strong>日期:</strong> ${item.date || "未指定日期"}</p>
+          <p><strong>時間:</strong> ${item.time || "未指定時間"}</p>
+          <p><strong>活動:</strong> ${item.activity || "未填寫活動"}</p>
+          <p><strong>地點:</strong> ${item.location || "未填寫地點"}</p>
+        </div>
+      </div>`;
         });
       } else {
         itineraryContainer.innerHTML = '<p>尚未新增行程。</p>';
@@ -113,15 +114,15 @@
       if (transportData.length > 0) {
         transportData.forEach((item, index) => {
           transportContainer.innerHTML += `
-            <div class="card mb-2">
-              <div class="card-body">
-                <h5 class="card-title">交通段 ${index + 1}</h5>
-                <p><strong>起點:</strong> ${item.from}</p>
-                <p><strong>目的地:</strong> ${item.to}</p>
-                <p><strong>交通工具:</strong> ${item.type}</p>
-                <p><strong>時間:</strong> ${item.time}</p>
-              </div>
-            </div>`;
+             <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">交通段 ${index + 1}</h5>
+          <p><strong>起點:</strong> ${item.from}</p>
+          <p><strong>目的地:</strong> ${item.to}</p>
+          <p><strong>交通工具:</strong> ${item.type}</p>
+          <p><strong>出發時間:</strong> ${item.date} ${item.time || '未指定時間'}</p>
+        </div>
+      </div>`;
         });
       } else {
         transportContainer.innerHTML = '<p>尚未新增交通規劃。</p>';
@@ -133,15 +134,15 @@
       if (accommodationData.length > 0) {
         accommodationData.forEach((item, index) => {
           accommodationContainer.innerHTML += `
-            <div class="card mb-2">
-              <div class="card-body">
-                <h5 class="card-title">第 ${index + 1} 晚</h5>
-                <p><strong>地點:</strong> ${item.location}</p>
-                <p><strong>類型:</strong> ${item.type}</p>
-                <p><strong>入住時間:</strong> ${item.checkIn}</p>
-                <p><strong>退房時間:</strong> ${item.checkOut}</p>
-              </div>
-            </div>`;
+              <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">第 ${index + 1} 個</h5>
+          <p><strong>地點:</strong> ${item.location}</p>
+          <p><strong>類型:</strong> ${item.type}</p>
+          <p><strong>入住時間:</strong> ${item.checkInDate} ${item.checkInTime || '未指定時間'}</p>
+          <p><strong>退房時間:</strong> ${item.checkOutDate} ${item.checkOutTime || '未指定時間'}</p>
+        </div>
+      </div>`;
         });
       } else {
         accommodationContainer.innerHTML = '<p>尚未新增住宿規劃。</p>';
@@ -163,16 +164,13 @@
               ${category.items
               .map(
                 (item) => `
-                  <div class="form-check">
-                    <input class="form-check-input subitem-checkbox" type="checkbox" ${item.checked ? 'checked' : ''
-                  } disabled>
-                    <label class="form-check-label">${item.name}</label>
-                  </div>`
+            <div class="mb-2">
+              <span>${item.name}</span>
+            </div>`
               )
               .join('')}
             </div>
-          </div>
-        `;
+          </div>`;
           itemsContainer.innerHTML += categoryHtml;
         });
       } else {
@@ -190,7 +188,8 @@
         alert('請輸入計畫名稱！');
         return;
       }
-      alert(`計畫「${planName}」已儲存！`);
+      const saveDate = new Date().toLocaleDateString();
+      alert(`計畫「${planName}」已儲存！完成日期：${saveDate}`);
       const modal = bootstrap.Modal.getInstance(document.getElementById('saveModal'));
       modal.hide();
     });

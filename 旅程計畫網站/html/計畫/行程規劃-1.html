@@ -13,8 +13,8 @@
   <main class="container">
     <h1>行程規劃</h1>
     <p class="optional-instructions text-muted">
-      請填寫以下行程規劃表單。您的計畫必須要規劃行程，否則無法儲存本計畫。
-  </p>
+      請填寫以下行程規劃表單。如果您的計畫不需要特別規劃行程，可以按下儲存跳過此部分。
+    </p>
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100"></div>
@@ -59,6 +59,10 @@
             <input type="text" class="form-control itinerary-name" placeholder="例如：台北市區探索" required>
           </div>
           <div class="form-group">
+            <label>活動日期</label>
+            <input type="date" class="form-control itinerary-date" required>
+          </div>
+          <div class="form-group">
             <label>活動時間</label>
             <input type="time" class="form-control itinerary-time" required>
           </div>
@@ -78,10 +82,10 @@
     function removeItinerary() {
       const container = document.getElementById('itinerary-container');
       const blocks = container.querySelectorAll('.itinerary-block');
-      if (blocks.length > 1) {
+      if (blocks.length > 0) {
         container.removeChild(blocks[blocks.length - 1]);
       } else {
-        alert("至少保留一個行程！");
+        alert("已經沒有更多行程規劃可以刪除！");
       }
     }
 
@@ -90,6 +94,7 @@
       const container = document.getElementById('itinerary-container');
       const itineraryData = [...container.querySelectorAll('.itinerary-block')].map(block => ({
         name: block.querySelector('.itinerary-name')?.value || "未命名行程",
+        date: block.querySelector('.itinerary-date')?.value || "未指定日期",
         time: block.querySelector('.itinerary-time')?.value || "未指定時間",
         activity: block.querySelector('.itinerary-activity')?.value || "未填寫內容",
         location: block.querySelector('.itinerary-location')?.value || "未填寫地點",
