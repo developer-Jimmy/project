@@ -26,6 +26,24 @@ body {
     height: 20px;
     margin-bottom: 30px;
   }
+   /* 行程詳細內容區塊 */
+   .itinerary-block {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .itinerary-block h5 {
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+
+  .itinerary-block .form-control {
+    margin-bottom: 10px;
+  }
+
   
   .step-header {
     background-color: #f8f9fa;
