@@ -1,90 +1,152 @@
 /* 自訂樣式 */
 body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
-    color: #343a40;
-  }
-  
-  .container {
-    max-width: 1000px;
-    margin-top: 50px;
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #343a40;
-    font-weight: 700;
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
-  
-  /* 進度條樣式 */
-  .progress {
-    height: 20px;
-    margin-bottom: 30px;
-  }
-   /* 行程詳細內容區塊 */
-   .itinerary-block {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  color: #343a40;
+}
 
-  .itinerary-block h5 {
-    font-size: 1.1rem;
-    color: #333;
-  }
+/* 提示字元 */
+.optional-instructions {
+  font-size: 16px;
+  /* 設置字體大小 */
+  color: #6c757d;
+  /* 設置字體顏色，深灰色 */
+  padding: 10px 0;
+  /* 上下填充 */
+  border-top: 1px solid #dee2e6;
+  /* 頂部邊框 */
+  border-bottom: 1px solid #dee2e6;
+  /* 底部邊框 */
+  margin-bottom: 20px;
+  /* 下邊距 */
+}
+
+.container {
+  max-width: 1000px;
+  margin-top: 50px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #343a40;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* 進度條樣式 */
+.progress {
+  height: 20px;
+  margin-bottom: 30px;
+}
+
+/* 行程詳細內容區塊 */
+.itinerary-block {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.itinerary-block h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
 
 
-  .itinerary-block .form-control {
-    margin-bottom: 10px;
-  }
+.itinerary-block .form-control {
+  margin-bottom: 10px;
+}
 
-  
-  .step-header {
-    background-color: #f8f9fa;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-weight: 600;
-  }
-  /* 按鈕設置 */
+
+.step-header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* 交通規劃內容區塊 */
+.transport-block {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.transport-block h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.transport-block .form-control {
+  margin-bottom: 10px;
+}
+
+.form-select {
+  margin-bottom: 20px;
+}
+
+/* 住宿規劃內容區塊 */
+.accommodation-block {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.accommodation-block h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.accommodation-block .form-control {
+  margin-bottom: 10px;
+}
+
+
+/* 按鈕設置 */
 .btn-primary {
-    background-color: #f8d347;
-    color: white;
-    font-weight: 700;
-  }
-  
-  .btn-primary:hover {
-    background-color: #f7c220;
-  }
-  
-  /* 進度條步驟文字 */
-  .step-label {
-    font-weight: 600;
-  }
+  background-color: #f8d347;
+  color: white;
+  font-weight: 700;
+}
 
-  /* 計畫預覽的樣式 */
-  .section-header {
-    background-color: #f8f9fa;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-weight: 600;
-  }
+.btn-primary:hover {
+  background-color: #f7c220;
+}
 
-  .item-block {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
+/* 進度條步驟文字 */
+.step-label {
+  font-weight: 600;
+}
 
-  .item-block h5 {
-    font-size: 1.1rem;
-    color: #333;
-  }
+/* 計畫預覽的樣式 */
+.section-header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.item-block {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.item-block h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+.item-block .form-check {
+  margin-bottom: 10px;
+}

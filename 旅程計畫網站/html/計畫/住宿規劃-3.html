@@ -5,46 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>住宿規劃</title>
-    <!-- 引入 Bootstrap 5 的 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/規劃設定.css">
-    <style>
-        /* 住宿規劃內容區塊 */
-        .accommodation-block {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .accommodation-block h5 {
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .accommodation-block .form-control {
-            margin-bottom: 10px;
-        }
-
-        .form-select {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 
 <body>
-
-    <!-- 主內容區 -->
     <main class="container">
         <h1>住宿規劃</h1>
+        <p class="optional-instructions text-muted">
+            請填寫以下住宿規劃表單。如果您的計畫不需要特別規劃住宿，可以按下儲存跳過此部分。
+        </p>
 
-        <!-- 進度條 -->
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100"></div>
+            <div class="progress-bar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <!-- 進度條步驟標籤 -->
         <div class="d-flex justify-content-between">
             <span class="step-label">規劃您的行程</span>
             <span class="step-label">規劃您的交通</span>
@@ -52,92 +27,86 @@
             <span class="step-label">規劃您的物品</span>
         </div>
 
-        <!-- 步驟 3: 規劃住宿 -->
         <div class="step-header">
             <h4>步驟 3：規劃您的住宿</h4>
         </div>
 
-        <!-- 住宿方式表單 -->
         <form>
-            <!-- 住宿方式1 -->
-            <section class="accommodation-block">
-                <h5>第 1 晚</h5>
-                <div class="form-group">
-                    <label for="accommodation1-title">住宿地點</label>
-                    <input type="text" class="form-control" id="accommodation1-title" placeholder="例如：台中市區住宿" required>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation1-type">住宿類型</label>
-                    <select class="form-select" id="accommodation1-type" required>
-                        <option value="飯店">飯店</option>
-                        <option value="民宿">民宿</option>
-                        <option value="旅館">旅館</option>
-                        <option value="青年旅舍">青年旅舍</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation1-check-in">入住時間</label>
-                    <input type="date" class="form-control" id="accommodation1-check-in" required>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation1-check-out">退房時間</label>
-                    <input type="date" class="form-control" id="accommodation1-check-out" required>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation1-location">住宿地點</label>
-                    <input type="text" class="form-control" id="accommodation1-location" placeholder="例如：台中市區" required>
-                </div>
-
-            </section>
-
-            <!-- 住宿方式2 -->
-            <section class="accommodation-block">
-                <h5>第 2 晚</h5>
-                <div class="form-group">
-                    <label for="accommodation2-title">住宿地點</label>
-                    <input type="text" class="form-control" id="accommodation2-title" placeholder="例如：高雄市區住宿" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="accommodation2-type">住宿類型</label>
-                    <select class="form-select" id="accommodation2-type" required>
-                        <option value="飯店">飯店</option>
-                        <option value="民宿">民宿</option>
-                        <option value="旅館">旅館</option>
-                        <option value="青年旅舍">青年旅舍</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation2-check-in">入住時間</label>
-                    <input type="date" class="form-control" id="accommodation2-check-in" required>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation2-check-out">退房時間</label>
-                    <input type="date" class="form-control" id="accommodation2-check-out" required>
-                </div>
-                <div class="form-group">
-                    <label for="accommodation2-location">住宿地點</label>
-                    <input type="text" class="form-control" id="accommodation2-location" placeholder="例如：高雄市區" required>
-                </div>
-
-            </section>
-
-            <!-- 增加更多住宿段 -->
-
-            <!-- 提交按鈕 -->
+            <div id="accommodation-container">
+                <!-- 住宿方式動態插入區域 -->
+            </div>
             <div class="my-3">
-                <button id="add-day-btn" class="btn btn-outline-primary">新增一晚住宿</button>
-                <button class="btn btn-outline-danger">刪除</button>
-                <a href="./交通規劃-2.html" type="button" class="btn btn-success ms-auto">返回</a>
-                <a href="./物品規劃-4.html" type="button" class="btn btn-primary">儲存</a>
+                <button type="button" id="add-accommodation-btn" class="btn btn-outline-primary">新增一晚住宿</button>
+                <button type="button" id="remove-accommodation-btn" class="btn btn-outline-danger">刪除最後一晚住宿</button>
+                <a href="./交通規劃-2.html" class="btn btn-secondary">返回</a>
+                <a href="./物品規劃-4.html" type="button" id="save-accommodation" class="btn btn-success">儲存</a>
             </div>
         </form>
     </main>
 
-    <!-- 引入 Bootstrap 和 JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('add-accommodation-btn').addEventListener('click', addAccommodation);
+            document.getElementById('remove-accommodation-btn').addEventListener('click', removeAccommodation);
+            document.getElementById('save-accommodation').addEventListener('click', saveAccommodation);
+            addAccommodation(); // 初始至少添加一個住宿規劃
+        });
 
+        function addAccommodation() {
+            const container = document.getElementById('accommodation-container');
+            const segments = container.querySelectorAll('.accommodation-block').length + 1;
+            const html = `
+                <section class="accommodation-block">
+                    <h5>第 ${segments} 晚</h5>
+                    <div class="form-group">
+                        <label>住宿地點</label>
+                        <input type="text" class="form-control accommodation-location" placeholder="例如：台中市區" required>
+                    </div>
+                    <div class="form-group">
+                        <label>住宿類型</label>
+                        <select class="form-select accommodation-type" required>
+                            <option value="">請選擇...</option>
+                            <option value="飯店">飯店</option>
+                            <option value="民宿">民宿</option>
+                            <option value="旅館">旅館</option>
+                            <option value="青年旅舍">青年旅舍</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>入住時間</label>
+                        <input type="date" class="form-control accommodation-check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label>退房時間</label>
+                        <input type="date" class="form-control accommodation-check-out" required>
+                    </div>
+                </section>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function removeAccommodation() {
+            const container = document.getElementById('accommodation-container');
+            const blocks = container.querySelectorAll('.accommodation-block');
+            if (blocks.length > 0) {
+                container.removeChild(blocks[blocks.length - 1]);
+            } else {
+                alert("已經沒有更多住宿可以刪除！");
+            }
+        }
+
+        function saveAccommodation() {
+            const container = document.getElementById('accommodation-container');
+            const accommodationData = [...container.querySelectorAll('.accommodation-block')].map(block => ({
+                location: block.querySelector('.accommodation-location').value,
+                type: block.querySelector('.accommodation-type').value,
+                checkIn: block.querySelector('.accommodation-check-in').value,
+                checkOut: block.querySelector('.accommodation-check-out').value,
+            }));
+            localStorage.setItem('accommodationData', JSON.stringify(accommodationData));
+            alert('住宿規劃已儲存！');
+        }
+    </script>
 </body>
 
 </html>

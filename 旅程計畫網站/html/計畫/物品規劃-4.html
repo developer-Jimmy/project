@@ -9,24 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../css/規劃設定.css">
-    <style>
-        /* 物品選擇區塊 */
-        .item-block {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
 
-        .item-block h5 {
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .item-block .form-check {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -34,6 +17,9 @@
     <!-- 主內容區 -->
     <main class="container">
         <h1>物品規劃</h1>
+        <p class="optional-instructions text-muted">
+            請填寫以下物品規劃表單。如果您的計畫不需要特別規劃物品，可以按下儲存跳過此部分。
+        </p>
 
         <!-- 進度條 -->
         <div class="progress">
@@ -56,93 +42,17 @@
 
         <!-- 物品清單 -->
         <form>
-            <!-- 物品區塊1 -->
-            <section class="item-block">
-                <input class="form-control form-control-sm mb-2" type="text" value="必備物品" aria-label="必備物品">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="護照" id="item1">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="護照" id="label1">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="機票" id="item2">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="機票" id="label2">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="信用卡" id="item3">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="信用卡" id="label3">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <button type="button" class="btn btn-sm btn-success">新增</button>
-            </section>
+            <div id="item-container">
+                <!-- 物品欄位動態插入區域 -->
+            </div>
 
-            <!-- 物品區塊2 -->
-            <section class="item-block">
-                <input class="form-control form-control-sm mb-2" type="text" value="個人用品" aria-label="個人用品">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="牙刷" id="item4">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="牙刷" id="label4">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="洗髮水" id="item5">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="洗髮水" id="label5">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="洗面乳" id="item6">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="洗面乳" id="label6">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <button type="button" class="btn btn-sm btn-success">新增</button>
-            </section>
-
-            <!-- 物品區塊3 -->
-            <section class="item-block">
-                <input class="form-control form-control-sm mb-2" type="text" value="電子產品" aria-label="電子產品">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="手機" id="item7">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="手機" id="label7">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="充電器" id="item8">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="充電器" id="label8">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="耳機" id="item9">
-                    <input class="form-control form-control-sm d-inline w-auto" type="text" value="耳機" id="label9">
-                    <button class="border-0">
-                        <i class="bi bi-x-square"></i>
-                    </button>
-                </div>
-                <button type="button" class="btn btn-sm btn-success">新增</button>
-            </section>
 
             <!-- 提交按鈕 -->
             <div class="my-3">
-                <button id="add-day-btn" class="btn btn-outline-primary">新增物品欄位</button>
-                <button class="btn btn-outline-danger">刪除</button>
-                <a href="./住宿規劃-3.html" type="button" class="btn btn-success ms-auto">返回</a>
-                <a href="./計畫預覽.html" type="button" class="btn btn-primary">儲存</a>
+                <button type="button" id="add-item-btn" class="btn btn-outline-primary">新增物品欄位</button>
+                <button type="button" id="remove-item-btn" class="btn btn-outline-danger">刪除最後物品欄位</button>
+                <a href="./住宿規劃-3.html" class="btn btn-secondary">返回</a>
+                <a href="./計畫預覽.html" type="button" id="save-item" class="btn btn-success">儲存</a>
             </div>
         </form>
     </main>
@@ -150,7 +60,102 @@
     <!-- 引入 Bootstrap 和 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('add-item-btn').addEventListener('click', addItem);
+            document.getElementById('remove-item-btn').addEventListener('click', removeItem);
+            document.getElementById('save-item').addEventListener('click', saveItem);
 
+            // 初始化動態新增第一個物品欄位
+            addItem();
+        });
+
+        // 新增物品欄位
+        function addItem() {
+            const container = document.getElementById('item-container');
+            const segments = container.querySelectorAll('.item-block').length + 1;
+
+            const html = `
+            <section class="item-block mb-4">
+                <h5>物品清單 ${segments}</h5>
+                <div class="form-group mb-2">
+                    <input class="form-control form-control-sm mb-2 item-name" type="text" placeholder="清單名稱">
+                </div>
+                <div class="item-sublist">
+                    <!-- 子項目將在此動態生成 -->
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-success add-subitem-btn">新增項目</button>
+                <hr>
+            </section>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+
+            // 綁定子項目新增按鈕
+            const newItemBlock = container.querySelector('.item-block:last-child');
+            const addSubItemBtn = newItemBlock.querySelector('.add-subitem-btn');
+            addSubItemBtn.addEventListener('click', function () {
+                addSubItem(newItemBlock);
+            });
+
+            // 自動新增一個子項目
+            addSubItem(newItemBlock);
+        }
+
+        // 新增子項目
+        function addSubItem(itemBlock) {
+            const sublist = itemBlock.querySelector('.item-sublist');
+            const subItems = sublist.querySelectorAll('.form-check').length + 1;
+
+            const html = `
+            <div class="form-check mb-2">
+                <input class="form-check-input subitem-checkbox" type="checkbox">
+                <input class="form-control form-control-sm d-inline w-auto subitem-name ms-2" type="text" placeholder="項目 ${subItems}">
+                <button type="button" class="btn btn-sm btn-outline-danger ms-2 remove-subitem-btn">刪除</button>
+            </div>
+            `;
+            sublist.insertAdjacentHTML('beforeend', html);
+
+            // 綁定刪除按鈕
+            const removeSubItemBtn = sublist.querySelector('.form-check:last-child .remove-subitem-btn');
+            removeSubItemBtn.addEventListener('click', function () {
+                removeSubItem(removeSubItemBtn);
+            });
+        }
+
+        // 刪除最後一個物品欄位
+        function removeItem() {
+            const container = document.getElementById('item-container');
+            const blocks = container.querySelectorAll('.item-block');
+            if (blocks.length > 0) {
+                blocks[blocks.length - 1].remove();
+            } else {
+                alert("已經沒有更多物品欄位可以刪除！");
+            }
+        }
+
+        // 刪除子項目
+        function removeSubItem(button) {
+            const subItem = button.closest('.form-check');
+            subItem.remove();
+        }
+
+        // 儲存物品規劃至 LocalStorage
+        function saveItem() {
+            const itemsData = [...document.querySelectorAll('.item-block')].map(block => {
+                const subItems = [...block.querySelectorAll('.form-check')].map(subItem => ({
+                    name: subItem.querySelector('.subitem-name').value || "未命名項目",
+                    checked: subItem.querySelector('.subitem-checkbox').checked
+                }));
+                return {
+                    listName: block.querySelector('.item-name').value || "未命名清單",
+                    items: subItems
+                };
+            });
+
+            localStorage.setItem('itemsData', JSON.stringify(itemsData));
+            alert("物品規劃已儲存！");
+        }
+    </script>
 </body>
 
 </html>

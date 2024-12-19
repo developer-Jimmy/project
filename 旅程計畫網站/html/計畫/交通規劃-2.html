@@ -8,29 +8,6 @@
     <!-- 引入 Bootstrap 5 的 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/規劃設定.css">
-    <style>
-        /* 交通規劃內容區塊 */
-        .transport-block {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .transport-block h5 {
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .transport-block .form-control {
-            margin-bottom: 10px;
-        }
-
-        .form-select {
-            margin-bottom: 20px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -38,92 +15,30 @@
     <!-- 主內容區 -->
     <main class="container">
         <h1>交通規劃</h1>
-
-        <!-- 進度條 -->
+        <p class="optional-instructions text-muted">
+            請填寫以下交通規劃表單。如果您的計畫不需要特別規劃交通，可以按下儲存跳過此部分。
+        </p>
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                aria-valuemax="100"></div>
+            <div class="progress-bar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-
-        <!-- 進度條步驟標籤 -->
         <div class="d-flex justify-content-between">
             <span class="step-label">規劃您的行程</span>
             <span class="step-label">規劃您的交通</span>
             <span class="step-label">規劃您的住宿</span>
             <span class="step-label">規劃您的物品</span>
         </div>
-
-        <!-- 步驟 2: 規劃交通 -->
         <div class="step-header">
             <h4>步驟 2：規劃您的交通</h4>
         </div>
-
-        <!-- 交通方式表單 -->
         <form>
-            <!-- 交通方式1 -->
-            <section class="transport-block">
-                <h5>第 1 段交通</h5>
-                <div class="form-group">
-                    <label for="transport1-title">起點至目的地</label>
-                    <input type="text" class="form-control" id="transport1-title" placeholder="例如：台北市區到台中" required>
-                </div>
-                <div class="form-group">
-                    <label for="transport1-type">交通工具</label>
-                    <select class="form-select" id="transport1-type" required>
-                        <option value="高鐵">高鐵</option>
-                        <option value="火車">火車</option>
-                        <option value="巴士">巴士</option>
-                        <option value="自駕">自駕</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="transport1-departure-time">出發時間</label>
-                    <input type="time" class="form-control" id="transport1-departure-time" required>
-                </div>
-                <div class="form-group">
-                    <label for="transport1-departure-location">出發地點</label>
-                    <input type="text" class="form-control" id="transport1-departure-location" placeholder="例如：台北車站"
-                        required>
-                </div>
-
-            </section>
-
-            <!-- 交通方式2 -->
-            <section class="transport-block">
-                <h5>第 2 段交通</h5>
-                <div class="form-group">
-                    <label for="transport2-title">起點至目的地</label>
-                    <input type="text" class="form-control" id="transport2-title" placeholder="例如：台中到高雄" required>
-                </div>
-                <div class="form-group">
-                    <label for="transport2-type">交通工具</label>
-                    <select class="form-select" id="transport2-type" required>
-                        <option value="高鐵">高鐵</option>
-                        <option value="火車">火車</option>
-                        <option value="巴士">巴士</option>
-                        <option value="自駕">自駕</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="transport2-departure-time">出發時間</label>
-                    <input type="time" class="form-control" id="transport2-departure-time" required>
-                </div>
-                <div class="form-group">
-                    <label for="transport2-departure-location">出發地點</label>
-                    <input type="text" class="form-control" id="transport2-departure-location" placeholder="例如：台中火車站"
-                        required>
-                </div>
-
-            </section>
-
-            <!-- 增加更多交通段 -->
-
-            <!-- 提交按鈕 -->
+            <div id="transport-container">
+                <!-- 交通方式動態插入區域 -->
+            </div>
             <div class="my-3">
-                <button id="add-day-btn" class="btn btn-outline-primary">新增一段交通</button>
-                <button class="btn btn-outline-danger">刪除</button>
-                <a href="./行程規劃-1.html" type="button" class="btn btn-success ms-auto">返回</a>
-                <a href="./住宿規劃-3.html" type="button" class="btn btn-primary">儲存</a>
+                <button type="button" id="add-transport-btn" class="btn btn-outline-primary">新增一段交通</button>
+                <button type="button" id="remove-transport-btn" class="btn btn-outline-danger">刪除最後一段交通</button>
+                <a href="./行程規劃-1.html" class="btn btn-secondary">返回</a>
+                <a href="./住宿規劃-3.html" type="button" id="save-transport" class="btn btn-success">儲存</a>
             </div>
         </form>
     </main>
@@ -131,7 +46,69 @@
     <!-- 引入 Bootstrap 和 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('add-transport-btn').addEventListener('click', addTransport);
+            document.getElementById('remove-transport-btn').addEventListener('click', removeTransport);
+            document.getElementById('save-transport').addEventListener('click', saveTransport);
+            addTransport(); // 初始至少添加一個交通規劃
+        });
 
+        function addTransport() {
+            const container = document.getElementById('transport-container');
+            const segments = container.querySelectorAll('.transport-block').length + 1;
+            const html = `
+        <section class="transport-block">
+            <h5>第 ${segments} 段交通</h5>
+            <div class="form-group">
+                <label>起點</label>
+                <input type="text" class="form-control transport-from" placeholder="例如：台北" required>
+            </div>
+            <div class="form-group">
+                <label>目的地</label>
+                <input type="text" class="form-control transport-to" placeholder="例如：台中" required>
+            </div>
+            <div class="form-group">
+                <label>交通工具</label>
+                <select class="form-select transport-type" required>
+                    <option value="">請選擇...</option>
+                    <option value="高鐵">高鐵</option>
+                    <option value="火車">火車</option>
+                    <option value="巴士">巴士</option>
+                    <option value="自駕">自駕</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>出發時間</label>
+                <input type="time" class="form-control transport-time" required>
+            </div>
+        </section>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function removeTransport() {
+            const container = document.getElementById('transport-container');
+            const blocks = container.querySelectorAll('.transport-block');
+            if (blocks.length > 0) {
+                container.removeChild(blocks[blocks.length - 1]);
+            } else {
+                alert("已經沒有更多交通段可以刪除！");
+            }
+        }
+        // 儲存交通規劃至 LocalStorage
+        function saveTransport() {
+            const container = document.getElementById('transport-container');
+            const transportData = [...container.querySelectorAll('.transport-block')].map(block => ({
+                from: block.querySelector('.transport-from').value,
+                to: block.querySelector('.transport-to').value,
+                type: block.querySelector('.transport-type').value,
+                time: block.querySelector('.transport-time').value,
+            }));
+            localStorage.setItem('transportData', JSON.stringify(transportData));
+            alert('交通規劃已儲存！');
+        }
+    </script>
 </body>
 
 </html>
