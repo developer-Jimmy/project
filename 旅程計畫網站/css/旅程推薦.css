@@ -40,7 +40,18 @@
     background-color: var(--dark-like-button-color);
     transform: scale(1.08);
 }
+.rating {
+    display: inline-block;
+    color: var(--primary-color);  /* 星星的颜色，金色 */
+    text-shadow: 0 0 3px var(--highlight-blue);  /* 增加轻微的阴影以提高可读性 */
+}
 
+.rating-score {
+    font-size: 1.1rem; 
+    color: var(--primary-color) !important; 
+    font-weight: bold;  
+    margin-left: 5px;  
+}
 /* 了解更多按鈕樣式 */
 .card .btn-primary {
     background-color: var(--highlight-blue);

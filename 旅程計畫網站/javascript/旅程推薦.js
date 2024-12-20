@@ -82,74 +82,77 @@ document.addEventListener("DOMContentLoaded", function () {
       { title: "里約熱內盧", description: "熱情的嘉年華與海灘。", image: "../img/旅程推薦圖片/里約熱內盧搜尋.jpg", likes: 20, rating: 4.2 }
   ];
 
-  // 渲染排行榜卡片
-  function renderRanking() {
-      // 先清空內容
-      rankingContainer.innerHTML = "";
+// 渲染排行榜卡片
+function renderRanking() {
+ // 先清空內容
+ rankingContainer.innerHTML = "";
 
-      // 根據喜歡數量或評分排序 (依據 likes 排序)
-      const sortedData = cardData.sort((a, b) => b.likes - a.likes);
+ // 根據喜歡數量排序
+ const sortedData = cardData.map((item, originalIndex) => ({
+     ...item,
+     originalIndex,
+ })).sort((a, b) => b.likes - a.likes);
 
-      // 動態生成卡片
-      sortedData.forEach((item, index) => {
-          const cardHtml = `
-              <div class="col-md-4 mb-4">
-                  <div class="card h-100 shadow-sm">
-                      <div class="position-relative">
-                          <img src="${item.image}" class="card-img-top" alt="${item.title}">
-                          <span class="w-25 badge bg-danger position-absolute top-0 start-0 m-2">#${index + 1}</span>
-                      </div>
-                      <div class="card-body">
-                          <h5 class="card-title">${item.title}</h5>
-                          <p class="card-text">${item.description}</p>
-                          <div class="d-flex justify-content-between align-items-center">
-                              <!-- 喜歡按鈕 -->
-                              <button class="btn btn-outline-danger like-btn" data-index="${index}">
-                                  <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">${item.likes}</span>)
-                              </button>
-                              <!-- 評分 -->
-                              <div class="rating text-muted">
-                                  ${generateStars(item.rating)} (${item.rating}/5)
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          `;
-          rankingContainer.insertAdjacentHTML("beforeend", cardHtml);
-      });
-
-      // 綁定喜歡按鈕事件
-      bindLikeButtons();
+ // 動態生成卡片
+ sortedData.forEach((item, displayIndex) => {
+     const cardHtml = `
+         <div class="col-md-4 mb-4">
+             <div class="card h-100 shadow-sm">
+                 <div class="position-relative">
+                     <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                     <span class="w-25 badge bg-danger position-absolute top-0 start-0 m-2">#${displayIndex + 1}</span>
+                 </div>
+                 <div class="card-body">
+                     <h5 class="card-title">${item.title}</h5>
+                     <p class="card-text">${item.description}</p>
+                     <div class="d-flex justify-content-between align-items-center">
+                         <!-- 喜歡按鈕 -->
+                         <button class="btn btn-outline-danger like-btn" data-original-index="${item.originalIndex}">
+                             <i class="bi bi-heart"></i> 喜歡 (<span class="like-count">${item.likes}</span>)
+                         </button>
+                         <!-- 評分 -->
+                         <div class="rating text-muted">
+                             ${generateStars(item.rating)} 
+                             <span class="rating-score">(${item.rating.toFixed(1)}/5)</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     `;
+     rankingContainer.insertAdjacentHTML("beforeend", cardHtml);
+ });
+}
+// 生成星星
+function generateStars(rating) {
+  let starsHtml = '';
+  for (let i = 1; i <= 5; i++) {
+      if (i <= Math.floor(rating)) {
+          starsHtml += '<i class="bi bi-star-fill text-warning"></i>'; // 滿星
+      } else if (i - rating <= 0.5) {
+          starsHtml += '<i class="bi bi-star-half text-warning"></i>'; // 半星
+      } else {
+          starsHtml += '<i class="bi bi-star text-secondary"></i>'; // 空星
+      }
   }
+  return starsHtml;
+}
 
-  // 生成星星
-  function generateStars(rating) {
-      const fullStars = Math.floor(rating);
-      const halfStar = rating % 1 >= 0.5 ? 1 : 0;
-      const emptyStars = 5 - fullStars - halfStar;
-
-      return "★".repeat(fullStars) + "☆".repeat(halfStar + emptyStars);
+// 綁定喜歡按鈕事件（事件委託）
+rankingContainer.addEventListener("click", function (event) {
+  const button = event.target.closest(".like-btn");
+  if (button) {
+      const originalIndex = button.getAttribute("data-original-index");
+      if (originalIndex !== null) {
+          cardData[originalIndex].likes += 1; // 增加喜歡數
+          renderRanking(); // 重新渲染排行榜
+      }
   }
-
-  // 綁定喜歡按鈕事件
-  function bindLikeButtons() {
-      const likeButtons = document.querySelectorAll(".like-btn");
-
-      likeButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-              const index = this.getAttribute("data-index");
-              cardData[index].likes += 1; // 喜歡數 +1
-              renderRanking(); // 重新渲染排行榜
-          });
-      });
-  }
-
-  // 初始化渲染
-  renderRanking();
 });
 
-
+// 初始化渲染
+renderRanking();
+});
 
 // 喜歡按鈕功能
 document.addEventListener("DOMContentLoaded", function () {

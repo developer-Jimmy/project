@@ -71,7 +71,7 @@
 }
 
 .output-area span {
-    color: var(--success-color);
+    color: var(--success-green);
 }
 
 /* 页脚样式 */
