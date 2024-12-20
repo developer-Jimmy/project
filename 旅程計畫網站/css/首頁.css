@@ -1,11 +1,5 @@
 
 
-#startButton {
-    background: linear-gradient(45deg, #007bff, #00c6ff);
-    color: white;
-    border: none;
-}
-
 /* 卡片设计 */
 .card {
     border: none;
@@ -25,43 +19,13 @@
 }
 
 .card .card-title {
-    color: var(--highlight-blue);
+    color: var(--post-color);
 }
 
 .card:hover .card-title {
     color: var(--hover-color);
 }
 
-
-.masonry-grid {
-    column-count: 3;
-    column-gap: 20px;
-}
-
-.masonry-grid .card {
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.masonry-grid img {
-    border-radius: var(--border-radius);
-    display: block;
-    width: 100%;
-    object-fit: cover;
-}
-
-@media (max-width: 1200px) {
-    .masonry-grid {
-        column-count: 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-grid {
-        column-count: 1;
-    }
-}
 
 /* 夜遊推薦圖片樣式 */
 .img-fluid {

@@ -1,4 +1,5 @@
 :root {
+    /* 深色主題 */
     --primary-bg: #1a1a1a;
     --secondary-bg: #333333;
     --primary-color: #FFD700;
@@ -14,7 +15,6 @@
     /* 直播平台 */
     --card-bg-color: #222;  /* 卡片背景色 */
     --text-color: #f8f9fa;  /* 基本文字顏色 */
-    --highlight-color: #FFD700;  /* 金色突出顯示 */
     --shadow-strong: rgba(0, 0, 0, 0.5);  /* 強陰影 */
     --shadow-light: rgba(0, 0, 0, 0.3);  /* 輕陰影 */
     --btn-bg-color: #1e90ff;  /* 按鈕背景色 */
@@ -224,4 +224,37 @@ a:hover {
 
 .alert a:hover {
     color: darken(var(--highlight-blue), 10%);
+}
+
+
+/* 默認深色主題 */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* 亮色主題 */
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* 調整導航欄顏色 */
+.navbar-dark.bg-dark.dark-theme {
+    background-color: #000000 !important;
+}
+
+.navbar-dark.bg-dark.light-theme {
+    background-color: #ffffff !important;
+    color: #000000;
+}
+
+.btn-outline-light.dark-theme {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline-light.light-theme {
+    border-color: #000000;
+    color: #000000;
 }
