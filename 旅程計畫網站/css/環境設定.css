@@ -11,7 +11,68 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     --font-main: 'Poppins', Arial, sans-serif;
-    /*主字體*/
+    /* 直播平台 */
+    --card-bg-color: #222;  /* 卡片背景色 */
+    --text-color: #f8f9fa;  /* 基本文字顏色 */
+    --highlight-color: #FFD700;  /* 金色突出顯示 */
+    --shadow-strong: rgba(0, 0, 0, 0.5);  /* 強陰影 */
+    --shadow-light: rgba(0, 0, 0, 0.3);  /* 輕陰影 */
+    --btn-bg-color: #1e90ff;  /* 按鈕背景色 */
+    --btn-hover-bg-color: #0077cc;  /* 按鈕懸停背景色 */
+    --header-bg-color: #f8f9fa;  /* 標題背景色 */
+    --hover-highlight: #FFC300;  /* 懸停時顏色變化 */
+    --category-bg-color: #2b2b2b;  /* 分類按鈕背景色 */
+    --category-border-color: #3a3a3a;  /* 分類按鈕邊框色 */
+    --category-hover-bg-color: #FFD700;  /* 分類按鈕懸停背景色 */
+    /* 活動專區 */
+    --activity-gradient-start: #212121; /* 活動區漸變起始 */
+    --activity-gradient-end: #1c1c1c; /* 活動區漸變終止 */
+    --activity-shadow: rgba(0, 0, 0, 0.4); /* 活動陰影 */
+    --activity-hover-shadow: rgba(0, 0, 0, 0.6); /* 活動懸停陰影 */
+    --activity-title-color: #FFC107; /* 活動標題顏色 */
+    /* 聯絡我們 */
+    --contact-bg-color: #007bff; /* 聯絡我們背景色 */
+    --contact-text-color: white; /* 聯絡我們文字色 */
+    --contact-highlight-color: #333; /* 聯絡信息突出顯示色 */
+    --form-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 表單陰影 */
+    --border-radius: 25px; /* 全局邊框圓角 */
+    /* 討論區 */
+    --dark-highlight-blue: #0056b3; /* 深藍色 */
+    --like-color: #FFA726; /* 橙色 */
+    --post-color: #29B6F6; /* 明亮藍色 */
+    --pagination-border-color: #37474F; /* 分頁邊框顏色 */
+    --pagination-bg: #263238; /* 分頁背景顏色 */
+    --hover-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* 旅程推薦 */
+    --like-button-color: #e63946; /* 喜歡按鈕顏色 */
+    --dark-like-button-color: #d62839; /* 深紅色 */
+    --card-gradient-start: #333; /* 卡片漸變起始色 */
+    --card-gradient-end: #444; /* 卡片漸變結束色 */
+    --text-gold: #FFC107; /* 金色文字 */
+    --text-light-gray: #eceff1; /* 淺灰色文字 */
+    --border-radius-large: 30px;
+    --text-muted-color: #90a4ae;
+    /* 旅程工具 */
+    --text-large-size: 2rem; /* 大号文字尺寸 */
+    --text-medium-size: 1.5rem; /* 中号文字尺寸 */
+    --text-small-size: 0.9rem; /* 小号文字尺寸 */
+    /* 旅程資源 */
+    --alert-bg-start: #FFEDB0; /* 提示信息起始背景色 */
+    --alert-bg-end: #FFD700; /* 提示信息结束背景色 */
+    --alert-text-color: #1A1A1A; /* 提示信息文字颜色 */
+    --alert-border-color: #FFD700; /* 提示信息边框颜色 */
+    --button-bg-start: #1A73E8; /* 按钮起始背景色 */
+    --button-bg-end: #004B8D; /* 按钮结束背景色 */
+    --button-text-color: #fff; /* 按钮文字颜色 */
+    --search-alert-bg-start: #E3F2FD; /* 查询提示起始背景色 */
+    --search-alert-bg-end: #90CAF9; /* 查询提示结束背景色 */
+    --search-alert-border-color: #64B5F6; /* 查询提示边框颜色 */
+    --primary-color: #FFD700; /* 主要颜色，用于强调 */
+    --text-heavy: bold; /* 加粗文字 */
+    --border-radius-large: 30px; /* 大圆角 */
+    --border-radius-small: 10px; /* 小圆角 */
+    --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.3); /* 轻微阴影 */
+    --box-shadow-strong: 0 6px 15px rgba(0, 0, 0, 0.5); /* 强阴影 */
 }
 
 /* 全局樣式 */

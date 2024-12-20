@@ -1,11 +1,10 @@
+/* 卡片樣式 */
 .card {
-    background: linear-gradient(145deg, #333, #444);
-    /* 提升背景層次 */
+    background: linear-gradient(145deg, var(--card-gradient-start), var(--card-gradient-end));
     border: none;
-    border-radius: 12px;
-    color: #f8f9fa;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    /* 更柔和的陰影 */
+    border-radius: var(--border-radius);
+    color: var(--secondary-color);
+    box-shadow: 0 6px 20px var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -15,41 +14,39 @@
 }
 
 .card-title {
-    color: #FFC107;
-    /* 改用暖色金黃 */
+    color: var(--text-gold);
     font-size: 1.3rem;
     font-weight: bold;
 }
 
 .card-text {
-    color: #eceff1;
+    color: var(--text-light-gray);
     font-size: 1rem;
     line-height: 1.5;
-    /* 增加易讀性 */
 }
 
 /* 喜歡按鈕樣式 */
 .like-btn {
-    background-color: #e63946;
-    color: #fff;
+    background-color: var(--like-button-color);
+    color: var(--secondary-color);
     border: none;
     padding: 8px 18px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-size: 0.95rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .like-btn:hover {
-    background-color: #d62839;
+    background-color: var(--dark-like-button-color);
     transform: scale(1.08);
 }
 
 /* 了解更多按鈕樣式 */
 .card .btn-primary {
-    background-color: #2196f3;
-    color: #fff;
+    background-color: var(--highlight-blue);
+    color: var(--secondary-color);
     border: none;
-    border-radius: 25px;
+    border-radius: var(--border-radius-large);
     padding: 14px 28px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -57,83 +54,61 @@
 }
 
 .card .btn-primary:hover {
-    background-color: #1976d2;
+    background-color: var(--dark-highlight-blue);
     transform: scale(1.1);
-}
-
-/* 評分星星樣式 */
-.rating-stars i {
-    margin-right: 3px;
-    font-size: 1rem;
-    color: #FFD700;
-}
-
-.rating .text-muted {
-    color: #90a4ae;
-}
-
-.rating .rating-score {
-    margin-left: 6px;
-    color: #eceff1;
-    font-size: 0.95rem;
 }
 
 /* 搜尋框樣式 */
 #search-form input[type="text"] {
-    border-radius: 30px;
+    border-radius: var(--border-radius-large);
     padding: 14px 20px;
-    border: 1px solid #90a4ae;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--text-muted-color);
+    box-shadow: var(--box-shadow);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 #search-form input[type="text"]:focus {
-    border-color: #2196f3;
+    border-color: var(--highlight-blue);
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
     outline: none;
 }
 
 #search-form .btn {
-    border-radius: 30px;
+    border-radius: var(--border-radius-large);
     padding: 12px 28px;
-    background-color: #2196f3;
-    color: #fff;
+    background-color: var(--highlight-blue);
+    color: var(--secondary-color);
     font-size: 1.1rem;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 #search-form .btn:hover {
-    background-color: #1976d2;
+    background-color: var(--dark-highlight-blue);
 }
 
 /* 分頁樣式 */
 .pagination .page-item.active .page-link {
-    background-color: #FFD700;
-    /* 金色背景 */
-    border-color: #FFD700;
-    color: #1a1a1a;
-    /* 深色文字 */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-bg);
 }
 
 .pagination .page-item .page-link {
-    color: #90CAF9;
-    /* 明亮藍色文字 */
-    border: 1px solid #37474F;
-    background-color: #263238;
-    /* 深灰背景 */
+    color: var(--highlight-blue);
+    border: 1px solid var(--pagination-border-color);
+    background-color: var(--pagination-bg);
 }
 
 .pagination .page-item .page-link:hover {
-    color: #FFD700;
-    /* 金色懸停效果 */
-    background-color: #37474F;
+    color: var(--primary-color);
+    background-color: var(--pagination-border-color);
 }
 
 /* h2 標題調整 */
 h2 {
     margin-top: 20px;
-    color: #FFC107;
+    color: var(--text-gold);
     text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.8);
     font-size: 2.2rem;
     font-weight: bold;

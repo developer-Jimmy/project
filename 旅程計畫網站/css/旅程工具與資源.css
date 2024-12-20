@@ -1,14 +1,4 @@
-:root {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #333333;
-    --primary-color: #FFD700;
-    --secondary-color: #f8f9fa;
-    --highlight-blue: #007bff;
-    --success-green: #28a745;
-    --light-gray: #d1d1d1;
-    --dark-gray: #2b2b2b;
-}
-/* 卡片樣式 */
+/* 卡片样式 */
 .card {
     border: none;
     background-color: var(--secondary-bg);
@@ -24,7 +14,7 @@
 }
 
 .card-title {
-    color: var(--highlight-blue);
+    color: var(--primary-color);
     font-size: 1.25rem;
     margin-bottom: 10px;
 }
@@ -41,23 +31,115 @@
     transform: scale(1.05);
 }
 
-/* 資訊列表 */
+
+/* 信息列表 */
 .list-group-item {
     background-color: var(--secondary-bg);
     color: var(--secondary-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 稍微透明的边框 */
     padding: 10px 20px;
     transition: background-color 0.3s ease;
 }
 
 .list-group-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时的背景颜色 */
 }
 
 .list-group-item a {
-    color: var(--highlight-blue);
+    color: var(--primary-color);
 }
 
 .list-group-item a:hover {
     color: var(--primary-color);
+}
+
+/* 旅程工具标题 */
+.toolTitle {
+    font-size: var(--text-large-size);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 输出区域 */
+.output-area {
+    font-size: var(--text-medium-size);
+    font-weight: bold;
+    color: var(--success-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.output-area span {
+    color: var(--success-color);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: var(--text-small-size);
+    color: var(--text-muted);
+}
+
+
+
+/* 提示信息样式 */
+.custom-alert {
+    background: linear-gradient(45deg, var(--alert-bg-start), var(--alert-bg-end));
+    color: var(--alert-text-color);
+    border: 1px solid var(--alert-border-color);
+    border-radius: var(--border-radius-small);
+    padding: 15px 20px;
+    font-size: 1rem;
+    box-shadow: var(--box-shadow-light);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+/* 提示信息文字加粗 */
+.custom-alert strong {
+    font-weight: var(--text-heavy);
+    color: #FF4500; /* 橙红文字 */
+}
+
+/* 返回按钮样式 */
+.custom-btn {
+    background: linear-gradient(45deg, var(--button-bg-start), var(--button-bg-end));
+    color: var(--button-text-color);
+    border: none;
+    font-size: 1rem;
+    font-weight: var(--text-heavy);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--box-shadow-light);
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+    background: linear-gradient(45deg, var(--button-bg-end), #00294D);
+    box-shadow: var(--box-shadow-strong);
+    transform: translateY(-2px);
+}
+
+/* 查询结果样式 */
+.custom-search-result h2 {
+    font-size: 1.5rem;
+    font-weight: var(--text-heavy);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* 查询提示信息样式 */
+.custom-search-alert {
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--search-alert-bg-start), var(--search-alert-bg-end));
+    color: var(--alert-text-color);
+    border: 1px solid var(--search-alert-border-color);
+    border-radius: var(--border-radius-small);
+    padding: 15px 20px;
+    font-size: 1rem;
+    box-shadow: var(--box-shadow-light);
+    transition: all 0.3s ease-in-out;
 }
