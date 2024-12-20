@@ -1,15 +1,83 @@
 /* 自訂樣式 */
 body {
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #001F3F, #00111A);
+  /* 深藍漸層背景 */
+  color: #fff;
+  /* 預設白色文字 */
   font-family: 'Arial', sans-serif;
-  color: #343a40;
+  margin: 0;
+  padding: 0;
 }
+
+.dark-title {
+  color: #ffd700;
+  /* 金色標題 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dark-progress {
+  background-color: #333333;
+  /* 進度條背景 */
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dark-progress-bar {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  /* 金色漸變進度條 */
+}
+
+.step-label-container .step-label {
+  font-weight: bold;
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  /* 全部大寫 */
+  letter-spacing: 1px;
+  /* 增加字距 */
+  margin-bottom: 10px;
+}
+
+.dark-form {
+  background-color: #1A1A1A;
+  /* 深灰表單背景 */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  /* 增加陰影效果 */
+  margin-top: 20px;
+}
+
+/* 輸入框樣式 */
+ .form-control {
+  background-color: #252525;
+  /* 深灰色背景 */
+  border: 1px solid #FFD700;
+  /* 金色邊框 */
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  border-color: #FFA500;
+  /* 聚焦時橙色邊框 */
+  box-shadow: 0 0 10px #FFA500;
+}
+
 
 /* 提示字元 */
 .optional-instructions {
+  text-align: center;
   font-size: 16px;
   /* 設置字體大小 */
-  color: #6c757d;
+  color: #AAAAAA !important;
+  /* 更淡的灰色文字 */
   /* 設置字體顏色，深灰色 */
   padding: 10px 0;
   /* 上下填充 */
@@ -21,20 +89,31 @@ body {
   /* 下邊距 */
 }
 
+.step-header {
+  color: lightblue;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
 .container {
   max-width: 1000px;
   margin-top: 50px;
   padding: 30px;
-  background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #343a40;
-  font-weight: 700;
-  margin-bottom: 30px;
-  font-size: 2rem;
+  color: #FFD700;
+  /* 金色標題 */
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+h5 {
+  color: greenyellow;
 }
 
 /* 進度條樣式 */
@@ -43,113 +122,174 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* 行程詳細內容區塊 */
-.itinerary-block {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+/* 按鈕樣式 */
+button,
+a.btn {
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-.itinerary-block h5 {
-  font-size: 1.1rem;
-  color: #333;
+/* 新增行程按鈕 */
+.btn-outline-primary {
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  background: none;
+}
+
+.btn-outline-primary:hover {
+  background: #FFD700;
+  color: #121212;
+  /* 深色文字 */
+}
+
+/* 刪除行程按鈕 */
+.btn-outline-danger {
+  color: #FF6347;
+  border: 2px solid #FF6347;
+  background: none;
+}
+
+.btn-outline-danger:hover {
+  background: #FF6347;
+  color: #121212;
+  /* 深色文字 */
+}
+
+/* 返回按鈕 */
+.btn-secondary {
+  color: #CCCCCC;
+  border: 2px solid #CCCCCC;
+  background: none;
+}
+
+.btn-secondary:hover {
+  background: #CCCCCC;
+  color: #121212;
+  /* 深色文字 */
+}
+
+/* 儲存按鈕 */
+.btn-success {
+  background: linear-gradient(45deg, #00C851, #007E33);
+  /* 綠色漸層背景 */
+  color: #fff;
+}
+
+.btn-success:hover {
+  background: linear-gradient(45deg, #007E33, #005523);
+  /* 更深的綠色 */
 }
 
 
-.itinerary-block .form-control {
-  margin-bottom: 10px;
-}
-
-
-.step-header {
-  background-color: #f8f9fa;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  font-weight: 600;
-}
-
-/* 交通規劃內容區塊 */
-.transport-block {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.transport-block h5 {
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.transport-block .form-control {
-  margin-bottom: 10px;
-}
+/* 自訂下拉選單容器 */
 
 .form-select {
-  margin-bottom: 20px;
+  background-color: #252525; /* 深灰背景 */
+  color: #FFD700; /* 金色文字 */
+  border: 1px solid #FFD700; /* 金色邊框 */
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-/* 住宿規劃內容區塊 */
-.accommodation-block {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+/* 聚焦效果 */
+.form-select:focus {
+  border-color: #FFA500; /* 聚焦橙色邊框 */
+  box-shadow: 0 0 8px #FFA500; /* 聚焦光暈效果 */
 }
 
-.accommodation-block h5 {
-  font-size: 1.1rem;
-  color: #333;
+
+/* 計畫預覽 */
+.preview-h1 {
+  color: #FFD700; /* 金色標題 */
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 10px;
 }
 
-.accommodation-block .form-control {
+/* 區塊標題 */
+.preview-h2 {
+  color: #FFA500; /* 橙色區塊標題 */
+  margin-bottom: 15px;
+  border-left: 5px solid #FFD700; /* 左邊金色條 */
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+/* 小標題 (如 "基本資料") */
+.section-header h4 {
+  color: #FFD700;
   margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 5px;
 }
 
-
-/* 按鈕設置 */
-.btn-primary {
-  background-color: #f8d347;
-  color: white;
-  font-weight: 700;
+/* 文字塊 */
+.preview-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #EDEDED; /* 白灰文字 */
 }
 
-.btn-primary:hover {
-  background-color: #f7c220;
+/* 強調文字 */
+.preview-block p strong {
+  color: #FFA500; /* 橙色強調 */
 }
 
-/* 進度條步驟文字 */
-.step-label {
-  font-weight: 600;
-}
-
-/* 計畫預覽的樣式 */
-.section-header {
-  background-color: #f8f9fa;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  font-weight: 600;
-}
-
-.item-block {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
+/* 卡片樣式 */
+#preview-itinerary, #preview-transport, #preview-accommodation, #preview-items {
+  background-color: #1A1A1A; /* 深灰色背景 */
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* 卡片陰影 */
   margin-bottom: 20px;
 }
-
-.item-block h5 {
-  font-size: 1.1rem;
-  color: #333;
+#itinerary-data, #transport-data, #accommodation-data, #items-data {
+  color: black;
+  border-bottom: 1px solid #FFD700;
 }
 
-
-.item-block .form-check {
-  margin-bottom: 10px;
+/* 模態框 */
+.modal-content {
+  background-color: #1A1A1A; /* 深灰色背景 */
+  color: #FFD700; /* 金色文字 */
+  border-radius: 10px;
 }
 
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.modal-title {
+  color: #FFD700; /* 金色標題 */
+}
+
+.modal-body p {
+  color: #EDEDED; /* 白灰文字 */
+}
+
+.modal-body .form-label {
+  color: #FFD700; /* 金色表單標籤 */
+}
+
+.modal-body .form-control {
+  background-color: #252525; /* 深灰背景 */
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+}
+
+.modal-body .form-control:focus {
+  border-color: #FFA500;
+  box-shadow: 0 0 10px #FFA500;
+  outline: none;
+}
 
 

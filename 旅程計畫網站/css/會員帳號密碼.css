@@ -1,0 +1,84 @@
+/* 全局樣式 */
+body {
+  background: linear-gradient(135deg, #001F3F, #00111A); /* 深藍漸層背景 */
+  font-family: 'Arial', sans-serif;
+  color: #EDEDED; /* 白灰文字顏色 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 卡片樣式 */
+.card {
+  background-color: #1A1A1A; /* 深灰背景 */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* 增加陰影效果 */
+  border: 1px solid #FFD700; /* 金色邊框 */
+}
+
+/* 卡片標題 */
+.card-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #FFD700; /* 金色標題 */
+  border-bottom: 2px solid #FFD700; /* 底部金色分隔線 */
+  padding-bottom: 10px;
+}
+
+/* 表單標籤 */
+.form-label {
+  font-weight: bold;
+  color: #FFD700; /* 金色標籤 */
+}
+
+/* 輸入框樣式 */
+.form-control {
+  background-color: #252525; /* 深灰輸入框背景 */
+  border: 1px solid #FFD700; /* 金色邊框 */
+  color: #FFD700; /* 金色文字 */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: #FFA500; /* 聚焦橙色邊框 */
+  box-shadow: 0 0 10px #FFA500; /* 光暈效果 */
+  outline: none; /* 移除瀏覽器預設邊框 */
+}
+
+/* 按鈕樣式 */
+.btn-primary {
+  background: linear-gradient(45deg, #FFA500, #FF6347); /* 橙紅漸變背景 */
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 30px; /* 圓角按鈕 */
+  padding: 10px 15px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #FF6347, #FF4500); /* 更深的橙紅 */
+  box-shadow: 0 4px 10px rgba(255, 99, 71, 0.5);
+}
+
+/* 忘記密碼與註冊連結 */
+.text-center a {
+  color: #FFD700; /* 金色連結 */
+  font-weight: bold;
+}
+
+.text-center a:hover {
+  color: #FFA500; /* 橙色懸浮 */
+  text-decoration: underline;
+}
+
+/* 卡片容器間距 */
+.container {
+  padding: 20px;
+}
+
+/* 卡片外部間距 */
+.card {
+  margin-top: 30px;
+}

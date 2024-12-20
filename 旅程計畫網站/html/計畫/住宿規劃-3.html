@@ -11,16 +11,16 @@
 
 <body>
     <main class="container">
-        <h1>住宿規劃</h1>
+        <h1 class="dark-title">住宿規劃</h1>
         <p class="optional-instructions text-muted">
             請填寫以下住宿規劃表單。如果您的計畫不需要特別規劃住宿，可以按下儲存跳過此部分。
         </p>
 
-        <div class="progress">
-            <div class="progress-bar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress dark-progress">
+            <div class="progress-bar dark-progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between step-label-container">
             <span class="step-label">規劃您的行程</span>
             <span class="step-label">規劃您的交通</span>
             <span class="step-label">規劃您的住宿</span>
@@ -31,11 +31,11 @@
             <h4>步驟 3：規劃您的住宿</h4>
         </div>
 
-        <form>
+        <form id="accommodationForm" class="dark-form">
             <div id="accommodation-container">
                 <!-- 住宿方式動態插入區域 -->
             </div>
-            <div class="my-3">
+            <div class="my-3 button-container">
                 <button type="button" id="add-accommodation-btn" class="btn btn-outline-primary">新增一個住宿</button>
                 <button type="button" id="remove-accommodation-btn" class="btn btn-outline-danger">刪除最後一個住宿</button>
                 <a href="./交通規劃-2.html" class="btn btn-secondary">返回</a>
@@ -62,7 +62,7 @@
                         <label>住宿地點</label>
                         <input type="text" class="form-control accommodation-location" placeholder="例如：台中市區" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group from-select-container">
                         <label>住宿類型</label>
                         <select class="form-select accommodation-type" required>
                             <option value="">請選擇...</option>

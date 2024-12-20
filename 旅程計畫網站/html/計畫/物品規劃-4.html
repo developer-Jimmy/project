@@ -16,19 +16,19 @@
 
     <!-- 主內容區 -->
     <main class="container">
-        <h1>物品規劃</h1>
+        <h1 class="dark-title">物品規劃</h1>
         <p class="optional-instructions text-muted">
             請填寫以下物品規劃表單。如果您的計畫不需要特別規劃物品，可以按下儲存跳過此部分。
         </p>
 
         <!-- 進度條 -->
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+        <div class="progress dark-progress">
+            <div class="progress-bar dark-progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
                 aria-valuemax="100"></div>
         </div>
 
         <!-- 進度條步驟標籤 -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between step-label-container">
             <span class="step-label">規劃您的行程</span>
             <span class="step-label">規劃您的交通</span>
             <span class="step-label">規劃您的住宿</span>
@@ -41,14 +41,14 @@
         </div>
 
         <!-- 物品清單 -->
-        <form>
+        <form id="itemForm" class="dark-form">
             <div id="item-container">
                 <!-- 物品欄位動態插入區域 -->
             </div>
 
 
             <!-- 提交按鈕 -->
-            <div class="my-3">
+            <div class="my-3 button-container">
                 <button type="button" id="add-item-btn" class="btn btn-outline-primary">新增物品清單</button>
                 <button type="button" id="remove-item-btn" class="btn btn-outline-danger">刪除最後物品清單</button>
                 <a href="./住宿規劃-3.html" class="btn btn-secondary">返回</a>

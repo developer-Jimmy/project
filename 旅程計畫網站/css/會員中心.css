@@ -1,77 +1,326 @@
+/* 全局樣式 */
 body {
-    background-color: #f8f9fa;
-    /* 整體背景 */
+    background: linear-gradient(135deg, #001F3F, #00111A);
+    /* 深藍漸層背景 */
     font-family: 'Roboto', sans-serif;
-}
-.card {
-    border-radius: 15px;
-}
-
- /* 側邊欄樣式 */
- .list-group-item {
-    font-size: 1.1rem;
-    padding: 15px;
-    transition: background-color 0.3s ease;
+    color: #EDEDED;
+    /* 白灰文字 */
+    margin: 0;
+    padding: 0;
 }
 
-/* Hover 效果 */
-.list-group-item:hover {
-    background-color: #f8f9fa;
-}
-
-/* 當前頁面的高亮顏色 */
-.list-group-item.active {
-    background-color: #007bff;
-    color: white;
-}
-
-/* 圖標與文字間的間距 */
-.list-group-item i {
-    margin-right: 10px;
-}
-
-/* 保證圖標大小一致 */
-.list-group-item i {
-    font-size: 1.3rem;
-}
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.btn-outline-primary {
-    border-radius: 20px;
-}
-
-#planList .list-group-item {
-    cursor: pointer;
-}
+/* 容器間距 */
 .container {
     margin-top: 50px;
 }
 
+/* 卡片樣式 */
+.card {
+    background-color: #1A1A1A;
+    /* 深灰背景 */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* 陰影效果 */
+    border: 1px solid #FFD700;
+    /* 金色邊框 */
+}
+
+/* 卡片標題 */
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FFD700;
+    /* 金色標題 */
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+/* 標籤頁樣式 */
+.nav-tabs .nav-link {
+    color: #FFD700;
+    /* 金色文字 */
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-tabs .nav-link.active {
+    color: #FFA500;
+    /* 橙色高亮 */
+    border-bottom: 3px solid #FFA500;
+    /* 橙色下劃線 */
+}
+
+.nav-tabs .nav-link:hover {
+    color: #FF6347;
+    /* 橙紅懸浮效果 */
+}
+
+/* 標籤頁內容 */
+.tab-content {
+    padding: 20px;
+    background-color: #1A1A1A;
+    /* 深灰背景 */
+    border-radius: 0 0 15px 15px;
+}
 
 
-.form-label {
+/* 側邊欄樣式 */
+.list-group-item {
+    font-size: 1.1rem;
+    padding: 15px;
+    background-color: #252525;
+    /* 深灰背景 */
+    color: #FFD700;
+    /* 金色文字 */
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 側邊欄 Hover 效果 */
+.list-group-item:hover {
+    background-color: #FFD700;
+    /* 金色背景 */
+    color: #1A1A1A;
+    /* 深灰文字 */
+}
+
+/* 當前頁面的高亮顏色 */
+.list-group-item.active {
+    background-color: #FFA500;
+    /* 橙色背景 */
+    color: #1A1A1A;
+    /* 深灰文字 */
     font-weight: bold;
 }
 
-
-
-.btn-outline-danger {
-    border-radius: 20px;
-}
-
-.form-control {
-    border-radius: 20px;
-}
-
-.bi-lock {
-    font-size: 1.2rem;
+/* 圖標樣式 */
+.list-group-item i {
     margin-right: 10px;
+    font-size: 1.3rem;
 }
 
+
+/* 表單標籤 */
+.form-label {
+    font-weight: bold;
+    color: #FFD700;
+    /* 金色標籤 */
+}
+
+/* 輸入框樣式 */
+.form-control {
+    background-color: #252525;
+    /* 深灰背景 */
+    border: 1px solid #FFD700;
+    /* 金色邊框 */
+    color: #FFD700;
+    /* 金色文字 */
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #FFA500;
+    /* 橙色邊框 */
+    box-shadow: 0 0 10px #FFA500;
+    /* 聚焦光暈效果 */
+    outline: none;
+}
+
+
+/* 用戶頭像 */
+img.rounded-circle {
+    border: 3px solid #FFD700;
+    /* 金色邊框 */
+    width: 100px;
+    height: 100px;
+}
+
+
+/* 表單間距 */
+form .mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+/* 狀態標籤 */
+.status {
+    font-size: 0.9rem;
+    /* 狀態字體大小 */
+    font-weight: bold;
+    /* 加粗 */
+    padding: 5px 10px;
+    /* 內邊距 */
+    border-radius: 20px;
+    /* 圓角 */
+    text-transform: uppercase;
+    /* 全部大寫 */
+    white-space: nowrap;
+    /* 防止文字換行 */
+}
+
+
+.status-pending {
+    background-color: #FF6347;
+    /* 橙紅背景 */
+    color: #fff;
+}
+
+.status-rejected {
+    background-color: #6c757d;
+    /* 深灰背景 */
+    color: #fff;
+    /* 白色文字 */
+    border: 1px solid #343a40;
+    /* 深色邊框 */
+    box-shadow: 0 2px 5px rgba(108, 117, 125, 0.5);
+    /* 柔和陰影 */
+    transition: all 0.3s ease-in-out;
+    /* 動態效果 */
+}
+
+/* 已完成狀態 */
+.status-completed {
+    background-color: #007bff;
+    /* 藍色背景 */
+    color: #fff;
+    /* 白色文字 */
+    border: 1px solid #0056b3;
+    /* 深藍邊框 */
+}
+
+/* 按鈕樣式 */
+/* 按鈕樣式 */
 .btn {
     border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #FFA500, #FF6347);
+    /* 橙紅漸變 */
+    border: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #FF6347, #FF4500);
+    /* 深橙紅漸變 */
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.5);
+}
+
+.btn-outline-primary {
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    background: none;
+}
+
+.btn-outline-primary:hover {
+    background-color: #FFD700;
+    color: #1A1A1A;
+}
+
+/* 成功按鈕 (btn-success) */
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    /* 綠色漸變背景 */
+    color: #fff;
+    /* 白色文字 */
+    border: 1px solid #1e7e34;
+    /* 深綠色邊框 */
+    font-size: 1rem;
+    /* 字體大小 */
+    font-weight: bold;
+    /* 加粗文字 */
+    border-radius: 30px;
+    /* 圓角按鈕 */
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    /* 綠色陰影效果 */
+    transition: all 0.3s ease-in-out;
+    /* 動畫效果 */
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #1e7e34, #155724);
+    /* 深綠色懸浮背景 */
+    box-shadow: 0 6px 18px rgba(40, 167, 69, 0.5);
+    /* 陰影增強 */
+    transform: translateY(-2px);
+    /* 輕微浮起效果 */
+}
+
+/* 危險按鈕 (btn-danger) */
+.btn-danger {
+    background: linear-gradient(45deg, #dc3545, #b21f2d);
+    /* 紅色漸變背景 */
+    color: #fff;
+    /* 白色文字 */
+    border: 1px solid #b21f2d;
+    /* 深紅色邊框 */
+    font-size: 1rem;
+    /* 字體大小 */
+    font-weight: bold;
+    /* 加粗文字 */
+    border-radius: 30px;
+    /* 圓角按鈕 */
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+    /* 紅色陰影效果 */
+    transition: all 0.3s ease-in-out;
+    /* 動畫效果 */
+}
+
+.btn-danger:hover {
+    background: linear-gradient(45deg, #b21f2d, #8a1d1b);
+    /* 深紅色懸浮背景 */
+    box-shadow: 0 6px 18px rgba(220, 53, 69, 0.5);
+    /* 陰影增強 */
+    transform: translateY(-2px);
+    /* 輕微浮起效果 */
+}
+
+
+/* 詳情按鈕 */
+.view-details-btn {
+    background-color: #FFD700;
+    /* 金色背景 */
+    color: #1A1A1A;
+    /* 深灰文字 */
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+.view-details-btn:hover {
+    background-color: #FFA500;
+    /* 橙色懸浮 */
+}
+
+/* Modal 樣式 */
+.modal-content {
+    background-color: #1A1A1A;
+    /* 深灰背景 */
+    color: #FFD700;
+    /* 金色文字 */
+    border-radius: 15px;
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+.modal-title {
+    color: #FFD700;
+    /* 金色標題 */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 動態生成的計劃內容 */
+#modal-details-container {
+    color: #EDEDED;
+    /* 白灰文字 */
 }
