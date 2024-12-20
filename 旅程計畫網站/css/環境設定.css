@@ -1,311 +1,74 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #333333;
+    --primary-color: #FFD700;
+    --secondary-color: #f8f9fa;
+    --hover-color: #ffcc00;
+    --dark-gray: #2b2b2b;
+    --light-gray: #d1d1d1;
+    --highlight-blue: #007bff;
+    --success-green: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --font-main: 'Poppins', Arial, sans-serif;
+    /*主字體*/
+}
+
+/* 全局樣式 */
 body {
     font-family: 'Arial', sans-serif;
-    color: #343a40;
-    background: linear-gradient(135deg, #1e1e1e 30%, #333333 90%);
+    color: var(--secondary-color);
+    background: linear-gradient(135deg, var(--primary-bg) 30%, var(--secondary-bg) 90%);
+    margin: 0;
+    padding: 0;
 }
 
-
-/* logo */
+/* Logo大小 */
 a img {
     width: 60px;
+    border-radius: var(--border-radius);
 }
 
-/* 旅程工具 */
-.toolTitle {
-    font-size: 2rem;
-    color: #007bff;
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-blue);
+}
+
+/* 介紹區 */
+
+#introduce {
+    background: linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
+    color: var(--secondary-color);
     text-align: center;
-    margin-bottom: 20px;
+    padding: 2rem;
 }
 
-.output-area {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #28a745;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.output-area span {
-    color: #28a745;
-}
-
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: #888;
-}
-
-
-/* 活動專區 */
-/* 區塊背景設計 */
-.activity-section {
-    background-color: #1c1c1c;
-    /* 深灰色背景 */
-    color: #ffffff;
-    padding: 60px 0;
-}
-
-/* 標題設計 */
-.activity-section h2 {
+#introduce h1 {
+    color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #f8f9fa;
-    /* 淺灰色標題 */
 }
 
-.activity-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    background-color: #2b2b2b;
-    /* 深灰色卡片背景 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* 輕微陰影 */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.activity-item:hover {
-    transform: translateY(-5px);
-    /* 輕微浮動效果 */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.activity-item img {
-    width: 40%;
-    /* 調整圖片大小 */
-    object-fit: cover;
-}
-
-/* 內容區塊 */
-.activity-content {
-    padding: 20px;
-}
-
-.activity-content h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    /* color: #ffcc00; */
-    /* 明亮的黃色標題 */
-    margin-bottom: 10px;
-}
-
-.activity-content p {
-    font-size: 1rem;
-    color: #d1d1d1;
-    /* 柔和的灰色文字 */
-    margin-bottom: 15px;
-}
-
-.btn-outline-secondary {
-    color: #ffcc00;
-    border-color: #ffcc00;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #ffcc00;
-    color: #2b2b2b;
-}
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-    .activity-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .activity-item img {
-        width: 100%;
-        height: 200px;
-    }
-}
-
-
-/* 卡片設計 */
-.card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    margin-bottom: 20px;
-}
-
-/* 旅程推薦 */
-/* 排行榜標籤 */
-.card .badge {
+#introduce p {
+    color: var(--light-gray);
     font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    margin-top: 15px;
 }
 
-.card-title {
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-/* 直播平台 */
-.card-text {
-    color: black;
-}
-
-.card:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-header {
-    background-color: #f8f9fa;
-}
-
-.card-body {
-    background-color: #fff;
-}
-
-.card-body .rating span {
-    color: #ffc107;
-    /* 星星顏色 */
-}
-
-.card img {
-    height: 20s0px;
-    object-fit: cover;
-}
-
-.card-img-top {
-    width: 100%;
-    /* 填滿卡片寬度 */
-    height: 200px;
-    /* 高度自適應 */
-    aspect-ratio: 16 / 9;
-    /* 強制圖片保持 16:9 的比例 */
-    object-fit: cover;
-    /* 裁剪多餘部分，保持比例 */
-}
-
-.card-footer {
-    margin-top: auto;
-    padding-top: 10px;
-}
-
-.card-footer .btn {
-    font-size: 1rem;
-}
-
-/* 首頁夜遊推薦 */
-/* 夜遊推薦圖片樣式 */
-.img-fluid {
-    max-height: 300px;
-    object-fit: cover;
-}
-
-/* 夜遊標題區塊 */
-.bg-dark h3 {
-    color: #f8d347;
-}
-
-.btn-outline-light:hover {
-    background-color: #f8d347;
-    color: #000;
-}
-
-/* 精選夜遊地點 */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        column-count: 2;
-        /* 螢幕寬度較小時使用2列 */
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-grid {
-        column-count: 1;
-        /* 手機端顯示1列 */
-    }
-}
-
-.masonry-grid {
-    column-count: 3;
-    /* 控制列數 */
-    column-gap: 20px;
-}
-
-.masonry-grid .card {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-
-.masonry-grid img {
-    width: 100%;
-    /* 自適應列寬 */
-    margin-bottom: 20px;
-    /* 圖片間距 */
-    border-radius: 8px;
-    /* 圓角 */
-    display: block;
-    object-fit: cover;
-    /* 保持圖片比例 */
-}
-
-/* 移除社群的預設底線 */
-.navbar-nav .nav-item.dropdown .nav-link::after {
-    content: none !important;
-    /* 完全移除底線 */
-}
 
 /* 改進黑色風格，加入深度質感 */
 .navbar-dark {
-    background: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
-    /* 漸層黑色背景 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* 細微白色邊框增加分隔感 */
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    box-shadow: var(--box-shadow);
 }
 
 /* 導覽列陰影效果增強 */
 .navbar {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* 鼠標懸停效果 - 夜晚金光點綴 */
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #ffc107;
-    /* 柔和的金黃色 */
-    background-color: rgba(255, 193, 7, 0.1);
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-
-/* 選單間距微調，增加舒適感 */
-.navbar-nav .nav-item {
-    margin-left: 20px;
-}
-
-/* 動態底線效果 */
-.navbar-nav .nav-link::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0;
-    background-color: #ffc107;
-    transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* 圓潤的按鈕設計（登入與註冊） */
-.navbar-nav .nav-link {
-    padding: 8px 15px;
-    border-radius: 20px;
 }
 
 /* 響應式設計，提升手機體驗 */
@@ -316,42 +79,57 @@ footer {
     }
 }
 
-/* 旅程推薦的喜歡與評分 */
-.rating-stars i {
-    cursor: pointer;
-    /* 滑鼠變成可點擊狀態 */
-    transition: color 0.2s ease;
-    /* 平滑過渡效果 */
+/* 選單間距微調，增加舒適感 */
+.navbar-nav .nav-item {
+    margin-left: 20px;
 }
 
-.rating-score {
-    font-size: 1.2rem;
+
+/* 圓潤的按鈕設計（登入與註冊） */
+.navbar-nav .nav-link {
+    padding: 8px 15px;
+    border-radius: 20px;
 }
 
-.like-btn,
-.rating {
-    font-size: 0.75rem;
+/* 鼠標懸停效果 - 夜晚金光點綴 */
+.navbar-dark .nav-link:hover {
+    color: var(--hover-color);
+    background-color: rgba(255, 193, 7, 0.1);
 }
 
-/* 介紹區 */
-
-#introduce {
-    background: linear-gradient(to bottom, #1a1a1a, #333);
-    color: #f8f9fa;
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
 }
 
-#introduce h1 {
-    color: #f39c12;
-    /* 亮金色標題 */
-    font-size: 36px;
-    font-weight: bold;
+/* 移除社群的預設底線 */
+.navbar-nav .nav-item.dropdown .nav-link::after {
+    content: none !important;
+    /* 完全移除底線 */
 }
 
-#introduce p {
-    color: #ccc;
-    /* 淺灰色文字 */
-    font-size: 18px;
-    margin-top: 15px;
+/* 動態底線效果 */
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+
+/* 設置輪播圖片的高度 */
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: var(--border-radius);
 }
 
 .carousel-caption h5 {
@@ -363,271 +141,26 @@ footer {
 
 .carousel-caption p {
     font-size: 1.2rem;
-    font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 
-
-#startButton {
-    background: linear-gradient(45deg, #007bff, #00c6ff);
-    color: white;
-    border: none;
-}
-
-
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* 設置輪播圖片的高度 */
-.carousel-item img {
-    width: 100%;
-    /* 讓圖片寬度佔滿容器 */
-    height: 400px;
-    /* 設置固定的高度 */
-    object-fit: cover;
-    /* 確保圖片保持比例填滿容器 */
-}
-
-
+/* 頁尾的提示 */
 .alert {
-    font-size: 1.1rem;
     background: linear-gradient(90deg, #d4edda, #fff3cd);
-
-    /* 柔和的漸層背景 */
     border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
 }
 
 .alert a {
-    text-decoration: none;
+    color: var(--highlight-blue);
     font-weight: bold;
-    color: #0056b3;
+    text-decoration: none;
 
     /* 突出連結 */
     transition: color 0.3s ease;
 }
 
 .alert a:hover {
-    color: #00376b;
-    /* 懸停效果 }*/
-}
-
-/* 提示信息樣式 */
-.custom-alert {
-    background: linear-gradient(45deg, #FFEDB0, #FFD700);
-    /* 淡黃色漸變背景 */
-    color: #1A1A1A;
-    /* 深灰文字 */
-    border: 1px solid #FFD700;
-    /* 金色邊框 */
-    border-radius: 10px;
-    /* 圓角設計 */
-    padding: 15px 20px;
-    /* 內邊距 */
-    font-size: 1rem;
-    /* 字體大小 */
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
-    /* 陰影效果 */
-    transition: all 0.3s ease-in-out;
-    /* 動態效果 */
-    margin-bottom: 20px;
-}
-
-/* 提示信息文字加粗 */
-.custom-alert strong {
-    font-weight: bold;
-    color: #FF4500;
-    /* 橙紅文字 */
-}
-
-/* 返回按鈕樣式 */
-.custom-btn {
-    background: linear-gradient(45deg, #1A73E8, #004B8D);
-    /* 藍色漸變背景 */
-    color: #fff;
-    /* 白色文字 */
-    border: none;
-    /* 移除邊框 */
-    font-size: 1rem;
-    /* 字體大小 */
-    font-weight: bold;
-    /* 加粗文字 */
-    padding: 10px 20px;
-    /* 內邊距 */
-    border-radius: 30px;
-    /* 圓角設計 */
-    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
-    /* 藍色陰影 */
-    transition: all 0.3s ease-in-out;
-    /* 動態效果 */
-}
-
-.custom-btn:hover {
-    background: linear-gradient(45deg, #004B8D, #00294D);
-    /* 深藍懸浮背景 */
-    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.5);
-    /* 增強陰影效果 */
-    transform: translateY(-2px);
-    /* 浮起效果 */
-}
-
-/* 查詢結果樣式 */
-.custom-search-result {
-    text-align: left;
-    /* 左對齊，讓查詢結果更自然 */
-}
-
-.custom-search-alert {
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #E3F2FD, #90CAF9);
-    /* 藍色漸變背景 */
-    color: #1A1A1A;
-    /* 深灰文字 */
-    border: 1px solid #64B5F6;
-    /* 藍色邊框 */
-    border-radius: 10px;
-    /* 圓角設計 */
-    padding: 15px 20px;
-    /* 內邊距 */
-    font-size: 1rem;
-    /* 字體大小 */
-    box-shadow: 0 4px 10px rgba(100, 181, 246, 0.3);
-    /* 柔和陰影 */
-    transition: all 0.3s ease-in-out;
-    /* 動態效果 */
-}
-
-/* 查詢標題樣式 */
-.custom-search-result h2 {
-    font-size: 1.5rem;
-    /* 標題字體大小 */
-    font-weight: bold;
-    /* 加粗 */
-    color: #FFD700;
-    /* 金色文字 */
-    border-bottom: 2px solid #FFD700;
-    /* 金色下劃線 */
-    padding-bottom: 5px;
-}
-
-/* 返回按鈕樣式 */
-.custom-btn {
-    background: linear-gradient(45deg, #1A73E8, #004B8D);
-    /* 藍色漸變背景 */
-    color: #fff;
-    /* 白色文字 */
-    border: none;
-    /* 移除邊框 */
-    font-size: 1rem;
-    /* 字體大小 */
-    font-weight: bold;
-    /* 加粗文字 */
-    padding: 10px 20px;
-    /* 內邊距 */
-    border-radius: 30px;
-    /* 圓角設計 */
-    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
-    /* 藍色陰影 */
-    transition: all 0.3s ease-in-out;
-    /* 動態效果 */
-}
-
-.custom-btn:hover {
-    background: linear-gradient(45deg, #004B8D, #00294D);
-    /* 深藍懸浮背景 */
-    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.5);
-    /* 增強陰影效果 */
-    transform: translateY(-2px);
-    /* 浮起效果 */
-}
-
-
-/* 聯絡我們 */
-
-.contact-header {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #007bff;
-    color: white;
-}
-
-.contact-header h2 {
-    font-weight: 600;
-}
-
-.contact-header p {
-    font-size: 1.1rem;
-}
-
-.contact-info,
-.contact-form {
-    padding: 30px 15px;
-}
-
-.contact-info h3 {
-    color: #007bff;
-    font-weight: 600;
-}
-
-.contact-info ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.contact-info ul li {
-    margin-bottom: 15px;
-}
-
-.contact-info ul li strong {
-    color: #333;
-}
-
-.form-control,
-.btn {
-    border-radius: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.contact-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #007bff;
-    color: white;
-}
-
-
-label,
-h2,
-h3 {
-    color: white;
-}
-
-/* 討論區 */
-.discussion-header {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.discussion-meta {
-    font-size: 12px;
-    color: gray;
-}
-
-.top-tag {
-    font-size: 14px;
-    color: #ff4500;
-    font-weight: bold;
-    background-color: #f8f9fa;
-    padding: 3px 10px;
-    border-radius: 5px;
-    margin-right: 10px;
+    color: darken(var(--highlight-blue), 10%);
 }

@@ -1,0 +1,60 @@
+/* 按讚數與貼文數樣式調整 */
+.discussion-meta {
+    font-size: 0.95rem; /* 稍微增大字體 */
+    font-weight: bold; /* 加粗字體 */
+    color: #FFD700; /* 金色文字，與背景對比明顯 */
+}
+
+.like-count {
+    color: #FFA726; /* 橙色，用於吸引注意 */
+}
+
+.post-count {
+    color: #29B6F6; /* 藍色，與按讚數區分 */
+}
+
+/* 卡片樣式 */
+.card {
+    background: linear-gradient(135deg, #444444, #555555); /* 深灰背景 */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #f8f9fa; /* 白色文字 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 卡片按鈕 */
+.card .btn {
+    background-color: #007bff; /* 藍色背景 */
+    border: none;
+    color: #fff; /* 白色文字 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn:hover {
+    background-color: #0056b3; /* 深藍色懸停 */
+    transform: scale(1.05);
+}
+
+/* 分頁樣式 */
+.pagination .page-item.active .page-link {
+    background-color: #FFD700; /* 金色背景 */
+    border-color: #FFD700;
+    color: #1a1a1a; /* 深色文字 */
+}
+
+.pagination .page-item .page-link {
+    color: #90CAF9; /* 明亮藍色文字 */
+    border: 1px solid #37474F;
+    background-color: #263238; /* 深灰背景 */
+}
+
+.pagination .page-item .page-link:hover {
+    color: #FFD700; /* 金色懸停效果 */
+    background-color: #37474F;
+}

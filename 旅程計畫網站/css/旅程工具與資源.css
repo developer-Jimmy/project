@@ -1,0 +1,63 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #333333;
+    --primary-color: #FFD700;
+    --secondary-color: #f8f9fa;
+    --highlight-blue: #007bff;
+    --success-green: #28a745;
+    --light-gray: #d1d1d1;
+    --dark-gray: #2b2b2b;
+}
+/* 卡片樣式 */
+.card {
+    border: none;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    color: var(--highlight-blue);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card .btn {
+    background-color: var(--highlight-blue);
+    color: var(--secondary-color);
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* 資訊列表 */
+.list-group-item {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.list-group-item a {
+    color: var(--highlight-blue);
+}
+
+.list-group-item a:hover {
+    color: var(--primary-color);
+}

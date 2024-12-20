@@ -1,0 +1,105 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #333333;
+    --primary-color: #FFD700;
+    --secondary-color: #f8f9fa;
+    --hover-color: #ffcc00;
+    --dark-gray: #2b2b2b;
+    --light-gray: #d1d1d1;
+    --highlight-blue: #007bff;
+    --success-green: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --font-main: 'Poppins', Arial, sans-serif;
+    /*主字體*/
+}
+
+#startButton {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+}
+
+/* 卡片设计 */
+.card {
+    border: none;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card .card-title {
+    color: var(--highlight-blue);
+}
+
+.card:hover .card-title {
+    color: var(--hover-color);
+}
+
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.masonry-grid .card {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.masonry-grid img {
+    border-radius: var(--border-radius);
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+/* 夜遊推薦圖片樣式 */
+.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* 夜遊標題區塊 */
+.bg-dark h3 {
+    color: #f8d347;
+}
+
+.btn-outline-light:hover {
+    background-color: #f8d347;
+    color: #000;
+}
+
+.btn-outline-secondary {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--hover-color);
+    color: var(--dark-gray);
+}

@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="card h-100 shadow-sm">
                       <div class="position-relative">
                           <img src="${item.image}" class="card-img-top" alt="${item.title}">
-                          <span class="badge bg-danger position-absolute top-0 start-0 m-2">#${index + 1}</span>
+                          <span class="w-25 badge bg-danger position-absolute top-0 start-0 m-2">#${index + 1}</span>
                       </div>
                       <div class="card-body">
                           <h5 class="card-title">${item.title}</h5>

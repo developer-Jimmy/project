@@ -1,0 +1,233 @@
+/* 活動專區主要區塊 */
+.activity-section {
+    background: linear-gradient(135deg, #212121, #1c1c1c);
+    /* 深灰漸層背景 */
+    color: #f8f9fa;
+    /* 明亮文字 */
+    padding: 80px 0;
+}
+
+/* 標題區 */
+.activity-section h2 {
+    color: #FFC107;
+    /* 金色標題 */
+    font-size: 2.8rem;
+    /* 調整字體大小 */
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
+    /* 增加陰影效果 */
+    margin-bottom: 40px;
+}
+
+/* 活動項目卡片 */
+.activity-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    background-color: #2b2b2b;
+    /* 深灰背景 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* 柔和陰影 */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-8px);
+    /* 浮動效果 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 活動圖片樣式 */
+.activity-item img {
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover img {
+    transform: scale(1.1);
+    /* 懸停時放大效果 */
+}
+
+/* 活動內容區塊 */
+.activity-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.activity-content h5 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FFC107;
+    /* 金色標題 */
+    margin-bottom: 15px;
+}
+
+.activity-content p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    /* 柔和灰色文字 */
+    margin-bottom: 20px;
+    line-height: 1.5;
+    /* 增加行間距 */
+}
+
+/* 查看更多按鈕 */
+.activity-content .btn {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #FFC107;
+    color: #FFC107;
+    /* 金色文字 */
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.activity-content .btn:hover {
+    background-color: #FFC107;
+    color: #212121;
+    /* 深灰背景 */
+    transform: scale(1.05);
+    /* 輕微放大效果 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .activity-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .activity-item img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .activity-content {
+        padding: 20px;
+    }
+
+    .activity-content h5 {
+        font-size: 1.6rem;
+    }
+
+    .activity-content p {
+        font-size: 0.95rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+
+    .activity-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* 活動卡片 */
+.card {
+    background: #2b2b2b;
+    /* 深灰色背景 */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* 柔和陰影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 卡片圖片 */
+/* 確保卡片圖片大小一致 */
+.card img {
+    width: 100%; /* 寬度佔滿卡片 */
+    height: 200px; /* 固定高度，根據需求調整 */
+    object-fit: cover; /* 確保圖片不變形，裁剪多餘部分 */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05); /* 懸停時放大圖片 */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.card-title {
+    color: #FFC107;
+    /* 金色文字 */
+    font-size: 1.5rem;
+    /* 調整字體大小 */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* 添加輕微陰影 */
+}
+
+.card-text {
+    color: #d1d1d1;
+    /* 柔和灰色文字 */
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+
+/* 按鈕樣式 */
+.card .btn-primary {
+    border-radius: 25px;
+    /* 圓角按鈕 */
+    padding: 12px 24px;
+    /* 增加按鈕尺寸 */
+    font-size: 1rem;
+    /* 字體大小 */
+    font-weight: bold;
+    color: #212121;
+    /* 按鈕文字深色 */
+    background-color: #FFC107;
+    /* 金色背景 */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card .btn-primary:hover {
+    background-color: #e6b800;
+    /* 更深的金色 */
+    transform: scale(1.05);
+    /* 放大效果 */
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.5);
+    /* 光暈效果 */
+}
+
+
+/* Modal 樣式調整 */
+.modal-content {
+    background-color: #2b2b2b;
+    /* 深灰背景 */
+    color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    border-bottom: 1px solid #FFC107;
+    /* 金色分隔線 */
+}
+
+.modal-footer .btn-primary {
+    background-color: #FFC107;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #e6b800;
+}
