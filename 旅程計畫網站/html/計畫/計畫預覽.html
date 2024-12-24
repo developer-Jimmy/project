@@ -95,17 +95,17 @@
           itineraryContainer.innerHTML += `
             <div class="card mb-2">
         <div class="card-body">
-          <h5 class="card-title">第 ${index + 1} 天</h5>
+          <h5 class="card-title">第 ${index + 1} 個</h5>
           <p><strong>行程名稱:</strong> ${item.name}</p>
-          <p><strong>日期:</strong> ${item.date || "未指定日期"}</p>
-          <p><strong>時間:</strong> ${item.time || "未指定時間"}</p>
-          <p><strong>活動:</strong> ${item.activity || "未填寫活動"}</p>
-          <p><strong>地點:</strong> ${item.location || "未填寫地點"}</p>
+          <p><strong>日期:</strong> ${item.date}</p>
+          <p><strong>時間:</strong> ${item.time}</p>
+          <p><strong>活動:</strong> ${item.activity}</p>
+          <p><strong>地點:</strong> ${item.location}</p>
         </div>
       </div>`;
         });
       } else {
-        itineraryContainer.innerHTML = '<p>尚未新增行程。</p>';
+        itineraryContainer.innerHTML = '<p class="text-white">尚未新增行程規劃。</p>';
       }
 
       // 交通
@@ -120,12 +120,12 @@
           <p><strong>起點:</strong> ${item.from}</p>
           <p><strong>目的地:</strong> ${item.to}</p>
           <p><strong>交通工具:</strong> ${item.type}</p>
-          <p><strong>出發時間:</strong> ${item.date} ${item.time || '未指定時間'}</p>
+          <p><strong>出發時間:</strong> ${item.date} ${item.time}</p>
         </div>
       </div>`;
         });
       } else {
-        transportContainer.innerHTML = '<p>尚未新增交通規劃。</p>';
+        transportContainer.innerHTML = '<p class="text-white">尚未新增交通規劃。</p>';
       }
 
       // 住宿
@@ -139,13 +139,13 @@
           <h5 class="card-title">第 ${index + 1} 個</h5>
           <p><strong>地點:</strong> ${item.location}</p>
           <p><strong>類型:</strong> ${item.type}</p>
-          <p><strong>入住時間:</strong> ${item.checkInDate} ${item.checkInTime || '未指定時間'}</p>
-          <p><strong>退房時間:</strong> ${item.checkOutDate} ${item.checkOutTime || '未指定時間'}</p>
+          <p><strong>入住時間:</strong> ${item.checkInDate} ${item.checkInTime}</p>
+          <p><strong>退房時間:</strong> ${item.checkOutDate} ${item.checkOutTime}</p>
         </div>
       </div>`;
         });
       } else {
-        accommodationContainer.innerHTML = '<p>尚未新增住宿規劃。</p>';
+        accommodationContainer.innerHTML = '<p class="text-white">尚未新增住宿規劃。</p>';
       }
 
       // 物品
@@ -174,7 +174,7 @@
           itemsContainer.innerHTML += categoryHtml;
         });
       } else {
-        itemsContainer.innerHTML = '<p>尚未新增物品規劃。</p>';
+        itemsContainer.innerHTML = '<p class="text-white">尚未新增物品規劃。</p>';
       }
     });
 

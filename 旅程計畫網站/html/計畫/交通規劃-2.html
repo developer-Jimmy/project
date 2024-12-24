@@ -104,11 +104,11 @@
         function saveTransport() {
             const container = document.getElementById('transport-container');
             const transportData = [...container.querySelectorAll('.transport-block')].map(block => ({
-                from: block.querySelector('.transport-from').value,
-                to: block.querySelector('.transport-to').value,
-                type: block.querySelector('.transport-type').value,
-                date: block.querySelector('.transport-date').value,
-                time: block.querySelector('.transport-time').value,
+                from: block.querySelector('.transport-from').value || "未填寫起點",
+                to: block.querySelector('.transport-to').value || "未填寫目的地",
+                type: block.querySelector('.transport-type').value || "未填寫類型",
+                date: block.querySelector('.transport-date').value || "未指定日期",
+                time: block.querySelector('.transport-time').value || "未指定時間",
             }));
             localStorage.setItem('transportData', JSON.stringify(transportData));
             alert('交通規劃已儲存！');

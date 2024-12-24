@@ -142,10 +142,10 @@
         function saveItem() {
             const itemsData = [...document.querySelectorAll('.item-block')].map(block => {
                 const subItems = [...block.querySelectorAll('.form-check')].map(subItem => ({
-                    name: subItem.querySelector('.subitem-name').value || "未命名項目",
+                    name: subItem.querySelector('.subitem-name').value || "未填寫物品項目",
                 }));
                 return {
-                    listName: block.querySelector('.item-name').value || "未命名清單",
+                    listName: block.querySelector('.item-name').value || "未填寫物品清單",
                     items: subItems
                 };
             });

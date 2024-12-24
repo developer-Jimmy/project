@@ -34,8 +34,8 @@
         <!-- 行程日程將由JavaScript動態生成 -->
       </div>
       <div class="my-3" button-container>
-        <button type="button" class="btn btn-outline-primary" id="add-itinerary-btn">新增一天行程</button>
-        <button type="button" class="btn btn-outline-danger" id="remove-itinerary-btn">刪除最後一天行程</button>
+        <button type="button" class="btn btn-outline-primary" id="add-itinerary-btn">新增一個行程</button>
+        <button type="button" class="btn btn-outline-danger" id="remove-itinerary-btn">刪除最後一個行程</button>
         <a href="../首頁.html" class="btn btn-secondary">返回</a>
         <a href="./交通規劃-2.html" type="button" id="save-itinerary" class="btn btn-success">儲存</a>
       </div>
@@ -55,7 +55,7 @@
       const segments = container.querySelectorAll('.itinerary-block').length + 1;
       const html = `
         <section class="itinerary-block">
-          <h5>第 ${segments} 天</h5>
+          <h5>第 ${segments} 個</h5>
           <div class="form-group">
             <label>行程名稱</label>
             <input type="text" class="form-control itinerary-name" placeholder="例如：台北市區探索" required>
@@ -95,10 +95,10 @@
     function saveItinerary() {
       const container = document.getElementById('itinerary-container');
       const itineraryData = [...container.querySelectorAll('.itinerary-block')].map(block => ({
-        name: block.querySelector('.itinerary-name')?.value || "未命名行程",
+        name: block.querySelector('.itinerary-name')?.value || "未填寫行程名稱",
         date: block.querySelector('.itinerary-date')?.value || "未指定日期",
         time: block.querySelector('.itinerary-time')?.value || "未指定時間",
-        activity: block.querySelector('.itinerary-activity')?.value || "未填寫內容",
+        activity: block.querySelector('.itinerary-activity')?.value || "未填寫活動",
         location: block.querySelector('.itinerary-location')?.value || "未填寫地點",
       }));
 

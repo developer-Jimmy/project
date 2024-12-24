@@ -104,12 +104,12 @@
         function saveAccommodation() {
             const container = document.getElementById('accommodation-container');
             const accommodationData = [...container.querySelectorAll('.accommodation-block')].map(block => ({
-                location: block.querySelector('.accommodation-location').value,
-                type: block.querySelector('.accommodation-type').value,
-                checkInDate: block.querySelector('.accommodation-check-in-date').value,
-                checkInTime: block.querySelector('.accommodation-check-in-time').value,
-                checkOutDate: block.querySelector('.accommodation-check-out-date').value,
-                checkOutTime: block.querySelector('.accommodation-check-out-time').value,
+                location: block.querySelector('.accommodation-location').value || "未填寫地點",
+                type: block.querySelector('.accommodation-type').value || "未填寫類型",
+                checkInDate: block.querySelector('.accommodation-check-in-date').value || "未指定日期",
+                checkInTime: block.querySelector('.accommodation-check-in-time').value || "未指定時間",
+                checkOutDate: block.querySelector('.accommodation-check-out-date').value || "未指定日期",
+                checkOutTime: block.querySelector('.accommodation-check-out-time').value || "未指定時間",
             }));
             localStorage.setItem('accommodationData', JSON.stringify(accommodationData));
             alert('住宿規劃已儲存！');
