@@ -71,31 +71,83 @@ document.addEventListener("DOMContentLoaded", () => {
     recommendedContent.innerHTML = "";
   }
 });
+
+// 了解更多
+document.addEventListener("DOMContentLoaded", function () {
+  const learnMoreButtons = document.querySelectorAll(".btn-primary.mt-2.w-100");
+
+  learnMoreButtons.forEach((button, index) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      const title = this.closest(".card").querySelector(".card-title").textContent;
+      const description = this.closest(".card").querySelector(".card-text").textContent;
+
+      const modalContent = `
+              <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title text-black" id="learnMoreModalLabel">${title}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <p class="text-black">${description}</p>
+                 <img src="../img/旅程推薦圖片/詳情圖片${index + 1}.jpg" class="img-fluid text-black" alt="詳細圖片">
+                              <p class="text-black">此旅程包含以下特色：</p>
+                              <ul>
+                                  <li class="text-black">詳細描述 1</li>
+                                  <li class="text-black">詳細描述 2</li>
+                                  <li class="text-black">詳細描述 3</li>
+                              </ul>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          `;
+
+      document.body.insertAdjacentHTML("beforeend", modalContent);
+
+      const modal = new bootstrap.Modal(document.getElementById("learnMoreModal"));
+      modal.show();
+
+      // 清理模態框
+      document.getElementById("learnMoreModal").addEventListener("hidden.bs.modal", function () {
+        document.getElementById("learnMoreModal").remove();
+      });
+    });
+  });
+});
+
+
+
 // 排行榜
 document.addEventListener("DOMContentLoaded", function () {
   const rankingContainer = document.getElementById("ranking-container");
 
   // 原始數據
   const cardData = [
-      { title: "阿姆斯特丹", description: "運河之旅，文化之都。", image: "../img/旅程推薦圖片/阿姆斯特丹搜尋.jpg", likes: 25, rating: 4.8 },
-      { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃。", image: "../img/旅程推薦圖片/佛羅倫斯搜尋.jpg", likes: 30, rating: 4.5 },
-      { title: "里約熱內盧", description: "熱情的嘉年華與海灘。", image: "../img/旅程推薦圖片/里約熱內盧搜尋.jpg", likes: 20, rating: 4.2 }
+    { title: "阿姆斯特丹", description: "運河之旅，文化之都。", image: "../img/旅程推薦圖片/阿姆斯特丹搜尋.jpg", likes: 25, rating: 4.8 },
+    { title: "佛羅倫斯", description: "藝術與文藝復興的搖籃。", image: "../img/旅程推薦圖片/佛羅倫斯搜尋.jpg", likes: 30, rating: 4.5 },
+    { title: "里約熱內盧", description: "熱情的嘉年華與海灘。", image: "../img/旅程推薦圖片/里約熱內盧搜尋.jpg", likes: 20, rating: 4.2 }
   ];
 
-// 渲染排行榜卡片
-function renderRanking() {
- // 先清空內容
- rankingContainer.innerHTML = "";
+  // 渲染排行榜卡片
+  function renderRanking() {
+    // 先清空內容
+    rankingContainer.innerHTML = "";
 
- // 根據喜歡數量排序
- const sortedData = cardData.map((item, originalIndex) => ({
-     ...item,
-     originalIndex,
- })).sort((a, b) => b.likes - a.likes);
+    // 根據喜歡數量排序
+    const sortedData = cardData.map((item, originalIndex) => ({
+      ...item,
+      originalIndex,
+    })).sort((a, b) => b.likes - a.likes);
 
- // 動態生成卡片
- sortedData.forEach((item, displayIndex) => {
-     const cardHtml = `
+    // 動態生成卡片
+    sortedData.forEach((item, displayIndex) => {
+      const cardHtml = `
          <div class="col-md-4 mb-4">
              <div class="card h-100 shadow-sm">
                  <div class="position-relative">
@@ -120,38 +172,38 @@ function renderRanking() {
              </div>
          </div>
      `;
-     rankingContainer.insertAdjacentHTML("beforeend", cardHtml);
- });
-}
-// 生成星星
-function generateStars(rating) {
-  let starsHtml = '';
-  for (let i = 1; i <= 5; i++) {
-      if (i <= Math.floor(rating)) {
-          starsHtml += '<i class="bi bi-star-fill text-warning"></i>'; // 滿星
-      } else if (i - rating <= 0.5) {
-          starsHtml += '<i class="bi bi-star-half text-warning"></i>'; // 半星
-      } else {
-          starsHtml += '<i class="bi bi-star text-secondary"></i>'; // 空星
-      }
+      rankingContainer.insertAdjacentHTML("beforeend", cardHtml);
+    });
   }
-  return starsHtml;
-}
+  // 生成星星
+  function generateStars(rating) {
+    let starsHtml = '';
+    for (let i = 1; i <= 5; i++) {
+      if (i <= Math.floor(rating)) {
+        starsHtml += '<i class="bi bi-star-fill text-warning"></i>'; // 滿星
+      } else if (i - rating <= 0.5) {
+        starsHtml += '<i class="bi bi-star-half text-warning"></i>'; // 半星
+      } else {
+        starsHtml += '<i class="bi bi-star text-secondary"></i>'; // 空星
+      }
+    }
+    return starsHtml;
+  }
 
-// 綁定喜歡按鈕事件（事件委託）
-rankingContainer.addEventListener("click", function (event) {
-  const button = event.target.closest(".like-btn");
-  if (button) {
+  // 綁定喜歡按鈕事件（事件委託）
+  rankingContainer.addEventListener("click", function (event) {
+    const button = event.target.closest(".like-btn");
+    if (button) {
       const originalIndex = button.getAttribute("data-original-index");
       if (originalIndex !== null) {
-          cardData[originalIndex].likes += 1; // 增加喜歡數
-          renderRanking(); // 重新渲染排行榜
+        cardData[originalIndex].likes += 1; // 增加喜歡數
+        renderRanking(); // 重新渲染排行榜
       }
-  }
-});
+    }
+  });
 
-// 初始化渲染
-renderRanking();
+  // 初始化渲染
+  renderRanking();
 });
 
 // 喜歡按鈕功能

@@ -1,3 +1,63 @@
+// 閱讀更多
+document.addEventListener("DOMContentLoaded", function () {
+  // 綁定所有「閱讀更多」按鈕
+  const readMoreButtons = document.querySelectorAll(".btn-primary");
+
+  readMoreButtons.forEach((button, index) => {
+      button.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // 獲取對應的討論標題與內容
+          const card = this.closest(".card");
+          const title = card.querySelector(".discussion-header").textContent;
+          const description = card.querySelector("p").textContent;
+
+          // 動態創建模態框內容
+          const modalHtml = `
+              <div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="readMoreModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="readMoreModalLabel">${title}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <p>${description}</p>
+                              <hr>
+                              <p>更多內容正在撰寫中，敬請期待...</p>
+                              <div class="alert alert-info mt-3" role="alert">
+                                  <strong>提示：</strong>加入我們的社群，獲得最新的內容更新與參與討論！
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                              <button type="button" class="btn btn-primary">加入討論</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          `;
+
+          // 插入模態框到頁面中
+          document.body.insertAdjacentHTML("beforeend", modalHtml);
+
+          // 顯示模態框
+          const modal = new bootstrap.Modal(document.getElementById("readMoreModal"));
+          modal.show();
+
+          // 模態框關閉時移除 DOM
+          document.getElementById("readMoreModal").addEventListener("hidden.bs.modal", function () {
+              document.getElementById("readMoreModal").remove();
+          });
+      });
+  });
+});
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const discussionContent = document.getElementById("discussion-content");
     const paginationItems = document.querySelectorAll(".pagination .page-item a");

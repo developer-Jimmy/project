@@ -16,13 +16,18 @@ body {
 
 /* 卡片樣式 */
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #1A1A1A;
-    /* 深灰背景 */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    /* 陰影效果 */
     border: 1px solid #FFD700;
-    /* 金色邊框 */
+}
+.card img {
+    height: 200px; /* 固定圖片高度 */
+    object-fit: cover; /* 確保圖片保持比例，填滿框架 */
+    border-radius: 15px 15px 0 0; /* 圖片與卡片圓角一致 */
 }
 
 /* 卡片標題 */
@@ -33,6 +38,16 @@ body {
     /* 金色標題 */
     border-bottom: 2px solid #FFD700;
     padding-bottom: 10px;
+}
+.card-body {
+    flex-grow: 1; /* 讓文字部分填滿剩餘空間 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card p {
+    color: #EDEDED;
+    margin-bottom: 15px;
 }
 
 /* 標籤頁樣式 */

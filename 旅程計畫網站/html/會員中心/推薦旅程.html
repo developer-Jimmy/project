@@ -9,6 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/會員中心.css">
+    <style>
+        #detailModal .modal-content {
+            background-color: #1A1A1A;
+            color: #FFD700;
+        }
+
+        #detailModal .modal-header {
+            border-bottom: 1px solid #FFD700;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,57 +72,100 @@
                     <!-- 推薦旅程卡片 -->
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <div class="card-header">
-                                日本櫻花之旅
-                            </div>
+                            <img class="rounded-3" src="../../img/會員中心圖片/櫻花之旅.jpg" alt="日本櫻花之旅">
                             <div class="card-body">
+                                <h5 class="card-title">日本櫻花之旅</h5>
                                 <p>欣賞美麗的櫻花並體驗傳統日式文化。</p>
-                                <button class="btn view-details-btn">查看詳情</button>
+                                <button class="btn view-details-btn" data-title="日本櫻花之旅"
+                                    data-desc="欣賞美麗的櫻花並體驗傳統日式文化，參觀東京、大阪等地，享受日本美食和溫泉。"
+                                    data-image="https://via.placeholder.com/400x200?text=櫻花之旅">查看詳情</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <div class="card-header">
-                                夏季歐洲之旅
-                            </div>
+                            <img class="rounded-3" src="../../img/會員中心圖片/夏季歐洲之旅.jpg" alt="夏季歐洲之旅">
                             <div class="card-body">
+                                <h5 class="card-title">夏季歐洲之旅</h5>
                                 <p>探索歐洲的壯麗景色和多元文化。</p>
-                                <button class="btn view-details-btn">查看詳情</button>
+                                <button class="btn view-details-btn" data-title="夏季歐洲之旅"
+                                    data-desc="參觀巴黎、羅馬、倫敦等城市，探索壯麗的自然景觀和深厚的文化底蘊。"
+                                    data-image="https://via.placeholder.com/400x200?text=夏季歐洲之旅">查看詳情</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <div class="card-header">
-                                澳洲大堡礁潛水
-                            </div>
+                            <img class="rounded-3" src="../../img/會員中心圖片/大堡礁潛水.jpg" alt="澳洲大堡礁潛水">
                             <div class="card-body">
+                                <h5 class="card-title">澳洲大堡礁潛水</h5>
                                 <p>潛入世界上最大的珊瑚礁，享受海底奇觀。</p>
-                                <button class="btn view-details-btn">查看詳情</button>
+                                <button class="btn view-details-btn" data-title="澳洲大堡礁潛水"
+                                    data-desc="探索大堡礁壯觀的海底世界，參加潛水和浮潛活動，欣賞珊瑚和海洋生物。"
+                                    data-image="https://via.placeholder.com/400x200?text=大堡礁潛水">查看詳情</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <div class="card-header">
-                                南極冒險之旅
-                            </div>
+                            <img class="rounded-3" src="../../img/會員中心圖片/南極冒險之旅.jpg" alt="南極冒險之旅">
                             <div class="card-body">
+                                <h5 class="card-title">南極冒險之旅</h5>
                                 <p>挑戰極地探險，發現世界的盡頭。</p>
-                                <button class="btn view-details-btn">查看詳情</button>
+                                <button class="btn view-details-btn" data-title="南極冒險之旅"
+                                    data-desc="探索南極冰原，觀賞企鵝和海豹，體驗前所未有的冒險旅程。"
+                                    data-image="https://via.placeholder.com/400x200?text=南極冒險之旅">查看詳情</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+        </div>
+    </main>
 
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-           
+    <!-- 詳情模態框 -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel">旅程詳情</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="detailImage" src="" alt="旅程圖片" class="img-fluid mb-3">
+                    <h3 id="detailTitle"></h3>
+                    <p id="detailDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 動態更新模態框內容
+        document.querySelectorAll('.view-details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.getAttribute('data-title');
+                const desc = button.getAttribute('data-desc');
+                const imageSrc = button.getAttribute('data-image');
+
+                // 更新模態框
+                document.getElementById('detailTitle').innerText = title;
+                document.getElementById('detailDescription').innerText = desc;
+                document.getElementById('detailImage').src = imageSrc;
+
+                // 顯示模態框
+                const detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
+                detailModal.show();
+            });
+        });
+    </script>
 </body>
 
 </html>

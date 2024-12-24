@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊日記與紀錄工具</title>
+    <!-- 引入 Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="../css/環境設定.css">
+    <link rel="stylesheet" href="../css/旅程工具與資源.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card p-4">
+            <h1 class="toolTitle">旅遊日記與紀錄</h1>
+            <!-- 輸入區域 -->
+            <!-- 日期選擇 -->
+            <div class="mb-3">
+                <label for="entry-date" class="form-label">日期</label>
+                <input type="date" class="form-control" id="entry-date">
+            </div>
+            <!-- 日記內容 -->
+            <div class="mb-3">
+                <label for="entry-content" class="form-label">今日記錄</label>
+                <textarea class="form-control" id="entry-content" rows="5" placeholder="記錄下今天的點滴..."></textarea>
+            </div>
+            <!-- 上傳圖片 -->
+            <div class="mb-3">
+                <label for="entry-image" class="form-label">上傳圖片</label>
+                <input type="file" class="form-control" id="entry-image" accept="image/*">
+            </div>
+            <!-- 地點標記 -->
+            <div class="mb-3">
+                <label for="entry-location" class="form-label">地點</label>
+                <input type="text" class="form-control" id="entry-location" placeholder="輸入地點名稱">
+            </div>
+            <!-- 按鈕 -->
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary" onclick="saveDiaryEntry()">儲存日記</button>
+                <br>
+                <a href="./旅程工具與資源.html" class="btn btn-primary">返回</a>
+            </div>
+            <!-- 日記列表 -->
+            <div id="diary-list" class="mt-5">
+                <h4>日記列表</h4>
+                <ul class="list-group"></ul>
+            </div>
+        </div>
+        <!-- 版權資訊 -->
+        <footer>
+            旅遊日記與紀錄工具 © 2024 by 旅程計畫
+        </footer>
+    </div>
+
+    <!-- JavaScript 功能 -->
+    <script>
+        const diaryEntries = [];
+
+        function saveDiaryEntry() {
+            const date = document.getElementById("entry-date").value;
+            const content = document.getElementById("entry-content").value;
+            const location = document.getElementById("entry-location").value;
+            const image = document.getElementById("entry-image").files[0];
+
+            if (!date || !content) {
+                alert("請填寫完整的日記內容！");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function () {
+                const imageUrl = reader.result;
+
+                // 儲存日記
+                const entry = { date, content, location, imageUrl };
+                diaryEntries.push(entry);
+
+                // 更新日記列表
+                renderDiaryList();
+            };
+
+            if (image) {
+                reader.readAsDataURL(image);
+            } else {
+                const entry = { date, content, location, imageUrl: null };
+                diaryEntries.push(entry);
+                renderDiaryList();
+            }
+        }
+
+        function renderDiaryList() {
+            const diaryList = document.getElementById("diary-list").querySelector(".list-group");
+            diaryList.innerHTML = "";
+
+            diaryEntries.forEach((entry, index) => {
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item";
+                listItem.innerHTML = `
+            <strong>${entry.date}</strong> - ${entry.content}
+            ${entry.location ? `<p><strong>地點：</strong>${entry.location}</p>` : ""}
+            ${entry.imageUrl ? `<img src="${entry.imageUrl}" class="img-thumbnail mt-2" alt="日記圖片">` : ""}
+        `;
+                diaryList.appendChild(listItem);
+            });
+        }
+
+    </script>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
