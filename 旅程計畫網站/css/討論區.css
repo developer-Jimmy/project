@@ -1,36 +1,4 @@
-.top-tag {
-    background-color: #FFD700;
-    /* 金色背景，象徵重要性 */
-    color: #1a1a1a;
-    /* 深色文字，與背景形成對比 */
-    font-size: 0.85rem;
-    /* 比正文略小的字體大小 */
-    font-weight: bold;
-    /* 加粗文字，強調內容 */
-    padding: 4px 8px;
-    /* 增加內間距，讓標籤看起來更舒適 */
-    border-radius: 12px;
-    /* 圓角設計，柔和視覺效果 */
-    margin-left: auto;
-    /* 將標籤推到右側 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* 添加陰影，增強立體感 */
-    text-transform: uppercase;
-    /* 將文字轉換為全大寫 */
-    letter-spacing: 0.5px;
-    /* 增加字母間距，提升可讀性 */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* 懸停效果的過渡動畫 */
-}
 
-.top-tag:hover {
-    background-color: #FFC300;
-    /* 懸停時背景變亮，增強交互感 */
-    color: #000000;
-    /* 文字變為黑色，與亮色背景對比 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* 懸停時增加陰影深度 */
-}
 
 /* 模態框樣式 */
 .modal-content {

@@ -1,3 +1,29 @@
+
+.carousel-caption {
+    z-index: 10;
+    position: absolute;
+    bottom: 20px; /* 保證文字距離底部不會太近 */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    color: #fff; /* 確保文字顏色與背景對比明顯 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* 提升可讀性 */
+}
+@media (max-width: 768px) {
+    .carousel-caption h5 {
+        font-size: 1rem; /* 縮小標題文字 */
+    }
+
+    .carousel-caption p {
+        font-size: 0.8rem; /* 縮小描述文字 */
+    }
+}
+
+
+.carousel-inner img {
+    height: 100%;
+    object-fit: cover; /* 確保圖片不會變形 */
+}
+
 /* 卡片樣式 */
 .card {
     background: linear-gradient(145deg, var(--card-gradient-start), var(--card-gradient-end));
